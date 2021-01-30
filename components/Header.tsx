@@ -1,10 +1,6 @@
 import { Transition } from '@headlessui/react';
 import { useState } from 'react';
-
-const links = [
-  { href: 'https://github.com/vercel/next.js', label: 'GitHub' },
-  { href: 'https://nextjs.org/docs', label: 'Docs' }
-];
+import Link from 'next/link';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,14 +8,16 @@ export default function Header() {
     <div className="relative bg-white">
       <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#">
-            <span className="sr-only">Project Voce Moderna</span>
-            <img
-              className="h-8 w-auto sm:h-10"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-              alt=""
-            ></img>
-          </a>
+          <Link href="/">
+            <a>
+              <span className="sr-only">Project Voce Moderna</span>
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                alt=""
+              ></img>
+            </a>
+          </Link>
         </div>
         <div className="-mr-2 -my-2 md:hidden">
           <button
@@ -47,24 +45,21 @@ export default function Header() {
           </button>
         </div>
         <nav className="hidden md:flex space-x-10">
-          <a
-            href="#"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Database
-          </a>
-          <a
-            href="#"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            About VM
-          </a>
-          <a
-            href="#"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Contact
-          </a>
+          <Link href="/database">
+            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Database
+            </a>
+          </Link>
+          <Link href="/about">
+            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              About
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Contact
+            </a>
+          </Link>
         </nav>
         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <a
