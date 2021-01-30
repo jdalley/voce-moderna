@@ -1,5 +1,15 @@
 {
-	"css.validate": false,
-	"less.validate": false,
-	"scss.validate": false,
+	// Fix Tailwind import warnings
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+	"editor.formatOnSave": true,
+	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#800080",
+    "titleBar.inactiveBackground": "#800080CC"
+  }
 }
