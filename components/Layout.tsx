@@ -4,17 +4,22 @@ import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
-type Props = {
+export type LayoutProps = {
   children?: ReactNode;
+  customMeta?: {
+    title?: string;
+    description?: string;
+  };
 };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, customMeta }: LayoutProps) {
   const router = useRouter();
   const meta = {
     title: 'Project Voce Moderna',
     description: 'New music database and practice tracks',
     image: 'https://projectvocemoderna.com/static/images/banner.png',
-    type: 'website'
+    type: 'website',
+    ...customMeta
   };
 
   return (
