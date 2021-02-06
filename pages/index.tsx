@@ -16,8 +16,7 @@ export default function Index(props) {
         <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
           Project Voce Moderna
         </h1>
-        {console.log(props.allArias[0].node)}
-        {console.log(aria)}
+
         <div className="mt-28 text-center">
           {aria.title[0].text} - ({aria.voice_type.name})
         </div>
@@ -58,6 +57,7 @@ export default function Index(props) {
 export async function getStaticProps({ preview = false, previewData }) {
   const allArias = await getAllArias(previewData);
 
+  console.log('index getStaticProps ran');
   return {
     props: { preview, allArias }
   };
