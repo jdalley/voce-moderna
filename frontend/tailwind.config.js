@@ -5,7 +5,14 @@ module.exports = {
   ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+			colors: {
+				'sick-red': '#FF0000' // generate colors for all variants of color classes
+			},
+			fontSize: {
+				'4.5xl': '2.5rem' // generate custom font size
+			}
+		},
   },
   variants: {
     extend: {},

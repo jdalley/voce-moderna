@@ -1,8 +1,8 @@
 {
-	// Fix Tailwind import warnings
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
+	// Avoid stylelint clashing with default validation
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
 
 	"editor.formatOnSave": true,
 	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },

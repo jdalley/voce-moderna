@@ -1,0 +1,8 @@
+{"_id": "baritone", "_type": "voiceType", "name": "Baritone"}
+{"_id": "bass", "_type": "voiceType", "name": "Bass"}
+{"_id": "bassBaritone", "_type": "voiceType", "name": "Bass Baritone"}
+{"_id": "contralto", "_type": "voiceType", "name": "Contralto"}
+{"_id": "counterTenor", "_type": "voiceType", "name": "Counter Tenor"}
+{"_id": "mezzoSoprano", "_type": "voiceType", "name": "Mezzo Soprano"}
+{"_id": "tenor", "_type": "voiceType", "name": "Tenor"}
+{"_id": "soprano", "_type": "voiceType", "name": "Soprano"}
