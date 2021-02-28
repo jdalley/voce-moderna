@@ -1,6 +1,4 @@
 import Layout, { LayoutProps } from '../components/Layout';
-import PrismicClient from '../lib/cms';
-import Prismic from '@prismicio/client';
 
 export default function Index(props: any) {
   const layoutProps: LayoutProps = {
@@ -64,16 +62,7 @@ export default function Index(props: any) {
 }
 
 export async function getStaticProps({ preview = false, previewData }) {
-  const client = PrismicClient();
-
-  const arias = await client.query(
-    [Prismic.Predicates.at('document.type', 'aria')],
-    {
-      pageSize: 10,
-      orderings: '[document.first_publication_date]',
-      fetchLinks: 'opera.title'
-    }
-  );
+  let arias = {};
 
   console.log('index -> getStaticProps was run.');
 
