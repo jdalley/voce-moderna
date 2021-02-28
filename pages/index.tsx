@@ -7,8 +7,6 @@ export default function Index(props: any) {
     }
   };
 
-  console.log({ ...props.arias });
-
   const arias = props.arias.results;
 
   return (
