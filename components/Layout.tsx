@@ -1,6 +1,6 @@
+import { ReactNode } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
-import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -19,7 +19,7 @@ export default function Layout({ children, customMeta }: LayoutProps) {
     description: 'New music database and practice tracks',
     image: 'https://projectvocemoderna.com/static/images/banner.png',
     type: 'website',
-    ...customMeta
+    ...customMeta,
   };
 
   return (

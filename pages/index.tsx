@@ -1,13 +1,14 @@
-import Layout, { LayoutProps } from '../components/Layout';
+import Layout, { LayoutProps } from '@components/Layout';
+import { allOperas } from '@utils/queries';
+import { getClient } from '@utils/sanity.server';
+import opera from 'studio/schemas/opera';
 
-export default function Index(props: any) {
+export default function Index({ operas, preview }) {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'Home'
-    }
+      title: 'Home',
+    },
   };
-
-  const arias = props.arias.results;
 
   return (
     <Layout customMeta={layoutProps.customMeta}>
@@ -15,13 +16,13 @@ export default function Index(props: any) {
         Project Voce Moderna
       </h1>
       <h2 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-        Listing of {arias.length} arias
+        Listing of {operas.length} operas
       </h2>
-      {arias.map((aria) => {
+      {operas.map((opera) => {
         return (
-          <div key={aria.uid} className="py-5">
+          <div key={opera.slug} className="py-5">
             <div className="text-center">
-              {aria.uid} - {aria.data.title[0].text}
+              {opera.slug} - {opera.title}
               {/* {aria.title[0].text} - ({aria.voice_type.name}) */}
             </div>
             {/* <div className="text-center">
@@ -59,12 +60,12 @@ export default function Index(props: any) {
   );
 }
 
-export async function getStaticProps({ preview = false, previewData }) {
-  let arias = {};
+export async function getStaticProps({ preview = false }) {
+  const operas = await getClient(preview).fetch(allOperas);
 
-  console.log('index -> getStaticProps was run.');
+  console.log(operas);
 
   return {
-    props: { preview, arias }
+    props: { operas, preview },
   };
 }
