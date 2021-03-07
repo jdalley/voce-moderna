@@ -1,7 +1,4 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import { allOperas } from '@utils/queries';
-import { getClient } from '@utils/sanity.server';
-import opera from 'studio/schemas/opera';
 
 export default function Index({ operas, preview }) {
   const layoutProps: LayoutProps = {
@@ -12,58 +9,27 @@ export default function Index({ operas, preview }) {
 
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-        Project Voce Moderna
-      </h1>
-      <h2 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-        Listing of {operas.length} operas
-      </h2>
-      {operas.map((opera) => {
-        return (
-          <div key={opera.slug} className="py-5">
-            <div className="text-center">
-              {opera.slug} - {opera.title}
-              {/* {aria.title[0].text} - ({aria.voice_type.name}) */}
+      <div className="relative">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="relative sm:overflow-hidden">
+            <div className="absolute inset-0">
+              <img
+                className="h-full w-full object-cover"
+                src="/images/vm-hero.png"
+                alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+              />
             </div>
-            {/* <div className="text-center">
-              <button
-                className="snipcart-add-item inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                data-item-id={aria.piano_track[0].track_id}
-                data-item-price={aria.piano_track[0].track_price}
-                data-item-url="/"
-                data-item-description={
-                  aria.piano_track[0].track_description[0].text
-                }
-                data-item-name={aria.piano_track[0].track_name}
-                data-item-file-guid={aria.vocal_track[0].file_guid}
-              >
-                Buy Piano Track
-              </button>
-              <button
-                className="snipcart-add-item mx-4 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                data-item-id={aria.vocal_track[0].track_id}
-                data-item-price={aria.vocal_track[0].track_price}
-                data-item-url="/"
-                data-item-description={
-                  aria.vocal_track[0].track_description[0].text
-                }
-                data-item-name={aria.vocal_track[0].track_name}
-                data-item-file-guid={aria.vocal_track[0].file_guid}
-              >
-                Buy Vocal Track
-              </button>
-            </div> */}
+            <div className="px-4 py-24 sm:px-6 sm:py-24 md:py-32 lg:py-44 lg:px-8"></div>
           </div>
-        );
-      })}
+        </div>
+      </div>
     </Layout>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const operas = await getClient(preview).fetch(allOperas);
-
-  console.log(operas);
+  //const operas = await getClient(preview).fetch(allOperas);
+  const operas = [];
 
   return {
     props: { operas, preview },

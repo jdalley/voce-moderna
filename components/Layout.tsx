@@ -47,7 +47,9 @@ export default function Layout({ children, customMeta }: LayoutProps) {
         Skip to content
       </a>
       <Header />
-      <main id="skip">{children}</main>
+      <div className="bg-white">
+        <main id="skip">{children}</main>
+      </div>
       <Footer />
     </div>
   );
