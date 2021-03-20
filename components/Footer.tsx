@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-white">
@@ -7,25 +9,32 @@ export default function Footer() {
           aria-label="Footer"
         >
           <div className="px-5 py-2">
-            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-              About
-            </a>
+            <Link href="/about">
+              <a className="text-base text-gray-500 hover:text-gray-900">
+                About
+              </a>
+            </Link>
           </div>
 
           <div className="px-5 py-2">
-            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-              Contact
-            </a>
+            <Link href="/contact">
+              <a className="text-base text-gray-500 hover:text-gray-900">
+                Contact
+              </a>
+            </Link>
           </div>
 
           <div className="px-5 py-2">
-            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-              FAQ
-            </a>
+            <Link href="/faq">
+              <a className="text-base text-gray-500 hover:text-gray-900">FAQ</a>
+            </Link>
           </div>
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="#" className="text-gray-400 hover:text-gray-500">
+          <a
+            href="https://www.instagram.com/projectvocemoderna"
+            className="text-gray-400 hover:text-gray-500"
+          >
             <span className="sr-only">Instagram</span>
             <svg
               className="h-6 w-6"
@@ -41,7 +50,10 @@ export default function Footer() {
             </svg>
           </a>
 
-          <a href="#" className="text-gray-400 hover:text-gray-500">
+          <a
+            href="https://twitter.com/vocemoderna"
+            className="text-gray-400 hover:text-gray-500"
+          >
             <span className="sr-only">Twitter</span>
             <svg
               className="h-6 w-6"

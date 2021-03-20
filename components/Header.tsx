@@ -9,14 +9,16 @@ export default function Header() {
       <div className="relative bg-white">
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 sm:justify-start sm:space-x-10 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Project Voce Moderna</span>
-              <img
-                className="h-10 w-auto sm:h-12"
-                src="/images/vm-logo.png"
-                alt=""
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <span className="sr-only">Project Voce Moderna</span>
+                <img
+                  className="h-10 w-auto sm:h-12"
+                  src="/images/vm-logo.png"
+                  alt=""
+                />
+              </a>
+            </Link>
           </div>
           <div className="-mr-2 -my-2 sm:hidden">
             <button
@@ -45,24 +47,21 @@ export default function Header() {
             </button>
           </div>
           <nav className="hidden sm:flex space-x-10">
-            <a
-              href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Database
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Contact
-            </a>
+            <Link href="/database">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Database
+              </a>
+            </Link>
+            <Link href="/about">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                About
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Contact
+              </a>
+            </Link>
           </nav>
           <div className="hidden sm:flex items-center justify-end sm:flex-1 lg:w-0">
             {/* Heroicon name: shopping-bag */}

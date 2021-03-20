@@ -1,0 +1,24 @@
+{
+	"name": "Project Voce Moderna",
+	"short_name": "VoceModerna",
+	"description": "",
+	"icons": [
+		{
+			"src": "/static/favicons/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/static/favicons/android-chrome-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#46b7cc",
+	"background_color": "#46b7cc",
+	"display": "standalone",
+	"dir": "ltr",
+	"lang": "en-US",
+	"orientation": "portrait-primary",
+	"start_url": "../../index.html"
+}
