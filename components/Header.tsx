@@ -136,79 +136,26 @@ export default function Header() {
                   <div className="mt-6">
                     <nav className="grid grid-cols-1 gap-7">
                       <a
-                        href="#"
+                        href="/database"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
-                          {/*  Heroicon name: database  */}
-                          <svg
-                            className="h-5 w-5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                            />
-                          </svg>
-                        </div>
-                        <div className="ml-4 text-base font-medium text-gray-900">
+                        <div className="text-base font-medium text-gray-900">
                           Database
                         </div>
                       </a>
-
                       <a
-                        href="#"
+                        href="/about"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
-                          {/*  Heroicon name: information-circle  */}
-                          <svg
-                            className="h-5 w-5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="ml-4 text-base font-medium text-gray-900">
+                        <div className="text-base font-medium text-gray-900">
                           About
                         </div>
                       </a>
-
                       <a
-                        href="#"
+                        href="/contact"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
-                          {/*  Heroicon name: mail  */}
-                          <svg
-                            className="h-5 w-5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="ml-4 text-base font-medium text-gray-900">
+                        <div className="text-base font-medium text-gray-900">
                           Contact
                         </div>
                       </a>
@@ -220,23 +167,21 @@ export default function Header() {
                     href="#"
                     className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                   >
-                    <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
-                      {/* Heroicon name: shopping-bag */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        className="h-5 w-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                        />
-                      </svg>
-                    </div>
+                    {/* Heroicon name: shopping-bag */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
