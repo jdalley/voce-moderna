@@ -66,8 +66,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; {new Date().getFullYear()} Project Voce Moderna, Inc. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} Project Voce Moderna
         </p>
       </div>
     </footer>

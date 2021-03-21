@@ -1,6 +1,9 @@
 import Layout, { LayoutProps } from '@components/Layout';
+import FeaturedArias from '@components/FeaturedArias';
+import { featuredAriasQuery } from '@utils/queries';
+import { getClient } from '@utils/sanity.server';
 
-export default function Index({ operas, preview }) {
+export default function Index({ featuredArias, preview }) {
   const layoutProps: LayoutProps = {
     customMeta: {
       title: 'Home',
@@ -9,29 +12,26 @@ export default function Index({ operas, preview }) {
 
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <div className="relative">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="relative sm:overflow-hidden">
-            <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="/images/vm-hero.png"
-                alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
-              />
-            </div>
-            <div className="px-4 py-24 sm:px-6 sm:py-24 md:py-32 lg:py-44 lg:px-8"></div>
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="relative px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
+          <div className="absolute inset-0">
+            <img
+              className="object-cover h-full w-full"
+              src="/images/vm-hero.png"
+              alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+            />
           </div>
         </div>
       </div>
+      <FeaturedArias featuredArias={featuredArias} />
     </Layout>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  //const operas = await getClient(preview).fetch(allOperas);
-  const operas = [];
+  const featuredArias = await getClient(preview).fetch(featuredAriasQuery);
 
   return {
-    props: { operas, preview },
+    props: { featuredArias, preview },
   };
 }

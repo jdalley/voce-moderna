@@ -54,14 +54,6 @@ export default {
       }
     },
     {
-      name: 'range',
-      title: 'Range',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
-    },
-    {
       name: 'scoreLink',
       title: 'Score Link',
       type: 'externalLink'

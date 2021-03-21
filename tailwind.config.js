@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     './pages/**/*.{js,jsx,ts,tsx}',
@@ -6,11 +8,12 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
-			colors: {
-				'sick-red': '#FF0000' // generate colors for all variants of color classes
+			colors: { // generate colors for all variants of color classes
+				teal: colors.teal,
+				cyan: colors.cyan
 			},
-			fontSize: {
-				'4.5xl': '2.5rem' // generate custom font size
+			fontSize: { // generate custom font size
+				'4.5xl': '2.5rem' 
 			}
 		},
   },

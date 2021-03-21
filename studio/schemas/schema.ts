@@ -9,6 +9,7 @@ import creator from './creator';
 import voiceType from './voiceType';
 import opera from './opera';
 import aria from './aria';
+import featuredAria from './featuredAria';
 
 // Objects
 import externalLink from './externalLink';
@@ -24,6 +25,7 @@ export default createSchema({
     creator,
     opera,
     aria,
+    featuredAria,
     voiceType,
     externalLink,
     track

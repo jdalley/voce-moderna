@@ -139,7 +139,7 @@ export default function Header() {
                         href="#"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gradient-to-r from-yellow-600 to-indigo-600 text-white">
+                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
                           {/*  Heroicon name: database  */}
                           <svg
                             className="h-5 w-5"
@@ -165,7 +165,7 @@ export default function Header() {
                         href="#"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gradient-to-r from-yellow-600 to-indigo-600 text-white">
+                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
                           {/*  Heroicon name: information-circle  */}
                           <svg
                             className="h-5 w-5"
@@ -191,7 +191,7 @@ export default function Header() {
                         href="#"
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gradient-to-r from-yellow-600 to-indigo-600 text-white">
+                        <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
                           {/*  Heroicon name: mail  */}
                           <svg
                             className="h-5 w-5"
@@ -220,7 +220,7 @@ export default function Header() {
                     href="#"
                     className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                   >
-                    <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gradient-to-r from-yellow-600 to-indigo-600 text-white">
+                    <div className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-md bg-gray-900 text-white">
                       {/* Heroicon name: shopping-bag */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
