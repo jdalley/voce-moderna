@@ -46,11 +46,13 @@ export default function Layout({ children, customMeta }: LayoutProps) {
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-      <Header />
-      <div className="bg-white">
-        <main id="skip">{children}</main>
+      <div className="bg-white flex flex-col min-h-screen justify-between">
+        <Header />
+        <main id="skip" className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
