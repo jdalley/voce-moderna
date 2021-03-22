@@ -1,14 +1,11 @@
 import Layout from '@components/Layout';
-import { VoiceType } from '@utils/enums';
-import { classNames, voiceToGradientMap } from '@utils/tailwind';
+import VoiceTypeGroup from '@components/VoiceTypeGroup';
 
 export default function Database() {
   return (
     <Layout>
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Database
-        </h1>
+      <div className="max-w-7xl mx-auto py-6">
+        <VoiceTypeGroup></VoiceTypeGroup>
       </div>
     </Layout>
   );

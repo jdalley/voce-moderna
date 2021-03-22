@@ -1,5 +1,3 @@
-import { VoiceType } from '@utils/enums';
-
 /** Build a classNames string from an array of values.
  *  Borrowed from: https://www.skies.dev/tailwind-react-trick
  */
@@ -9,26 +7,25 @@ export function classNames(
   return classes.filter(Boolean).join(' ');
 }
 
-/** Map of VoiceType to Tailwind gradients (from/to) */
-export const voiceToGradientMap: Record<VoiceType, string> = {
-  [VoiceType.Baritone]: 'from-blue-500 to-blue-600',
-  [VoiceType.Bass]: 'from-bluegray-500 to-bluegray-600',
-  [VoiceType.BassBaritone]: 'from-amber-500 to-amber-600',
-  [VoiceType.Contralto]: 'from-fuchsia-500 to-fuchsia-600',
-  [VoiceType.CounterTenor]: 'from-emerald-500 to-emerald-600',
-  [VoiceType.MezzoSoprano]: 'from-cyan-500 to-cyan-600',
-  [VoiceType.Soprano]: 'from-yellow-500 to-yellow-600',
-  [VoiceType.Tenor]: 'from-red-500 to-red-600',
+/** Map of Voice Type to Tailwind gradients (from/to) */
+export const voiceToGradientMap: Record<string, string> = {
+  baritone: 'from-cyan-600 to-blue-600',
+  bass: 'from-blue-600 to-bluegray-600',
+  bassBaritone: 'from-red-600 to-amber-600',
+  contralto: 'from-indigo-600 to-fuchsia-600',
+  counterTenor: 'from-lime-600 to-emerald-700',
+  mezzoSoprano: 'from-green-500 to-cyan-700',
+  soprano: 'from-amber-600 to-rose-500',
+  tenor: 'from-fuchsia-600 to-red-600',
 };
 
-/** Map of colour to Tailwind gradients (from/to) */
-export const colourToGradientMap: Record<string, string> = {
-  blue: 'from-blue-500 to-blue-600',
-  bluegray: 'from-bluegray-500 to-bluegray-600',
-  amber: 'from-amber-500 to-amber-600',
-  fuchsia: 'from-fuchsia-500 to-fuchsia-600',
-  emerald: 'from-emerald-500 to-emerald-600',
-  cyan: 'from-cyan-500 to-cyan-600',
-  yellow: 'from-yellow-500 to-yellow-600',
-  red: 'from-red-500 to-red-600',
+export const voiceHoverToGradientMap: Record<string, string> = {
+  baritoneHover: 'hover:from-blue-700 hover:to-cyan-700',
+  bassHover: 'hover:from-bluegray-700 hover:to-blue-700',
+  bassBaritoneHover: 'hover:from-amber-600 hover:to-red-700',
+  contraltoHover: 'hover:from-fuchsia-700 hover:to-indigo-700',
+  counterTenorHover: 'hover:from-emerald-800 hover:to-lime-700',
+  mezzoSopranoHover: 'hover:from-cyan-800 hover:to-green-600',
+  sopranoHover: 'hover:from-rose-600 hover:to-amber-700',
+  tenorHover: 'hover:from-red-700 hover:to-fuchsia-700',
 };

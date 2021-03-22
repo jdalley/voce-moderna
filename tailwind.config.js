@@ -15,9 +15,14 @@ module.exports = {
 				teal: colors.teal,
 				cyan: colors.cyan,
 				bluegray: colors.blueGray,
+				truegray: colors.trueGray,
 				amber: colors.amber,
 				fuchsia: colors.fuchsia,
-				emerald: colors.emerald
+				violet: colors.violet,
+				rose: colors.rose,
+				emerald: colors.emerald,
+				lime: colors.lime,
+				yellow: colors.yellow,
 			},
 			fontSize: { // generate custom font size
 				'4.5xl': '2.5rem' 
