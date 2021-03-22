@@ -1,4 +1,6 @@
 import Layout from '@components/Layout';
+import { VoiceType } from '@utils/enums';
+import { classNames, voiceToGradientMap } from '@utils/tailwind';
 
 export default function Database() {
   return (

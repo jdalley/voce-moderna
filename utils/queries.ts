@@ -19,7 +19,7 @@ export const featuredAriasQuery = groq`
 		aria->{
 			title, 
 			slug{current},
-			voiceType->{name},
+			voiceType->{name, displayName},
 			description,
 			opera->{
 				title,

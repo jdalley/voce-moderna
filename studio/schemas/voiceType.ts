@@ -7,6 +7,11 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string'
+    },
+    {
+      name: 'displayName',
+      title: 'Display Name',
+      type: 'string'
     }
   ]
 };

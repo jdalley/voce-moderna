@@ -1,17 +1,25 @@
+import { classNames, voiceToGradientMap } from '@utils/tailwind';
+
 export default function FeaturedAriaCard({ featuredAria }) {
   const aria = featuredAria.aria;
 
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-      <div className="h-24 bg-gradient-to-r from-teal-500 to-cyan-600"></div>
+      <div
+        className={classNames(
+          'h-24',
+          'bg-gradient-to-r',
+          voiceToGradientMap[aria.voiceType.name]
+        )}
+      ></div>
       <div className="-mt-10 mx-5 px-8 pt-6 pb-7 bg-white rounded-lg flex-1 flex flex-col justify-between ">
         <div className="flex-1">
           <p className="text-lg leading-6 font-medium text-gray-900">
             Voice Type
           </p>
-          <p className="text-sm font-medium">{aria.voiceType.name}</p>
+          <p className="text-sm font-medium">{aria.voiceType.displayName}</p>
         </div>
-        <div className="flex-1 mt-3 t">
+        <div className="flex-1 mt-3">
           <p className="ext-lg leading-6 font-medium text-gray-900">Aria</p>
           <p className="text-sm font-medium">
             <a
