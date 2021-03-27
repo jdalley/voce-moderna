@@ -30,7 +30,6 @@ export default function Index({ featuredArias, preview }) {
 
 export async function getStaticProps({ preview = false }) {
   const featuredArias = await getClient(preview).fetch(featuredAriasQuery);
-
   return {
     props: { featuredArias, preview },
   };

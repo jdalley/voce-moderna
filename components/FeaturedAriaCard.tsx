@@ -46,7 +46,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             Creators
           </p>
           {aria.opera.composers.map((c) => (
-            <div key={c.id} className="flex-1">
+            <div key={c.slug} className="flex-1">
               <p className="text-sm font-medium text-gray-900">
                 <a
                   href={'/creator/' + c.slug}
@@ -58,7 +58,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             </div>
           ))}
           {aria.opera.librettists.map((l) => (
-            <div key={l.id} className="flex-1">
+            <div key={l.slug} className="flex-1">
               <p className="mt-1 text-sm font-medium text-gray-900">
                 <a
                   href={'/creator/' + l.slug}

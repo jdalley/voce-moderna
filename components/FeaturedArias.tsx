@@ -15,7 +15,7 @@ export default function FeaturedArias({ featuredArias }) {
         <div className="mt-12 max-w-md mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {featuredArias.map((featuredAria) => (
             <FeaturedAriaCard
-              key={featuredAria.id}
+              key={featuredAria.slug}
               featuredAria={featuredAria}
             />
           ))}
