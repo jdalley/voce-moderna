@@ -1,40 +1,40 @@
 {
-	"name": "voce-moderna",
-	"private": true,
-	"version": "1.0.0",
-	"description": "",
-	"main": "package.json",
-	"author": "Jeff Dalley <jeffdalley@gmail.com>",
-	"license": "UNLICENSED",
-	"scripts": {
-		"start": "sanity start",
-		"test": "sanity check"
-	},
-	"keywords": [
-		"sanity"
-	],
-	"dependencies": {
-		"@sanity/base": "^2.6.2",
-		"@sanity/components": "^2.2.6",
-		"@sanity/core": "^2.6.2",
-		"@sanity/default-layout": "^2.6.2",
-		"@sanity/default-login": "^2.2.6",
-		"@sanity/desk-tool": "^2.6.3",
-		"@sanity/production-preview": "^2.2.6",
-		"@sanity/types": "^2.7.1",
-		"@sanity/vision": "^2.2.6",
-		"prop-types": "^15.7",
-		"react": "^17.0",
-		"react-dom": "^17.0"
-	},
-	"devDependencies": {
-		"prettier": "^2.1.1",
-		"typescript": "^4.1.5"
-	},
-	"prettier": {
-		"arrowParens": "always",
-		"singleQuote": true,
-		"tabWidth": 2,
-		"trailingComma": "none"
-	}
+  "name": "voce-moderna",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Jeff Dalley <jeffdalley@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.7.1",
+    "@sanity/components": "^2.2.6",
+    "@sanity/core": "^2.7.1",
+    "@sanity/default-layout": "^2.7.1",
+    "@sanity/default-login": "^2.7.0",
+    "@sanity/desk-tool": "^2.7.1",
+    "@sanity/production-preview": "^2.2.6",
+    "@sanity/types": "^2.7.1",
+    "@sanity/vision": "^2.7.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1",
+    "typescript": "^4.1.5"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  }
 }
