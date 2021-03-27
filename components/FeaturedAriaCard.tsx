@@ -23,7 +23,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
           <p className="ext-lg leading-6 font-medium text-gray-900">Aria</p>
           <p className="text-sm font-medium">
             <a
-              href={'/aria/' + aria.slug.current}
+              href={'/aria/' + aria.slug}
               className="text-cyan-600 hover:underline"
             >
               {aria.title}
@@ -34,7 +34,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
           <p className="text-lg leading-6 font-medium text-gray-900">Opera</p>
           <p className="text-sm font-medium">
             <a
-              href={'/opera/' + aria.opera.slug.current}
+              href={'/opera/' + aria.opera.slug}
               className="text-cyan-600 hover:underline"
             >
               {aria.opera.title}
@@ -49,7 +49,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             <div key={c.id} className="flex-1">
               <p className="text-sm font-medium text-gray-900">
                 <a
-                  href={'/creator/' + c.slug.current}
+                  href={'/creator/' + c.slug}
                   className="text-cyan-600 hover:underline"
                 >
                   {c.firstName} {c.lastName} (Composer)
@@ -61,7 +61,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             <div key={l.id} className="flex-1">
               <p className="mt-1 text-sm font-medium text-gray-900">
                 <a
-                  href={'/creator/' + l.slug.current}
+                  href={'/creator/' + l.slug}
                   className="text-cyan-600 hover:underline"
                 >
                   {l.firstName} {l.lastName} (Librettist)

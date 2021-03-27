@@ -41,7 +41,7 @@ export default {
       name: 'relativeUrl',
       title: 'Relative URL',
       type: 'string',
-      description: '/aria/aria-name'
+      description: '/arias/aria-name'
     },
     {
       name: 'description',
