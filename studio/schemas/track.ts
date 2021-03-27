@@ -1,3 +1,5 @@
+import { SanityDocument, SlugSourceOptions } from '@sanity/types';
+
 export default {
   name: 'track',
   title: 'Track',
@@ -14,7 +16,14 @@ export default {
       title: 'Id',
       type: 'slug',
       options: {
-        source: (doc, options) => options.parent.ariaName,
+        source: (doc: SanityDocument, options: SlugSourceOptions) => {
+          let parent: Record<string, unknown> = options.parent as Record<
+            string,
+            unknown
+          >;
+          // name here is track.name.
+          return parent.name;
+        },
         slugify: (input: string) =>
           input
             .toLowerCase()
