@@ -24,7 +24,7 @@ module.exports = {
 				lime: colors.lime,
 				yellow: colors.yellow,
 			},
-			backgroundImage: theme => ({
+			backgroundImage: (theme) => ({
 				'piano-man': "url('/images/piano-man.svg')"
 			}),
 			typography: (theme) => ({

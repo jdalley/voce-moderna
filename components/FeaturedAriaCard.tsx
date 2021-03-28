@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { classNames, voiceToGradientMap } from '@utils/tailwind';
 
 export default function FeaturedAriaCard({ featuredAria }) {
@@ -22,23 +23,19 @@ export default function FeaturedAriaCard({ featuredAria }) {
         <div className="flex-1 mt-3">
           <p className="ext-lg leading-6 font-medium text-gray-900">Aria</p>
           <p className="text-sm font-medium">
-            <a
-              href={'/aria/' + aria.slug}
-              className="text-cyan-600 hover:underline"
-            >
-              {aria.title}
-            </a>
+            <Link href={'/arias/' + aria.slug}>
+              <a className="text-cyan-600 hover:underline">{aria.title}</a>
+            </Link>
           </p>
         </div>
         <div className="flex-1 mt-3">
           <p className="text-lg leading-6 font-medium text-gray-900">Opera</p>
           <p className="text-sm font-medium">
-            <a
-              href={'/opera/' + aria.opera.slug}
-              className="text-cyan-600 hover:underline"
-            >
-              {aria.opera.title}
-            </a>
+            <Link href={'/operas/' + aria.opera.slug}>
+              <a className="text-cyan-600 hover:underline">
+                {aria.opera.title}
+              </a>
+            </Link>
           </p>
         </div>
         <div className="flex-1 mt-3 ">
@@ -48,24 +45,22 @@ export default function FeaturedAriaCard({ featuredAria }) {
           {aria.opera.composers.map((c) => (
             <div key={c.slug} className="flex-1">
               <p className="text-sm font-medium text-gray-900">
-                <a
-                  href={'/creators/' + c.slug}
-                  className="text-cyan-600 hover:underline"
-                >
-                  {c.firstName} {c.lastName} (Composer)
-                </a>
+                <Link href={'/creators/' + c.slug}>
+                  <a className="text-cyan-600 hover:underline">
+                    {c.firstName} {c.lastName} (Composer)
+                  </a>
+                </Link>
               </p>
             </div>
           ))}
           {aria.opera.librettists.map((l) => (
             <div key={l.slug} className="flex-1">
               <p className="mt-1 text-sm font-medium text-gray-900">
-                <a
-                  href={'/creators/' + l.slug}
-                  className="text-cyan-600 hover:underline"
-                >
-                  {l.firstName} {l.lastName} (Librettist)
-                </a>
+                <Link href={'/creators/' + l.slug}>
+                  <a className="text-cyan-600 hover:underline">
+                    {l.firstName} {l.lastName} (Librettist)
+                  </a>
+                </Link>
               </p>
             </div>
           ))}

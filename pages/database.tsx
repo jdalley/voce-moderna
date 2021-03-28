@@ -11,9 +11,7 @@ export default function Database({ preview }) {
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
-      <div className="max-w-7xl mx-auto py-6">
-        <VoiceTypeGroup></VoiceTypeGroup>
-      </div>
+      <VoiceTypeGroup></VoiceTypeGroup>
     </Layout>
   );
 }
