@@ -49,7 +49,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             <div key={c.slug} className="flex-1">
               <p className="text-sm font-medium text-gray-900">
                 <a
-                  href={'/creator/' + c.slug}
+                  href={'/creators/' + c.slug}
                   className="text-cyan-600 hover:underline"
                 >
                   {c.firstName} {c.lastName} (Composer)
@@ -61,7 +61,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
             <div key={l.slug} className="flex-1">
               <p className="mt-1 text-sm font-medium text-gray-900">
                 <a
-                  href={'/creator/' + l.slug}
+                  href={'/creators/' + l.slug}
                   className="text-cyan-600 hover:underline"
                 >
                   {l.firstName} {l.lastName} (Librettist)

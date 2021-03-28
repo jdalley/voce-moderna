@@ -3,6 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
+import PreviewAlert from './PreviewAlert';
 
 export type LayoutProps = {
   children?: ReactNode;
@@ -10,9 +11,10 @@ export type LayoutProps = {
     title?: string;
     description?: string;
   };
+  preview?: Boolean;
 };
 
-export default function Layout({ children, customMeta }: LayoutProps) {
+export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const router = useRouter();
   const meta = {
     title: 'Project Voce Moderna',
@@ -46,11 +48,11 @@ export default function Layout({ children, customMeta }: LayoutProps) {
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-
       <div className="bg-white flex flex-col min-h-screen justify-between">
+        <PreviewAlert preview={preview} />
         <Header />
         <main id="skip" className="flex-grow">
-          {children}
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">{children}</div>
         </main>
         <Footer />
       </div>

@@ -3,15 +3,15 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
 		content: [
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}',
+      './pages/**/*.{ts,tsx}',
+      './components/**/*.{ts,tsx}',
 			'./utils/**/*.ts'
     ]
 	},
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'media', 
   theme: {
     extend: {
-			colors: { // generate colors for all variants of color classes
+			colors: { 
 				teal: colors.teal,
 				cyan: colors.cyan,
 				bluegray: colors.blueGray,
@@ -24,13 +24,25 @@ module.exports = {
 				lime: colors.lime,
 				yellow: colors.yellow,
 			},
-			fontSize: { // generate custom font size
-				'4.5xl': '2.5rem' 
-			}
+			backgroundImage: theme => ({
+				'piano-man': "url('/images/piano-man.svg')"
+			}),
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						a: {
+							color: theme('colors.cyan.600')
+						}
+					}
+				}
+			})
 		},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/typography')
+	],
 }

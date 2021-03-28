@@ -8,19 +8,18 @@ export default function Index({ featuredArias, preview }) {
     customMeta: {
       title: 'Home',
     },
+    preview,
   };
 
   return (
-    <Layout customMeta={layoutProps.customMeta}>
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div className="relative px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
-          <div className="absolute inset-0">
-            <img
-              className="object-cover h-full w-full"
-              src="/images/vm-hero.png"
-              alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
-            />
-          </div>
+    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+      <div className="relative px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
+        <div className="absolute inset-0">
+          <img
+            className="object-cover h-full w-full"
+            src="/images/vm-hero.png"
+            alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+          />
         </div>
       </div>
       <FeaturedArias featuredArias={featuredArias} />
