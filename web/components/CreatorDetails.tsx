@@ -2,14 +2,14 @@ import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlForImage } from '@utils/sanity';
 
-export default function Creator({ creator }) {
+export default function CreatorDetails({ creator }) {
   const creatorName = `${creator.firstName} ${creator.lastName}`;
 
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div>
-        <div className="relative h-32 w-full bg-piano-man lg:h-48">
-          <div className="absolute inset-0 bg-gradient-to-t from-white"></div>
+        <div className="relative h-32 w-full bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600 lg:h-48">
+          <div className="absolute inset-0 bg-topography"></div>
         </div>
         <div className="relative px-4 sm:px-6">
           <div className="-mt-12 sm:-mt-16">

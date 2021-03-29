@@ -19,7 +19,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const meta = {
     title: 'Project Voce Moderna',
     description: 'New music database and practice tracks',
-    image: 'https://projectvocemoderna.com/static/images/banner.png',
+    image: 'https://projectvocemoderna.com/images/vm-hero.png',
     type: 'website',
     ...customMeta,
   };

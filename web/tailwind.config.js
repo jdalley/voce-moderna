@@ -13,7 +13,7 @@ module.exports = {
     extend: {
 			backgroundImage: (theme) => ({
 				'vm-logo': "url('/images/vm-logo.svg')",
-				'piano-man': "url('/images/piano-man.svg')"
+				'topography': "url('/images/topography.svg')"
 			}),
 			colors: { 
 				teal: colors.teal,
