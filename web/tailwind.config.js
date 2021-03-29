@@ -11,6 +11,10 @@ module.exports = {
   darkMode: 'media', 
   theme: {
     extend: {
+			backgroundImage: (theme) => ({
+				'vm-logo': "url('/images/vm-logo.svg')",
+				'piano-man': "url('/images/piano-man.svg')"
+			}),
 			colors: { 
 				teal: colors.teal,
 				cyan: colors.cyan,
@@ -24,9 +28,6 @@ module.exports = {
 				lime: colors.lime,
 				yellow: colors.yellow,
 			},
-			backgroundImage: (theme) => ({
-				'piano-man': "url('/images/piano-man.svg')"
-			}),
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
@@ -37,6 +38,9 @@ module.exports = {
 				}
 			})
 		},
+		fontFamily: {
+			selima: ['Selima', 'script'],
+		}
   },
   variants: {
     extend: {},

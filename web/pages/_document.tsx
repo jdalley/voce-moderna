@@ -5,6 +5,13 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link
+            rel="preload"
+            href="/fonts/Selima.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <link rel="preconnect" href="https://app.snipcart.com" />
           <link rel="preconnect" href="https://cdn.snipcart.com" />
           <link

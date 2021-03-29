@@ -10,13 +10,8 @@ export default function Header() {
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 sm:justify-start sm:space-x-10 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <a>
+              <a className="h-8 w-12 bg-vm-logo bg-no-repeat bg-contain">
                 <span className="sr-only">Project Voce Moderna</span>
-                <img
-                  className="h-10 w-auto sm:h-12"
-                  src="/images/vm-logo.png"
-                  alt=""
-                />
               </a>
             </Link>
           </div>
@@ -47,6 +42,11 @@ export default function Header() {
             </button>
           </div>
           <nav className="hidden sm:flex space-x-10">
+            <Link href="/">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Home
+              </a>
+            </Link>
             <Link href="/database">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Database
@@ -100,13 +100,7 @@ export default function Header() {
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
-                    <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="/images/vm-logo.png"
-                        alt="Workflow"
-                      />
-                    </div>
+                    <div className="h-8 w-12 bg-vm-logo bg-no-repeat bg-contain"></div>
                     <div className="-mr-2">
                       <button
                         type="button"
@@ -135,30 +129,34 @@ export default function Header() {
                   </div>
                   <div className="mt-6">
                     <nav className="grid grid-cols-1 gap-7">
-                      <a
-                        href="/database"
-                        className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="text-base font-medium text-gray-900">
-                          Database
-                        </div>
-                      </a>
-                      <a
-                        href="/about"
-                        className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="text-base font-medium text-gray-900">
-                          About
-                        </div>
-                      </a>
-                      <a
-                        href="/contact"
-                        className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="text-base font-medium text-gray-900">
-                          Contact
-                        </div>
-                      </a>
+                      <Link href="/">
+                        <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                          <div className="text-base font-medium text-gray-900">
+                            Home
+                          </div>
+                        </a>
+                      </Link>
+                      <Link href="/database">
+                        <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                          <div className="text-base font-medium text-gray-900">
+                            Database
+                          </div>
+                        </a>
+                      </Link>
+                      <Link href="/about">
+                        <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                          <div className="text-base font-medium text-gray-900">
+                            About
+                          </div>
+                        </a>
+                      </Link>
+                      <Link href="/contact">
+                        <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                          <div className="text-base font-medium text-gray-900">
+                            Contact
+                          </div>
+                        </a>
+                      </Link>
                     </nav>
                   </div>
                 </div>
