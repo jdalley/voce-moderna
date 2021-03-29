@@ -11,6 +11,7 @@ export default function VoiceTypeGroup() {
       {Object.entries(voiceTypes).map(([key, value]) => {
         return (
           <button
+            key={key}
             type="button"
             className={classNames(
               'flex-wrap items-center m-4 px-4 py-2 border border-transparent',

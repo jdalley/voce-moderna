@@ -97,7 +97,7 @@ export const creatorBySlugQuery = groq`
 `;
 
 export const featuredAriasQuery = groq`
-	*[_type == 'featuredAria']{
+	*[_type == 'featuredAria'] | order(_updatedAt desc) {
 		aria->{
 			title, 
 			${slug},
