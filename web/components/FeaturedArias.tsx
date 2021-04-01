@@ -2,7 +2,7 @@ import FeaturedAriaCard from '@components/FeaturedAriaCard';
 
 export default function FeaturedArias({ featuredArias }) {
   return (
-    <div className="relative pt-12 pb-14 px-4 sm:px-6 lg:pt-24 lg:pb-24 lg:px-20">
+    <section className="relative pt-12 pb-14 px-4 sm:px-6 lg:pt-20 lg:pb-24 lg:px-12">
       <div className="text-center">
         <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
           Newly Added Arias
@@ -11,7 +11,7 @@ export default function FeaturedArias({ featuredArias }) {
           Check out some recently added arias.
         </p>
       </div>
-      <div className="mt-12 max-w-md mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <div className="mt-12 max-w-sm mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {featuredArias.map((featuredAria) => (
           <FeaturedAriaCard
             key={featuredAria.aria.slug}
@@ -19,6 +19,6 @@ export default function FeaturedArias({ featuredArias }) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

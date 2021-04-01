@@ -1,8 +1,8 @@
-import Layout, { LayoutProps } from '@components/Layout';
-import FeaturedArias from '@components/FeaturedArias';
+import Head from 'next/head';
 import { featuredAriasQuery } from '@utils/queries';
 import { getClient } from '@utils/sanity.server';
-import Head from 'next/head';
+import Layout, { LayoutProps } from '@components/Layout';
+import FeaturedArias from '@components/FeaturedArias';
 
 export default function Index({ featuredArias, preview }) {
   const layoutProps: LayoutProps = {

@@ -5,7 +5,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
   const aria = featuredAria.aria;
 
   return (
-    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <article className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div
         className={classNames(
           'h-24',
@@ -66,6 +66,6 @@ export default function FeaturedAriaCard({ featuredAria }) {
           ))}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
