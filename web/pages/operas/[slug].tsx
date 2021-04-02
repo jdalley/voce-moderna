@@ -4,6 +4,14 @@ import { operaBySlugQuery, operaSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
 
 export default function Opera({ data, preview }) {
+  if (data.opera === undefined)
+    return (
+      <div>
+        Oops, can't find the data for this opera. It has to be around here
+        somewhere...
+      </div>
+    );
+
   const opera = data.opera;
   const layoutProps: LayoutProps = {
     customMeta: {
@@ -11,6 +19,7 @@ export default function Opera({ data, preview }) {
     },
     preview,
   };
+
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
       <OperaDetails opera={opera} />
