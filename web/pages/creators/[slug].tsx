@@ -4,14 +4,6 @@ import { creatorBySlugQuery, creatorSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
 
 export default function Creator({ data, preview }) {
-  if (data.creator === undefined)
-    return (
-      <div>
-        Oops, can't find the data for this creator. It has to be around here
-        somewhere...
-      </div>
-    );
-
   const creator = data.creator;
   const layoutProps: LayoutProps = {
     customMeta: {
