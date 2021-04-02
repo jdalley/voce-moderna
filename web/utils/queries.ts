@@ -71,7 +71,7 @@ export const operaBySlugQuery = groq`
 		mediaLinks[]{description, url},
 		"arias": *[_type == "aria" && references(^._id)] {
 			title,
-			slug{current},
+			${slug},
 			voiceType->{displayName}
 		}
 	}	

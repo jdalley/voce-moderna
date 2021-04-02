@@ -24,9 +24,9 @@ export default function CreatorDetails({ creator }) {
         </div>
       </div>
       <div className="px-4 py-5 sm:px-9">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">
+        <h1 className="text-lg leading-6 font-medium text-gray-900">
           {creatorName}
-        </h3>
+        </h1>
       </div>
       <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:pb-9 sm:px-9">
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
