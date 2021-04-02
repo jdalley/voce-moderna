@@ -12,6 +12,8 @@ export default function Opera({ data, preview }) {
       </div>
     );
 
+  console.log('Okay... about to render the Opera...');
+
   const opera = data.opera;
   const layoutProps: LayoutProps = {
     customMeta: {
@@ -32,6 +34,9 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
   });
 
+  console.log('Opera: ');
+  console.log(opera);
+
   return {
     props: {
       data: { opera },
@@ -42,6 +47,9 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const paths = await sanityClient.fetch(operaSlugsQuery);
+
+  console.log(paths);
+
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: true,
