@@ -10,35 +10,35 @@ export default function Footer() {
         >
           <div className="px-5 py-2">
             <Link href="/">
-              <a className="text-base text-gray-500 hover:text-gray-900">
+              <a className="text-base text-gray-600 hover:text-gray-900">
                 Home
               </a>
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link href="/database">
-              <a className="text-base text-gray-500 hover:text-gray-900">
+              <a className="text-base text-gray-600 hover:text-gray-900">
                 Database
               </a>
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link href="/about">
-              <a className="text-base text-gray-500 hover:text-gray-900">
+              <a className="text-base text-gray-600 hover:text-gray-900">
                 About
               </a>
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link href="/contact">
-              <a className="text-base text-gray-500 hover:text-gray-900">
+              <a className="text-base text-gray-600 hover:text-gray-900">
                 Contact
               </a>
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link href="/faq">
-              <a className="text-base text-gray-500 hover:text-gray-900">FAQ</a>
+              <a className="text-base text-gray-600 hover:text-gray-900">FAQ</a>
             </Link>
           </div>
         </nav>

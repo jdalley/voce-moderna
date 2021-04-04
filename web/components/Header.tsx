@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="relative bg-white">
+      <div className="relative">
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 sm:justify-start sm:space-x-10 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
@@ -30,22 +30,22 @@ export default function Header() {
           </div>
           <nav className="hidden sm:flex space-x-10">
             <Link href="/">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Home
               </a>
             </Link>
             <Link href="/database">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Database
               </a>
             </Link>
             <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 About
               </a>
             </Link>
             <Link href="/contact">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Contact
               </a>
             </Link>

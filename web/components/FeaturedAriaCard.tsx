@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { classNames, voiceToGradientMap } from '@utils/tailwind';
+import { urlForImage } from '@utils/sanity';
 
 export default function FeaturedAriaCard({ featuredAria }) {
   const aria = featuredAria.aria;
@@ -15,54 +16,58 @@ export default function FeaturedAriaCard({ featuredAria }) {
       ></div>
       <div className="-mt-10 mx-5 px-8 pt-6 pb-7 bg-white rounded-lg flex-1 flex flex-col justify-between ">
         <div className="flex-1">
-          <p className="text-lg leading-6 font-medium text-gray-900">
-            Voice Type
-          </p>
-          <p className="text-sm font-medium">{aria.voiceType.displayName}</p>
+          <dt className="font-medium text-gray-500">Voice Type</dt>
+          <dd className="mt-1">
+            <span className="text-gray-900">{aria.voiceType.displayName}</span>
+          </dd>
         </div>
         <div className="flex-1 mt-3">
-          <p className="ext-lg leading-6 font-medium text-gray-900">Aria</p>
-          <p className="text-sm font-medium">
+          <dt className="font-medium text-gray-500">Aria</dt>
+          <dd className="mt-1">
             <Link href={'/arias/' + aria.slug}>
               <a className="text-cyan-600 hover:underline">{aria.title}</a>
             </Link>
-          </p>
+          </dd>
         </div>
         <div className="flex-1 mt-3">
-          <p className="text-lg leading-6 font-medium text-gray-900">Opera</p>
-          <p className="text-sm font-medium">
+          <dt className="font-medium text-gray-500">Opera</dt>
+          <dd className="mt-1">
             <Link href={'/operas/' + aria.opera.slug}>
               <a className="text-cyan-600 hover:underline">
                 {aria.opera.title}
               </a>
             </Link>
-          </p>
+          </dd>
         </div>
         <div className="flex-1 mt-3 ">
-          <p className="text-lg leading-6 font-medium text-gray-900">
-            Creators
-          </p>
-          {aria.opera.composers.map((c) => (
-            <div key={c.slug} className="flex-1">
-              <p className="text-sm font-medium text-gray-900">
-                <Link href={'/creators/' + c.slug}>
-                  <a className="text-cyan-600 hover:underline">
-                    {c.firstName} {c.lastName} (Composer)
-                  </a>
-                </Link>
-              </p>
-            </div>
+          <dt className="font-medium text-gray-500">Creators</dt>
+          {aria.opera.composers.map((composer) => (
+            <dd key={composer.slug} className="flex-1 mt-1">
+              <img
+                className="inline-block mr-3 h-8 w-8 rounded-full"
+                alt={`Avatar photo of ${composer.firstName} ${composer.lastName}`}
+                src={urlForImage(composer.photo).width(32).height(32).url()}
+              />
+              <Link href={'/creators/' + composer.slug}>
+                <a className="text-cyan-600 hover:underline">
+                  {composer.firstName} {composer.lastName} (Composer)
+                </a>
+              </Link>
+            </dd>
           ))}
-          {aria.opera.librettists.map((l) => (
-            <div key={l.slug} className="flex-1">
-              <p className="mt-1 text-sm font-medium text-gray-900">
-                <Link href={'/creators/' + l.slug}>
-                  <a className="text-cyan-600 hover:underline">
-                    {l.firstName} {l.lastName} (Librettist)
-                  </a>
-                </Link>
-              </p>
-            </div>
+          {aria.opera.librettists.map((librettist) => (
+            <dd key={librettist.slug} className="flex-1 mt-1">
+              <img
+                className="inline-block mr-3 h-8 w-8 rounded-full"
+                alt={`Avatar photo of ${librettist.firstName} ${librettist.lastName}`}
+                src={urlForImage(librettist.photo).width(32).height(32).url()}
+              />
+              <Link href={'/creators/' + librettist.slug}>
+                <a className="text-cyan-600 hover:underline">
+                  {librettist.firstName} {librettist.lastName} (Librettist)
+                </a>
+              </Link>
+            </dd>
           ))}
         </div>
       </div>

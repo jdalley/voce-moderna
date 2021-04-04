@@ -19,13 +19,13 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const meta = {
     title: 'Project Voce Moderna',
     description: 'New music database and practice tracks',
-    image: 'https://projectvocemoderna.com/images/vm-hero.png',
+    image: 'https://projectvocemoderna.com/images/vm-logo-colour.png',
     type: 'website',
     ...customMeta,
   };
 
   return (
-    <div className="bg-white">
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -56,6 +56,6 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
         </main>
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
