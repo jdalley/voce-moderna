@@ -46,6 +46,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'length',
+      title: 'Length',
+      type: 'string'
+    },
+    {
       name: 'tessitura',
       title: 'Tessitura',
       type: 'image',
