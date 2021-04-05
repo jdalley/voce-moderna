@@ -51,7 +51,9 @@ export default function Header() {
             </Link>
           </nav>
           <div className="hidden sm:flex items-center justify-end sm:flex-1 lg:w-0">
-            <ShoppingBagIcon className="h-6 w-6" />
+            <button type="button" className="snipcart-checkout">
+              <ShoppingBagIcon className="h-6 w-6" />
+            </button>
           </div>
         </div>
         <Transition
@@ -113,12 +115,14 @@ export default function Header() {
               </div>
             </div>
             <div className="py-6 px-5">
-              <a
-                href="#"
-                className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
-              >
-                <ShoppingBagIcon className="h-5 w-5" />
-              </a>
+              <div className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="snipcart-checkout "
+                >
+                  <ShoppingBagIcon className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
         </Transition>

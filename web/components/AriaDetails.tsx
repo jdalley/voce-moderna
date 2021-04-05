@@ -15,7 +15,7 @@ export default function AriaDetails({ aria }) {
         </div>
       </div>
       <div className="flex flex-col px-4 py-5 sm:px-9 sm:justify-between sm:flex-row">
-        <h1 className="text-lg font-medium text-gray-900 leading-8">
+        <h1 className="text-xl font-medium leading-9 text-gray-900">
           {aria.title}
         </h1>
         <div className="mt-4 sm:mt-0">
@@ -41,7 +41,7 @@ export default function AriaDetails({ aria }) {
 
           <div className="sm:col-span-1">
             <img
-              className="h-36 w-36 rounded-md p-1 ring-2 ring-gray-200"
+              className="h-36 w-36 rounded-md mt-2 p-1 ring-2 ring-gray-200"
               alt={`Image of the tessitura for the aria`}
               src={urlForImage(aria.tessitura).width(144).height(144).url()}
             />

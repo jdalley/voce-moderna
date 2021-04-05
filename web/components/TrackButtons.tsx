@@ -3,7 +3,7 @@ import { classNames } from '@utils/tailwind';
 export default function TrackButtons({ pianoTrack, vocalTrack }) {
   const buttonClasses = classNames(
     'snipcart-add-item',
-    'block w-full px-2.5 py-1.5',
+    'block w-full px-2.5 py-2',
     'text-sm font-medium text-white',
     'border border-transparent rounded shadow-sm',
     'bg-gradient-to-r',

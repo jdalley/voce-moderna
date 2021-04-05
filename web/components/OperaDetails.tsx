@@ -13,7 +13,7 @@ export default function OperaDetails({ opera }) {
         </div>
       </div>
       <div className="px-4 py-5 sm:px-9">
-        <h1 className="text-lg leading-6 font-medium text-gray-900">
+        <h1 className="text-xl font-medium leading-9 text-gray-900">
           {opera.title}
         </h1>
       </div>
