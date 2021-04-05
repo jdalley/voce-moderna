@@ -28,6 +28,7 @@ export const ariaBySlugQuery = groq`
 		${slug},
 		voiceType->{displayName},
 		character,
+		length,
 		description,
 		tessitura,
 		opera->{

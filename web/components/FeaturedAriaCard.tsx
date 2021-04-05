@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { classNames, voiceToGradientMap } from '@utils/tailwind';
 import { urlForImage } from '@utils/sanity';
+import CreatorList from '@components/CreatorList';
 
 export default function FeaturedAriaCard({ featuredAria }) {
   const aria = featuredAria.aria;
@@ -40,35 +41,16 @@ export default function FeaturedAriaCard({ featuredAria }) {
           </dd>
         </div>
         <div className="flex-1 mt-3 ">
-          <dt className="font-medium text-gray-500">Creators</dt>
-          {aria.opera.composers.map((composer) => (
-            <dd key={composer.slug} className="flex-1 mt-1">
-              <img
-                className="inline-block mr-3 h-8 w-8 rounded-full"
-                alt={`Avatar photo of ${composer.firstName} ${composer.lastName}`}
-                src={urlForImage(composer.photo).width(32).height(32).url()}
-              />
-              <Link href={'/creators/' + composer.slug}>
-                <a className="text-cyan-600 hover:underline">
-                  {composer.firstName} {composer.lastName} (Composer)
-                </a>
-              </Link>
-            </dd>
-          ))}
-          {aria.opera.librettists.map((librettist) => (
-            <dd key={librettist.slug} className="flex-1 mt-1">
-              <img
-                className="inline-block mr-3 h-8 w-8 rounded-full"
-                alt={`Avatar photo of ${librettist.firstName} ${librettist.lastName}`}
-                src={urlForImage(librettist.photo).width(32).height(32).url()}
-              />
-              <Link href={'/creators/' + librettist.slug}>
-                <a className="text-cyan-600 hover:underline">
-                  {librettist.firstName} {librettist.lastName} (Librettist)
-                </a>
-              </Link>
-            </dd>
-          ))}
+          <dt className="font-medium text-gray-500">Composer</dt>
+          <dd className="mt-1">
+            <CreatorList creators={aria.opera.composers} />
+          </dd>
+        </div>
+        <div className="flex-1 mt-3 ">
+          <dt className="font-medium text-gray-500">Librettist</dt>
+          <dd className="mt-1">
+            <CreatorList creators={aria.opera.librettists} />
+          </dd>
         </div>
       </div>
     </article>

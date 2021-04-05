@@ -21,14 +21,21 @@ export default function OperaDetails({ opera }) {
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Composer</dt>
-            <CreatorList creators={opera.composers} />
-
+            <dd className="mt-1">
+              <CreatorList creators={opera.composers} />
+            </dd>
             <dt className="mt-6 font-medium text-gray-500">Librettist</dt>
-            <CreatorList creators={opera.librettists} />
-
-            <dt className="mt-6 font-medium text-gray-500">Source Material</dt>
-            <dd className="mt-1 text-gray-900">{opera.sourceMaterial}</dd>
-
+            <dd className="mt-1">
+              <CreatorList creators={opera.librettists} />
+            </dd>
+            {opera.sourceMaterial !== undefined && (
+              <>
+                <dt className="mt-6 font-medium text-gray-500">
+                  Source Material
+                </dt>
+                <dd className="mt-1 text-gray-900">{opera.sourceMaterial}</dd>
+              </>
+            )}
             <dt className="mt-6 font-medium text-gray-500">Arias</dt>
             <dd className="mt-1 text-gray-900">
               <ul>
@@ -43,22 +50,29 @@ export default function OperaDetails({ opera }) {
                 ))}
               </ul>
             </dd>
-
-            <dt className="mt-6 font-medium text-gray-500">Score</dt>
-            <dd className="mt-1 text-gray-900">
-              {opera.scoreLink !== undefined && (
-                <ScoreLink link={opera.scoreLink} />
-              )}
-            </dd>
-
+            {opera.scoreLink !== undefined && (
+              <>
+                <dt className="mt-6 font-medium text-gray-500">Score</dt>
+                <dd className="mt-1 text-gray-900">
+                  <ScoreLink link={opera.scoreLink} />
+                </dd>
+              </>
+            )}
             {opera.mediaLinks !== undefined && (
-              <ExternalMediaList links={opera.mediaLinks} />
+              <>
+                <dt className="mt-6 font-medium text-gray-500">Media</dt>
+                <dd className="mt-1">
+                  <ExternalMediaList links={opera.mediaLinks} />
+                </dd>
+              </>
             )}
           </div>
           <div className="sm:col-span-2">
             <dt className=" font-medium text-gray-500">Synopsis</dt>
             <dd className="mt-1 text-gray-900 prose max-w-2xl">
-              <BlockContent blocks={opera.synopsis} />
+              {opera.synopsis !== undefined && (
+                <BlockContent blocks={opera.synopsis} />
+              )}
             </dd>
           </div>
         </dl>
