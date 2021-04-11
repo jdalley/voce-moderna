@@ -1,5 +1,6 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import VoiceTypeGroup from '@components/VoiceTypeGroup';
+import UseState from 'react';
+import DatabaseSearch from '@components/DatabaseSearch';
 
 export default function Database({ preview }) {
   const layoutProps: LayoutProps = {
@@ -11,7 +12,7 @@ export default function Database({ preview }) {
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
-      <VoiceTypeGroup></VoiceTypeGroup>
+      <DatabaseSearch></DatabaseSearch>
     </Layout>
   );
 }
