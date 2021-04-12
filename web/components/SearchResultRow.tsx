@@ -1,6 +1,7 @@
 export default function SearchResultRow({ result }) {
+  //TODO: Implement the row data
   return (
-    <tr>
+    <tr key={result?.id}>
       <td className="px-6 py-4 whitespace-nowrap">
         <div className="text-sm text-gray-900">Opera Title</div>
       </td>
