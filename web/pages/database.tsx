@@ -1,24 +1,53 @@
-import { useState } from 'react';
-import { voiceTypes } from '@utils/enums';
+import { useState, useEffect, MouseEvent } from 'react';
+import { SearchIcon } from '@heroicons/react/solid';
+import { voiceTypes, searchTypes } from '@utils/enums';
+import { sanityClient } from '@utils/sanity.server';
+import { getSearchQuery } from '@utils/queries';
 import { classNames, voiceToGradientMap } from '@utils/tailwind';
 import Layout, { LayoutProps } from '@components/Layout';
 import SearchResults from '@components/SearchResults';
-import { SearchIcon } from '@heroicons/react/solid';
 
 export default function Database() {
+  const [voiceType, setVoiceType] = useState('');
+  const [searchType, setSearchType] = useState('opera');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchLoading, setSearchLoading] = useState(false);
+
+  useEffect(() => {
+    setSearchLoading(true);
+
+    console.log(`Voice type is: ${voiceType}`);
+    const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
+    sanityClient
+      .fetch(searchCriteria.query, searchCriteria.params)
+      .then((results) => {
+        setSearchResults(results);
+      })
+      .finally(() => {
+        setSearchLoading(false);
+      });
+  }, [voiceType]);
+
+  function handleSearch(e: MouseEvent) {
+    e.preventDefault();
+    setSearchLoading(true);
+    const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
+    sanityClient
+      .fetch(searchCriteria.query, searchCriteria.params)
+      .then((results) => {
+        setSearchResults(results);
+      })
+      .finally(() => {
+        setSearchLoading(false);
+      });
+  }
+
   const layoutProps: LayoutProps = {
     customMeta: {
       title: 'Database',
     },
   };
-
-  const searchResults = [];
-
-  const [voiceType, setVoiceType] = useState('');
-  //TODO: Implement state for select/text changes in search criteria.
-  const [searchType, setSearchType] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-
   const searchBorderGradient =
     voiceType === '' || voiceType === 'all'
       ? 'bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600'
@@ -43,7 +72,7 @@ export default function Database() {
                     <select
                       id="voiceType"
                       name="voiceType"
-                      defaultValue=""
+                      defaultValue={voiceType}
                       onChange={(e) => setVoiceType(e.target.value)}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                     >
@@ -70,12 +99,17 @@ export default function Database() {
                     <select
                       id="searchType"
                       name="searchType"
+                      defaultValue={searchType}
+                      onChange={(e) => setSearchType(e.target.value)}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                     >
-                      <option value="opera">Opera Title</option>
-                      <option value="aria">Aria Title</option>
-                      <option value="composer">Composer Name</option>
-                      <option value="librettist">Librettist Name</option>
+                      {Object.entries(searchTypes).map(([key, value]) => {
+                        return (
+                          <option key={key} value={key}>
+                            {value}
+                          </option>
+                        );
+                      })}
                     </select>
                   </div>
                   <div className="mt-1">
@@ -83,6 +117,8 @@ export default function Database() {
                       type="text"
                       name="searchTerm"
                       id="searchTerm"
+                      defaultValue={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
                       className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                       placeholder="Search"
                     />
@@ -90,6 +126,7 @@ export default function Database() {
                   <div>
                     <button
                       type="button"
+                      onClick={handleSearch}
                       className="w-full inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-indigo-500 sm:w-auto hover:from-indigo-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                       <SearchIcon className="h-6 w-6 mr-2" /> Search
@@ -99,8 +136,16 @@ export default function Database() {
               </div>
             </div>
           </div>
-          <main className="lg:col-span-7">
-            <SearchResults results={searchResults} />
+          <main className="mt-8 lg:mt-0 lg:col-span-7">
+            {voiceType === '' ? (
+              <div className="text-center">
+                <p className="my-10 text-xl text-gray-500">
+                  Pick a voice type to get started
+                </p>
+              </div>
+            ) : (
+              <SearchResults results={searchResults} loading={searchLoading} />
+            )}
           </main>
         </div>
       </div>

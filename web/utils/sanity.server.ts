@@ -6,8 +6,10 @@
 import { createClient } from 'next-sanity';
 import { sanityConfig } from './config';
 
-export const sanityClient = createClient(sanityConfig);
+// This is the type used in PicoSanity for the second argument of fetch().
+export type QueryParams = { [key: string]: unknown };
 
+export const sanityClient = createClient(sanityConfig);
 export const previewClient = createClient({
   ...sanityConfig,
   useCdn: false,

@@ -50,7 +50,7 @@ export default function OperaDetails({ opera }) {
                 ))}
               </ul>
             </dd>
-            {opera.scoreLink !== undefined && (
+            {opera.scoreLink !== undefined && opera.scoreLink && (
               <>
                 <dt className="mt-6 font-medium text-gray-500">Score</dt>
                 <dd className="mt-1 text-gray-900">
@@ -58,7 +58,7 @@ export default function OperaDetails({ opera }) {
                 </dd>
               </>
             )}
-            {opera.mediaLinks !== undefined && (
+            {opera.mediaLinks !== undefined && opera.mediaLinks && (
               <>
                 <dt className="mt-6 font-medium text-gray-500">Media</dt>
                 <dd className="mt-1">

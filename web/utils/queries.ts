@@ -1,21 +1,40 @@
 import { groq } from 'next-sanity';
+import { QueryParams } from '@utils/sanity.server';
 
-const slug = groq`"slug": slug.current`;
+type SearchCriteria = {
+  query: string;
+  params?: QueryParams;
+};
 
-const shortCreatorFields = groq`
+const slug = `"slug": slug.current`;
+const shortCreatorFields = `
 	firstName,
 	lastName,
 	${slug},
 	photo
 `;
-
-const ariaTrackFields = groq`
+const ariaTrackFields = `
 	"id": id.current,
 	name,
 	description, 
 	relativeUrl,
 	price,
 	fileGuid
+`;
+const searchResultFields = `
+	"ariaTitle": title,
+	"ariaSlug": slug.current,
+	voiceType->{name},
+	opera->{
+		title,
+		${slug},
+		composers[]-> {
+			${shortCreatorFields}
+		},
+		librettists[]-> {
+			${shortCreatorFields}
+		}
+	}
 `;
 
 export const ariaSlugsQuery = groq`
@@ -117,3 +136,129 @@ export const featuredAriasQuery = groq`
 		}
 	}
 `;
+
+export const ariasByAnyVoiceType = groq`
+	*[_type == "aria"] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariasByVoiceType = groq`
+	*[_type == "aria" && references(*[_type == "voiceType" && name == $voiceType]._id)] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariasByOperaTitle = groq`
+	*[_type == "aria" 
+		&& references(*[_type == "voiceType" && name == $voiceType]._id)
+		&& references(*[_type == "opera" && title match "*" + $operaTitle + "*"]._id)] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariasByAriaTitle = groq`
+	*[_type == "aria" 
+		&& references(*[_type == "voiceType" && name == $voiceType]._id)
+		&& title match "*" + $ariaTitle + "*"] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariasByComposerName = groq`
+	*[_type == "aria" 
+		&& references(*[_type == "voiceType" && name == $voiceType]._id)
+		&& references(*[_type == "opera" && 
+    	(composers[]->firstName match "*" + $name + "*" || composers[]->lastName match "*" + $name + "*")]._id)] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariasByLibrettistName = groq`
+	*[_type == "aria" 
+		&& references(*[_type == "voiceType" && name == $voiceType]._id)
+		&& references(*[_type == "opera" && 
+    	(librettists[]->firstName match "*" + $name + "*" || librettists[]->lastName match "*" + $name + "*")]._id)] {
+		${searchResultFields}
+	}	
+`;
+
+export const ariaSearchBase = `
+	*[_type == "aria" 
+		{{voiceType}}
+		{{filter}}	
+	]{
+		${searchResultFields}
+	}	
+`;
+
+/**
+ * Construct a Groq query to find Arias based on the searchType.
+ * @param searchType Type of search: opear title, aria title, composer name, librettist name.
+ * @param searchTerm The term to search by, wildcards are added to each side of the term.
+ * @param voiceType The voice type to filter by. Null or "all" will remove this expression.
+ */
+export function getSearchQuery(
+  searchType: string,
+  searchTerm: string,
+  voiceType: string
+): SearchCriteria {
+  let search: SearchCriteria = {
+    query: '',
+    params: {},
+  };
+
+  search.query = ariaSearchBase;
+
+  console.log(`Search Type: ${searchType}`);
+  console.log(`Search Term: ${searchTerm}`);
+  console.log(`Voice Type: ${voiceType}`);
+
+  if (!voiceType || voiceType === 'all') {
+    search.query = search.query.replace('{{voiceType}}', '');
+  } else {
+    search.query = search.query.replace(
+      '{{voiceType}}',
+      `&& references(*[_type == "voiceType" && name == $voiceType]._id)`
+    );
+    Object.assign(search.params, { voiceType });
+  }
+
+  if (!searchType || searchType === '' || !searchTerm || searchTerm === '') {
+    search.query = search.query.replace('{{filter}}', '');
+  } else {
+    if (searchType === 'opera') {
+      search.query = search.query.replace(
+        '{{filter}}',
+        `&& references(*[_type == "opera" && title match "*" + $operaTitle + "*"]._id)`
+      );
+      Object.assign(search.params, { operaTitle: searchTerm });
+    } else if (searchType === 'aria') {
+      search.query = search.query.replace(
+        '{{filter}}',
+        `&& title match "*" + $ariaTitle + "*"`
+      );
+      Object.assign(search.params, { ariaTitle: searchTerm });
+    } else if (searchType === 'composer') {
+      search.query = search.query.replace(
+        '{{filter}}',
+        `&& references(*[_type == "opera" && 
+					(composers[]->firstName match "*" + $name + "*" 
+						|| composers[]->lastName match "*" + $name + "*")]._id)`
+      );
+      Object.assign(search.params, { name: searchTerm });
+    } else if (searchType === 'librettist') {
+      search.query = search.query.replace(
+        '{{filter}}',
+        `&& references(*[_type == "opera" && 
+					(librettists[]->firstName match "*" + $name + "*" 
+						|| librettists[]->lastName match "*" + $name + "*")]._id)`
+      );
+      Object.assign(search.params, { name: searchTerm });
+    }
+  }
+
+  console.log(search);
+
+  return search;
+}
