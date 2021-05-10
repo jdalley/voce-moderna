@@ -3,7 +3,11 @@ import { SearchIcon } from '@heroicons/react/solid';
 import { voiceTypes, searchTypes } from '@utils/enums';
 import { sanityClient } from '@utils/sanity.server';
 import { getSearchQuery } from '@utils/queries';
-import { classNames, voiceToGradientMap } from '@utils/tailwind';
+import {
+  classNames,
+  voiceToGradientMap,
+  voiceHoverToGradientMap,
+} from '@utils/tailwind';
 import Layout, { LayoutProps } from '@components/Layout';
 import SearchResults from '@components/SearchResults';
 
@@ -16,7 +20,6 @@ export default function Database() {
 
   useEffect(() => {
     setSearchLoading(true);
-
     console.log(`Voice type is: ${voiceType}`);
     const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
     sanityClient
@@ -48,10 +51,15 @@ export default function Database() {
       title: 'Database',
     },
   };
-  const searchBorderGradient =
+  const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'
-      ? 'bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600'
+      ? 'bg-gradient-to-tr from-yellow-300 via-cyan-600 to-rose-600'
       : `bg-gradient-to-r ${voiceToGradientMap[voiceType]}`;
+
+  const voiceTypeHoverGradient =
+    voiceType === '' || voiceType === 'all'
+      ? 'hover:bg-gradient-to-tl'
+      : `${voiceHoverToGradientMap[voiceType]}`;
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
@@ -60,7 +68,7 @@ export default function Database() {
           <div className="bg-white sticky top-6 lg:relative lg:top-0 lg:col-span-3">
             <div aria-label="Search criteria" className="lg:sticky lg:top-6">
               <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
-                <div className={classNames('h-20', searchBorderGradient)}></div>
+                <div className={classNames('h-20', voiceTypeGradient)}></div>
                 <div className="-mt-14 mx-2 px-3 pt-4 pb-6 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4">
                   <div>
                     <label
@@ -127,7 +135,13 @@ export default function Database() {
                     <button
                       type="button"
                       onClick={handleSearch}
-                      className="w-full inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-indigo-500 sm:w-auto hover:from-indigo-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className={classNames(
+                        'w-full inline-flex items-center px-4 py-2',
+                        'shadow-sm text-base font-medium rounded-md text-white',
+                        'sm:w-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                        voiceTypeGradient,
+                        voiceTypeHoverGradient
+                      )}
                     >
                       <SearchIcon className="h-6 w-6 mr-2" /> Search
                     </button>
