@@ -2,6 +2,9 @@ import { urlForImage } from '@utils/sanity';
 import Link from 'next/link';
 
 export default function CreatorList({ creators }) {
+  if (creators === undefined || !creators || creators.length === 0) {
+    return null;
+  }
   return (
     <ul>
       {creators.map((creator) => (
