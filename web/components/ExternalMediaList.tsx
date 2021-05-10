@@ -1,6 +1,9 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 
 export default function ExternalMediaList({ links }) {
+  if (links === undefined || !links || links.length === 0) {
+    return null;
+  }
   return (
     <ul>
       {links.map((link) => (

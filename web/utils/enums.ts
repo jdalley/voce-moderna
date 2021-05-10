@@ -11,3 +11,10 @@ export const voiceTypes = {
   bassBaritone: 'Bass-Baritone',
   bass: 'Bass',
 };
+
+export const searchTypes = {
+  opera: 'Opera Title',
+  aria: 'Aria Title',
+  composer: 'Composer Name',
+  librettist: 'Librettist Name',
+};

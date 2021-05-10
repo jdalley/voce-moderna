@@ -49,17 +49,19 @@ export default function AriaDetails({ aria }) {
 
             <dt className="mt-6 font-medium text-gray-500">Score</dt>
             <dd className="mt-1 text-gray-900">
-              {aria.scoreLink !== undefined && (
+              {aria.scoreLink !== undefined && aria.scoreLink && (
                 <ScoreLink link={aria.scoreLink} />
               )}
             </dd>
 
-            <dt className="mt-6 font-medium text-gray-500">Performances</dt>
-            <dd className="mt-1">
-              {aria.performanceLinks !== undefined && (
-                <ExternalMediaList links={aria.performanceLinks} />
-              )}
-            </dd>
+            {aria.performanceLinks !== undefined && aria.performanceLinks && (
+              <>
+                <dt className="mt-6 font-medium text-gray-500">Performances</dt>
+                <dd className="mt-1">
+                  <ExternalMediaList links={aria.performanceLinks} />
+                </dd>
+              </>
+            )}
           </dl>
 
           <dl className="row-start-1 md:col-start-2">
@@ -77,11 +79,13 @@ export default function AriaDetails({ aria }) {
             <dt className="mt-6 font-medium text-gray-500">Length</dt>
             <dd className="mt-1">{aria.length}</dd>
 
-            <img
-              className="mt-6 h-36 w-36 rounded-md p-1 ring-2 ring-gray-200"
-              alt={`Image of the tessitura for the aria`}
-              src={urlForImage(aria.tessitura).width(144).height(144).url()}
-            />
+            {aria.tessitura !== undefined && aria.tessitura && (
+              <img
+                className="mt-6 h-36 w-36 rounded-md p-1 ring-2 ring-gray-200"
+                alt={`Image of the tessitura for the aria`}
+                src={urlForImage(aria.tessitura).width(144).height(144).url()}
+              />
+            )}
           </dl>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 
 export default function ScoreLink({ link }) {
+  if (link === undefined || !link) {
+    return null;
+  }
   return (
     <>
       <p>{link.description}</p>
