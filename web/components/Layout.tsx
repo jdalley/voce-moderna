@@ -18,7 +18,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const router = useRouter();
   const meta = {
     title: 'Project Voce Moderna',
-    description: 'New music database and practice tracks',
+    description: 'Contemporary aria database',
     image: 'https://projectvocemoderna.com/images/vm-logo-colour.png',
     type: 'website',
     ...customMeta,
