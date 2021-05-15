@@ -208,11 +208,11 @@ export function getSearchQuery(
     params: {},
   };
 
-  search.query = ariaSearchBase;
+  if (!voiceType || voiceType === '') {
+    return null;
+  }
 
-  console.log(`Search Type: ${searchType}`);
-  console.log(`Search Term: ${searchTerm}`);
-  console.log(`Voice Type: ${voiceType}`);
+  search.query = ariaSearchBase;
 
   if (!voiceType || voiceType === 'all') {
     search.query = search.query.replace('{{voiceType}}', '');
@@ -257,8 +257,6 @@ export function getSearchQuery(
       Object.assign(search.params, { name: searchTerm });
     }
   }
-
-  console.log(search);
 
   return search;
 }

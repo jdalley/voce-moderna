@@ -19,31 +19,34 @@ export default function Database() {
   const [searchLoading, setSearchLoading] = useState(false);
 
   useEffect(() => {
-    setSearchLoading(true);
-    console.log(`Voice type is: ${voiceType}`);
     const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
-    sanityClient
-      .fetch(searchCriteria.query, searchCriteria.params)
-      .then((results) => {
-        setSearchResults(results);
-      })
-      .finally(() => {
-        setSearchLoading(false);
-      });
+    if (searchCriteria) {
+      setSearchLoading(true);
+      sanityClient
+        .fetch(searchCriteria.query, searchCriteria.params)
+        .then((results) => {
+          setSearchResults(results);
+        })
+        .finally(() => {
+          setSearchLoading(false);
+        });
+    }
   }, [voiceType]);
 
   function handleSearch(e: MouseEvent) {
     e.preventDefault();
-    setSearchLoading(true);
     const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
-    sanityClient
-      .fetch(searchCriteria.query, searchCriteria.params)
-      .then((results) => {
-        setSearchResults(results);
-      })
-      .finally(() => {
-        setSearchLoading(false);
-      });
+    if (searchCriteria) {
+      setSearchLoading(true);
+      sanityClient
+        .fetch(searchCriteria.query, searchCriteria.params)
+        .then((results) => {
+          setSearchResults(results);
+        })
+        .finally(() => {
+          setSearchLoading(false);
+        });
+    }
   }
 
   const layoutProps: LayoutProps = {
