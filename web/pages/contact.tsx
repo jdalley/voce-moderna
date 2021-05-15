@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <Layout customMeta={layoutProps.customMeta}>
       <div className="max-w-3xl mx-auto py-14 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mt-14 sm:mt-16 md:mt-0">
+        <div className="text-center">
           <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
             Contact Us
           </h2>
