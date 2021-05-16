@@ -1,5 +1,5 @@
-import { useState, useEffect, MouseEvent } from 'react';
-import { SearchIcon } from '@heroicons/react/solid';
+import { useState, useEffect, MouseEvent, FormEvent } from 'react';
+import { SearchIcon, XIcon } from '@heroicons/react/solid';
 import { voiceTypes, searchTypes } from '@utils/enums';
 import { sanityClient } from '@utils/sanity.server';
 import { getSearchQuery } from '@utils/queries';
@@ -33,7 +33,7 @@ export default function Database() {
     }
   }, [voiceType]);
 
-  function handleSearch(e: MouseEvent) {
+  function handleSearch(e: FormEvent) {
     e.preventDefault();
     const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
     if (searchCriteria) {
@@ -49,11 +49,18 @@ export default function Database() {
     }
   }
 
+  function handleReset(e: MouseEvent) {
+    e.preventDefault();
+    setSearchTerm('');
+    (e.currentTarget as HTMLButtonElement).blur();
+  }
+
   const layoutProps: LayoutProps = {
     customMeta: {
       title: 'Database',
     },
   };
+
   const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'
       ? 'bg-gradient-to-tr from-yellow-300 via-cyan-600 to-rose-600'
@@ -71,7 +78,10 @@ export default function Database() {
           <div aria-label="Search criteria" className="lg:sticky lg:top-6">
             <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
               <div className={classNames('h-20', voiceTypeGradient)}></div>
-              <div className="-mt-14 mx-2 px-3 pt-3 pb-4 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4">
+              <form
+                onSubmit={handleSearch}
+                className="-mt-14 mx-2 px-3 pt-3 pb-4 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4"
+              >
                 <div>
                   <label
                     htmlFor="voiceType"
@@ -122,21 +132,28 @@ export default function Database() {
                     })}
                   </select>
                 </div>
-                <div className="mt-1">
+                <div className="relative mt-1">
                   <input
                     type="text"
                     name="searchTerm"
                     id="searchTerm"
-                    defaultValue={searchTerm}
+                    value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="shadow-sm py-1 sm:py-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                     placeholder="Search"
                   />
+                  <button
+                    type="reset"
+                    onClick={handleReset}
+                    className="absolute top-[5px] right-[9px] p-1 text-gray-400 bg-transparent rounded-md cursor-pointer sm:top-[7px] sm:right-2 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  >
+                    <span className="sr-only">Clear search</span>
+                    <XIcon className="h-4 w-4" />
+                  </button>
                 </div>
                 <div>
                   <button
-                    type="button"
-                    onClick={handleSearch}
+                    type="submit"
                     className={classNames(
                       'w-full inline-flex items-center px-4 py-2',
                       'shadow-sm text-base font-medium rounded-md text-white',
@@ -148,7 +165,7 @@ export default function Database() {
                     <SearchIcon className="h-6 w-6 mr-2" /> Search
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
