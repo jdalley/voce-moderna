@@ -17,7 +17,7 @@ export default function Index({ featuredArias, preview }) {
       <Head>
         <link rel="preload" href="/images/vm-hero.png" as="image" />
       </Head>
-      <div className="relative px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
+      <div className="relative  px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
         <div className="absolute inset-0">
           <img
             className="object-cover h-full w-full"

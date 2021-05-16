@@ -30,15 +30,15 @@ export default function Footer() {
             </Link>
           </div>
           <div className="px-5 py-2">
+            <Link href="/faq">
+              <a className="text-base text-gray-600 hover:text-gray-900">FAQ</a>
+            </Link>
+          </div>
+          <div className="px-5 py-2">
             <Link href="/contact">
               <a className="text-base text-gray-600 hover:text-gray-900">
                 Contact
               </a>
-            </Link>
-          </div>
-          <div className="px-5 py-2">
-            <Link href="/faq">
-              <a className="text-base text-gray-600 hover:text-gray-900">FAQ</a>
             </Link>
           </div>
         </nav>

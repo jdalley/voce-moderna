@@ -9,19 +9,21 @@ export default function About() {
   };
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <article className="relative max-w-7xl mx-auto overflow-x-hidden py-14 px-4 sm:px-6 lg:px-8">
+      <article className="relative max-w-7xl mx-auto overflow-x-hidden py-4 px-4 sm:py-14 sm:px-6 lg:px-8">
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
-          <div>
+          <div className="lg:row-start-1 lg:col-start-1">
             <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               About Voce Moderna
             </h1>
-            <div className="mt-8 prose prose-cyan text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+            <div className="mt-8 text-lg text-gray-500 leading-8">
               <p>
                 Voce Moderna is a new resource to help connect singers with
                 contemporary opera arias. It is intended to showcase and promote
                 the work of living composers, and focuses on works written since
                 2000.
               </p>
+            </div>
+            <div className="mt-8 prose prose-cyan text-gray-500 lg:max-w-none lg:row-start-1 lg:col-start-1">
               <p>
                 Composers and publishers are collaborators at Voce Moderna, and
                 they receive royalties from track purchases. Mechanical licenses
@@ -33,15 +35,63 @@ export default function About() {
                 this site, so be sure to keep checking back for new entries.
               </p>
             </div>
+          </div>
+          <div className="relative lg:row-start-1 lg:col-start-2">
+            <svg
+              className="hidden lg:block absolute top-0 right-0 -mt-20 mr-5"
+              width={404}
+              height={384}
+              fill="none"
+              viewBox="0 0 404 384"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern
+                  id="de316486-4a29-4312-bdfc-fbce2132a2c1"
+                  x={0}
+                  y={0}
+                  width={20}
+                  height={20}
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect
+                    x={0}
+                    y={0}
+                    width={4}
+                    height={4}
+                    className="text-gray-200"
+                    fill="currentColor"
+                  />
+                </pattern>
+              </defs>
+              <rect
+                width={404}
+                height={384}
+                fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)"
+              />
+            </svg>
+            <div className="relative text-base mx-auto max-w-prose mt-10 lg:mt-0 lg:max-w-none ">
+              <figure>
+                <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
+                  <img
+                    className="bg-white rounded-lg shadow-lg object-cover object-top lg:object-center"
+                    src="/images/vm-logo-colour.png"
+                    alt="The VM logo in black Selima font with paint strokes behind it."
+                  />
+                </div>
+              </figure>
+            </div>
+          </div>
+          <div className="lg:row-start-2 lg:col-start-2">
             <h2 className="mt-8 text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               The Creators
             </h2>
           </div>
         </div>
         <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
-          <div className="relative lg:row-start-1 lg:col-start-2">
+          <div className="relative lg:row-start-1 lg:col-start-1">
             <svg
-              className="hidden lg:block absolute top-0 right-0 -mt-20 -mr-20"
+              className="hidden lg:block absolute top-0 left-0 -mt-20 -ml-20"
               width={404}
               height={384}
               fill="none"
@@ -77,7 +127,7 @@ export default function About() {
               <figure>
                 <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
                   <img
-                    className="rounded-lg shadow-lg object-cover object-top lg:object-center"
+                    className="rounded-lg shadow-lg object-cover object-top lg:object-center lg:float-right"
                     src="/images/blair.jpg"
                     alt="A portrait of Blair Salter"
                   />
@@ -86,7 +136,7 @@ export default function About() {
             </div>
           </div>
           <div className="mt-8 lg:mt-0">
-            <div className="prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+            <div className="prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-2">
               <h3>Blair Salter</h3>
               <p>
                 Collaborative pianist Blair Salter is a versatile performer and
@@ -140,10 +190,10 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className=" mt-8 lg:mt-32 lg:grid lg:grid-cols-2 lg:gap-8">
-          <div className=" relative lg:row-start-1 lg:col-start-1">
+        <div className=" mt-8 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8">
+          <div className=" relative lg:row-start-1 lg:col-start-2">
             <svg
-              className="hidden lg:block absolute top-0 left-0 -mt-20 -ml-20"
+              className="hidden lg:block absolute top-0 right-0 -mt-20 -mr-20"
               width={404}
               height={384}
               fill="none"
@@ -177,9 +227,9 @@ export default function About() {
             </svg>
             <div className="relative mx-auto max-w-prose lg:max-w-none">
               <figure>
-                <div className=" aspect-w-3 aspect-h-3 lg:aspect-none">
+                <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
                   <img
-                    className="rounded-lg shadow-lg object-cover object-top lg:object-center lg:float-right"
+                    className="rounded-lg shadow-lg object-cover object-top lg:object-center"
                     src="/images/jeff.jpg"
                     alt="A portrait of Jeff Dalley"
                   />
@@ -188,7 +238,7 @@ export default function About() {
             </div>
           </div>
           <div className="mt-8 lg:mt-0">
-            <div className="prose prose-cyan text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-2">
+            <div className="prose prose-cyan text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
               <h3>Jeff Dalley</h3>
               <p>
                 A software developer by day (and sometimes by night), Jeff

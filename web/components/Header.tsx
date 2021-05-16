@@ -44,6 +44,11 @@ export default function Header() {
                 About
               </a>
             </Link>
+            <Link href="/faq">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
+                FAQ
+              </a>
+            </Link>
             <Link href="/contact">
               <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Contact
@@ -101,6 +106,13 @@ export default function Header() {
                     <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         About
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="/faq">
+                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                      <div className="text-base font-medium text-gray-900">
+                        FAQ
                       </div>
                     </a>
                   </Link>

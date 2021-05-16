@@ -66,105 +66,103 @@ export default function Database() {
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
-      <div className="py-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid-cols-10 lg:gap-6">
-          <div className="bg-white sticky top-6 lg:relative lg:top-0 lg:col-span-3">
-            <div aria-label="Search criteria" className="lg:sticky lg:top-6">
-              <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
-                <div className={classNames('h-20', voiceTypeGradient)}></div>
-                <div className="-mt-14 mx-2 px-3 pt-4 pb-6 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4">
-                  <div>
-                    <label
-                      htmlFor="voiceType"
-                      className="block text-sm font-medium text-gray-700"
-                    >
-                      Voice Type
-                    </label>
-                    <select
-                      id="voiceType"
-                      name="voiceType"
-                      defaultValue={voiceType}
-                      onChange={(e) => setVoiceType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                    >
-                      <option value="" disabled>
-                        Select voice type...
-                      </option>
-                      <option value="all">All</option>
-                      {Object.entries(voiceTypes).map(([key, value]) => {
-                        return (
-                          <option key={key} value={key}>
-                            {value}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="searchType"
-                      className="block text-sm font-medium text-gray-700"
-                    >
-                      Search Type
-                    </label>
-                    <select
-                      id="searchType"
-                      name="searchType"
-                      defaultValue={searchType}
-                      onChange={(e) => setSearchType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                    >
-                      {Object.entries(searchTypes).map(([key, value]) => {
-                        return (
-                          <option key={key} value={key}>
-                            {value}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="searchTerm"
-                      id="searchTerm"
-                      defaultValue={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <div>
-                    <button
-                      type="button"
-                      onClick={handleSearch}
-                      className={classNames(
-                        'w-full inline-flex items-center px-4 py-2',
-                        'shadow-sm text-base font-medium rounded-md text-white',
-                        'sm:w-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
-                        voiceTypeGradient,
-                        voiceTypeHoverGradient
-                      )}
-                    >
-                      <SearchIcon className="h-6 w-6 mr-2" /> Search
-                    </button>
-                  </div>
+      <div className="max-w-4xl mx-auto grid grid-cols-1 gap-4 sm:py-2 lg:py-8 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid-cols-10 lg:gap-6">
+        <div className="bg-white sticky top-6 lg:relative lg:top-0 lg:col-span-3">
+          <div aria-label="Search criteria" className="lg:sticky lg:top-6">
+            <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
+              <div className={classNames('h-20', voiceTypeGradient)}></div>
+              <div className="-mt-14 mx-2 px-3 pt-3 pb-4 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4">
+                <div>
+                  <label
+                    htmlFor="voiceType"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Voice Type
+                  </label>
+                  <select
+                    id="voiceType"
+                    name="voiceType"
+                    defaultValue={voiceType}
+                    onChange={(e) => setVoiceType(e.target.value)}
+                    className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                  >
+                    <option value="" disabled>
+                      Select voice type...
+                    </option>
+                    <option value="all">All</option>
+                    {Object.entries(voiceTypes).map(([key, value]) => {
+                      return (
+                        <option key={key} value={key}>
+                          {value}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="searchType"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Search Type
+                  </label>
+                  <select
+                    id="searchType"
+                    name="searchType"
+                    defaultValue={searchType}
+                    onChange={(e) => setSearchType(e.target.value)}
+                    className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                  >
+                    {Object.entries(searchTypes).map(([key, value]) => {
+                      return (
+                        <option key={key} value={key}>
+                          {value}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div className="mt-1">
+                  <input
+                    type="text"
+                    name="searchTerm"
+                    id="searchTerm"
+                    defaultValue={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="shadow-sm py-1 sm:py-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Search"
+                  />
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    onClick={handleSearch}
+                    className={classNames(
+                      'w-full inline-flex items-center px-4 py-2',
+                      'shadow-sm text-base font-medium rounded-md text-white',
+                      'sm:w-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                      voiceTypeGradient,
+                      voiceTypeHoverGradient
+                    )}
+                  >
+                    <SearchIcon className="h-6 w-6 mr-2" /> Search
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <main className="mt-8 lg:mt-0 lg:col-span-7">
-            {voiceType === '' ? (
-              <div className="text-center">
-                <p className="my-10 text-xl text-gray-500">
-                  Pick a voice type to get started
-                </p>
-              </div>
-            ) : (
-              <SearchResults results={searchResults} loading={searchLoading} />
-            )}
-          </main>
         </div>
+        <main className="lg:col-span-7">
+          {voiceType === '' ? (
+            <div className="text-center">
+              <p className="my-10 text-xl text-gray-500">
+                Pick a voice type to get started
+              </p>
+            </div>
+          ) : (
+            <SearchResults results={searchResults} loading={searchLoading} />
+          )}
+        </main>
       </div>
     </Layout>
   );
