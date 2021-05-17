@@ -24,6 +24,7 @@ export default function TrackButtons({ pianoTrack, vocalTrack }) {
         data-item-description={pianoTrack.description}
         data-item-name={pianoTrack.name}
         data-item-file-guid={pianoTrack.fileGuid}
+        data-item-max-quantity="1"
       >
         Buy Piano Track
       </button>
@@ -41,6 +42,7 @@ export default function TrackButtons({ pianoTrack, vocalTrack }) {
         data-item-description={vocalTrack.description}
         data-item-name={vocalTrack.name}
         data-item-file-guid={vocalTrack.fileGuid}
+        data-item-max-quantity="1"
       >
         Buy Vocal Track
       </button>

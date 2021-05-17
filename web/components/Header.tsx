@@ -1,10 +1,40 @@
+import { useEffect, useState } from 'react';
 import { Transition } from '@headlessui/react';
-import { useState } from 'react';
 import { MenuIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
+// We know Snipcart will exist on window.
+declare global {
+  interface Window {
+    Snipcart: any;
+  }
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    /* 	Snipcart has a cart summary helper when you use the class snipcart-items-count,
+     *	however as of version 3.2 this value is not persisted through next/link routing.
+     *
+     *	The following is a workaround to provide the value across any route changes
+     *	as well as full page reloads.
+     */
+    const snip = window.Snipcart;
+    if (snip && snip.store) {
+      const initialState = snip.store.getState();
+      setCartCount(initialState.cart.items.count);
+
+      // subscribe is triggered when a snipcart action is dispatched, ie: state changes.
+      const unsubscribe = snip.store.subscribe(() => {
+        const newState = snip.store.getState();
+        setCartCount(newState.cart.items.count);
+      });
+
+      return () => unsubscribe();
+    }
+  }, [setCartCount]);
 
   return (
     <header>
@@ -56,6 +86,9 @@ export default function Header() {
             </Link>
           </nav>
           <div className="hidden sm:flex items-center justify-end sm:flex-1 lg:w-0">
+            <span className="h-6 w-6 text-sm leading-normal mr-1 rounded-full border border-gray-400 bg-gray-100 text-center">
+              {cartCount}
+            </span>
             <button type="button" className="snipcart-checkout">
               <ShoppingBagIcon className="h-6 w-6" />
             </button>
@@ -132,8 +165,11 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="snipcart-checkout "
                 >
-                  <ShoppingBagIcon className="h-5 w-5" />
+                  <ShoppingBagIcon className="h-6 w-6" />
                 </button>
+                <span className="h-6 w-6 text-sm leading-normal ml-1 rounded-full border border-gray-400 bg-gray-100 text-center">
+                  {cartCount}
+                </span>
               </div>
             </div>
           </div>
