@@ -4,9 +4,21 @@ import NProgress from 'nprogress';
 import '@styles/index.css';
 import '@styles/nprogress.css';
 
-Router.events.on('routeChangeStart', () => NProgress.start());
-Router.events.on('routeChangeComplete', () => NProgress.done());
-Router.events.on('routeChangeError', () => NProgress.done());
+function handleRouteStart(url: string, { shallow }: { shallow: Boolean }) {
+  if (!shallow) {
+    NProgress.start();
+  }
+}
+
+function handleRouteDone(url: string, { shallow }: { shallow: Boolean }) {
+  if (!shallow) {
+    NProgress.done();
+  }
+}
+
+Router.events.on('routeChangeStart', handleRouteStart);
+Router.events.on('routeChangeComplete', handleRouteDone);
+Router.events.on('routeChangeError', handleRouteDone);
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
