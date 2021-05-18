@@ -1,7 +1,7 @@
 import { FormEvent, MouseEvent, useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { parse } from 'querystring';
 import debounce from 'lodash.debounce';
-import { ParsedUrlQuery } from 'querystring';
 import { SearchIcon, XIcon } from '@heroicons/react/solid';
 import { searchTypes, voiceTypes } from '@utils/enums';
 import { sanityClient } from '@utils/sanity.server';
@@ -14,32 +14,45 @@ import {
 import Layout, { LayoutProps } from '@components/Layout';
 import SearchResults from '@components/SearchResults';
 
-type DatabaseProps = {
-  voiceTypeProp: string;
-  searchTypeProp: string;
-  searchTermProp: string;
-};
+export default function Database() {
+  const router = useRouter();
+  const { asPath } = router;
 
-export default function Database({
-  voiceTypeProp,
-  searchTypeProp,
-  searchTermProp,
-}: DatabaseProps) {
-  const [voiceType, setVoiceType] = useState(voiceTypeProp);
-  const [searchType, setSearchType] = useState(searchTypeProp);
-  const [searchTerm, setSearchTerm] = useState(searchTermProp);
+  const [voiceType, setVoiceType] = useState('');
+  const [searchType, setSearchType] = useState('opera');
+  const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [searchLoading, setSearchLoading] = useState(false);
 
-  const router = useRouter();
+  // Update state from the query string only one time.
+  useEffect(() => {
+    const query = parse(asPath.substr(asPath.indexOf('?') + 1));
+    const voice: string = query.voice as string;
+    const type: string = query.type as string;
+    const search: string = query.search as string;
+
+    console.log('[InUseEffect]: Voice, type, search:');
+    console.log(voice);
+    console.log(type);
+    console.log(search);
+
+    if (voice) {
+      setVoiceType(voice);
+    }
+    if (type) {
+      setSearchType(type);
+    }
+    if (search) {
+      setSearchTerm(search);
+    }
+  }, []);
 
   useEffect(() => {
-    if (
-      voiceTypes.hasOwnProperty(voiceType) ||
-      voiceType.toLowerCase() === 'all'
-    ) {
-      updateRoute({ voice: voiceType });
-    }
+    search();
+  }, [voiceType]);
+
+  function search() {
+    updateRouteParams();
     const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
     if (searchCriteria) {
       setSearchLoading(true);
@@ -52,69 +65,32 @@ export default function Database({
           setSearchLoading(false);
         });
     }
-  }, [voiceType]);
+  }
 
-  useEffect(() => {
-    if (searchTypes.hasOwnProperty(searchType)) {
-      updateRoute({ type: searchType });
+  function updateRouteParams() {
+    const params = {};
+    if (voiceType) {
+      Object.assign(params, { voice: voiceType });
     }
-  }, [searchType]);
-
-  useEffect(() => {
+    if (searchType) {
+      Object.assign(params, { type: searchType });
+    }
     if (searchTerm) {
-      updateRoute({ search: searchTerm });
-    } else {
-      removeRouteParam('search');
+      Object.assign(params, { search: searchTerm });
     }
-  }, [searchTerm]);
-
-  const updateRoute = useCallback(
-    debounce((queryParam) => {
-      let currentQuery = router.query;
-      // copy the query parameter key/value to the current query object.
-      Object.assign(currentQuery, queryParam);
-      router.push(
-        {
-          pathname: '/database',
-          query: currentQuery,
-        },
-        undefined,
-        { shallow: true }
-      );
-    }, 400),
-    []
-  );
-
-  const removeRouteParam = useCallback(
-    debounce((param) => {
-      let currentQuery = router.query;
-      delete currentQuery[param];
-      router.push(
-        {
-          pathname: '/database',
-          query: currentQuery,
-        },
-        undefined,
-        { shallow: true }
-      );
-    }, 400),
-    []
-  );
+    router.push(
+      {
+        pathname: '/database',
+        query: params,
+      },
+      undefined,
+      { shallow: true }
+    );
+  }
 
   function handleSearch(e: FormEvent) {
     e.preventDefault();
-    const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
-    if (searchCriteria) {
-      setSearchLoading(true);
-      sanityClient
-        .fetch(searchCriteria.query, searchCriteria.params)
-        .then((results) => {
-          setSearchResults(results);
-        })
-        .finally(() => {
-          setSearchLoading(false);
-        });
-    }
+    search();
   }
 
   function handleReset(e: MouseEvent) {
@@ -124,16 +100,12 @@ export default function Database({
   }
 
   const layoutProps: LayoutProps = {
-    customMeta: {
-      title: 'Database',
-    },
+    customMeta: { title: 'Database' },
   };
-
   const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'
       ? 'bg-gradient-to-tr from-yellow-300 via-cyan-600 to-rose-600'
       : `bg-gradient-to-r ${voiceToGradientMap[voiceType]}`;
-
   const voiceTypeHoverGradient =
     voiceType === '' || voiceType === 'all'
       ? 'hover:bg-gradient-to-tl'
@@ -160,7 +132,7 @@ export default function Database({
                   <select
                     id="voiceType"
                     name="voiceType"
-                    defaultValue={voiceType}
+                    value={voiceType}
                     onChange={(e) => setVoiceType(e.target.value)}
                     className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                   >
@@ -187,7 +159,7 @@ export default function Database({
                   <select
                     id="searchType"
                     name="searchType"
-                    defaultValue={searchType}
+                    value={searchType}
                     onChange={(e) => setSearchType(e.target.value)}
                     className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                   >
@@ -251,12 +223,4 @@ export default function Database({
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps({ query }: { query: ParsedUrlQuery }) {
-  const voiceTypeProp: string = (query.voice as string) || '';
-  const searchTypeProp: string = (query.type as string) || 'opera';
-  const searchTermProp: string = (query.search as string) || '';
-
-  return { props: { voiceTypeProp, searchTypeProp, searchTermProp } };
 }
