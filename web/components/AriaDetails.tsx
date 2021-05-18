@@ -7,8 +7,6 @@ import ScoreLink from '@components/ScoreLink';
 import TrackButtons from '@components/TrackButtons';
 
 export default function AriaDetails({ aria }) {
-  // Right: Voice Type, Character, Description, Length
-
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div className="relative h-32 w-full bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600 lg:h-48">

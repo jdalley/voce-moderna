@@ -30,11 +30,6 @@ export default function Database() {
     const type: string = query.type as string;
     const search: string = query.search as string;
 
-    console.log('[InUseEffect]: Voice, type, search:');
-    console.log(voice);
-    console.log(type);
-    console.log(search);
-
     if (voice) {
       setVoiceType(voice);
     }
