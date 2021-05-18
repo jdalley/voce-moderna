@@ -1,7 +1,6 @@
-import { FormEvent, MouseEvent, useCallback, useEffect, useState } from 'react';
+import { FormEvent, MouseEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { parse } from 'querystring';
-import debounce from 'lodash.debounce';
 import { SearchIcon, XIcon } from '@heroicons/react/solid';
 import { searchTypes, voiceTypes } from '@utils/enums';
 import { sanityClient } from '@utils/sanity.server';
