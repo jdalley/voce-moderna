@@ -1,19 +1,19 @@
 module.exports = {
-  extends: ['stylelint-config-standard'],
+  extends: ['stylelint-config-prettier'],
   rules: {
-    "at-rule-no-unknown": [
+    'at-rule-no-unknown': [
       true,
       {
         ignoreAtRules: [
-          "tailwind",
-          "apply",
-          "variants",
-          "responsive",
-          "screen",
+          'tailwind',
+          'apply',
+          'variants',
+          'responsive',
+          'screen',
         ],
       },
     ],
-    "declaration-block-trailing-semicolon": null,
-    "no-descending-specificity": null,
+    'declaration-block-trailing-semicolon': null,
+    'no-descending-specificity': null,
   },
 };

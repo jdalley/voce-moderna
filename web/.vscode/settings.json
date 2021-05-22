@@ -5,8 +5,7 @@
 	"scss.validate": false,
 
 	"editor.formatOnSave": true,
-	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#800080",

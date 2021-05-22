@@ -11,3 +11,23 @@
   font-display: optional;
   src: url('/fonts/Selima.woff2') format('woff2');
 }
+
+/* Snipcart Customization */
+#snipcart * {
+  /* Font family matching Tailwind's sans-serif */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#snipcart .snipcart__font--tiny {
+  font-size: 14px;
+}
+#snipcart label,
+.snipcart__font--slim,
+.snipcart-billing-completed__information,
+.snipcart-cart-header {
+  font-weight: 400;
+}
+#snipcart .snipcart-item-line--cart-edit .snipcart-item-line__title {
+  padding-left: 0;
+}
