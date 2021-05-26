@@ -37,6 +37,7 @@
     "autoprefixer": "^10.2.5",
     "postcss": "^8.3.0",
     "prettier": "^2.3.0",
+    "sanity-codegen": "^0.9.3",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "tailwindcss": "^2.1.2",
