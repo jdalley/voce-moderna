@@ -23,9 +23,13 @@
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
     },
+		{
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./parts/deskStructure.ts"
+    },
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
-      "path": "./plugins/resolveProductionUrl.ts"
+      "path": "./parts/resolveProductionUrl.ts"
     }
   ]
 }
