@@ -2,8 +2,13 @@ import Link from 'next/link';
 import { classNames, voiceToGradientMap } from '@utils/tailwind';
 import { urlForImage } from '@utils/sanity';
 import CreatorList from '@components/CreatorList';
+import type { FeaturedAria } from 'types/sanity';
 
-export default function FeaturedAriaCard({ featuredAria }) {
+export default function FeaturedAriaCard({
+  featuredAria,
+}: {
+  featuredAria: FeaturedAria;
+}) {
   const aria = featuredAria.aria;
 
   return (
@@ -25,7 +30,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
         <div className="flex-1 mt-3">
           <dt className="font-medium text-gray-500">Aria</dt>
           <dd className="mt-1">
-            <Link href={'/arias/' + aria.slug}>
+            <Link href={'/arias/' + aria.slug.current}>
               <a className="text-cyan-600 hover:underline">{aria.title}</a>
             </Link>
           </dd>
@@ -33,7 +38,7 @@ export default function FeaturedAriaCard({ featuredAria }) {
         <div className="flex-1 mt-3">
           <dt className="font-medium text-gray-500">Opera</dt>
           <dd className="mt-1">
-            <Link href={'/operas/' + aria.opera.slug}>
+            <Link href={'/operas/' + aria.opera.slug.current}>
               <a className="text-cyan-600 hover:underline">
                 {aria.opera.title}
               </a>

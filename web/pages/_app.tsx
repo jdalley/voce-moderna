@@ -4,13 +4,13 @@ import NProgress from 'nprogress';
 import '@styles/index.css';
 import '@styles/nprogress.css';
 
-function handleRouteStart(url: string, { shallow }: { shallow: Boolean }) {
+function handleRouteStart(url: string, { shallow }: { shallow: boolean }) {
   if (!shallow) {
     NProgress.start();
   }
 }
 
-function handleRouteDone(url: string, { shallow }: { shallow: Boolean }) {
+function handleRouteDone(url: string, { shallow }: { shallow: boolean }) {
   if (!shallow) {
     NProgress.done();
   }

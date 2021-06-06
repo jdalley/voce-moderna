@@ -11,7 +11,7 @@ export type LayoutProps = {
     title?: string;
     description?: string;
   };
-  preview?: Boolean;
+  preview?: boolean;
 };
 
 export default function Layout({ children, customMeta, preview }: LayoutProps) {

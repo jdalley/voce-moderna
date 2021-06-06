@@ -5,8 +5,9 @@ import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
 import ScoreLink from '@components/ScoreLink';
 import TrackButtons from '@components/TrackButtons';
+import type { Aria } from 'types/sanity';
 
-export default function AriaDetails({ aria }) {
+export default function AriaDetails({ aria }: { aria: Aria }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div className="relative h-32 w-full bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600 lg:h-48">
@@ -38,7 +39,7 @@ export default function AriaDetails({ aria }) {
 
             <dt className="mt-6 font-medium text-gray-500">Opera</dt>
             <dd className="mt-1">
-              <Link href={`/operas/${aria.opera.slug}`}>
+              <Link href={`/operas/${aria.opera.slug.current}`}>
                 <a className="text-cyan-600 hover:underline">
                   {aria.opera.title}
                 </a>

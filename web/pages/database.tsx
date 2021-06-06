@@ -12,15 +12,17 @@ import {
 } from '@utils/tailwind';
 import Layout, { LayoutProps } from '@components/Layout';
 import SearchResults from '@components/SearchResults';
+import type { SearchResult } from 'types/sanity';
 
 export default function Database() {
   const router = useRouter();
   const { asPath } = router;
+  const searchResultDefault: Array<SearchResult> = [];
 
   const [voiceType, setVoiceType] = useState('');
   const [searchType, setSearchType] = useState('opera');
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(searchResultDefault);
   const [searchLoading, setSearchLoading] = useState(false);
 
   // Update state from the query string only one time.

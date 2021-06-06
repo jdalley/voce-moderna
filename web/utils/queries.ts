@@ -6,11 +6,10 @@ type SearchCriteria = {
   params?: QueryParams;
 };
 
-const slug = `"slug": slug.current`;
 const shortCreatorFields = `
 	firstName,
 	lastName,
-	${slug},
+  slug,
 	photo
 `;
 const ariaTrackFields = `
@@ -27,7 +26,7 @@ const searchResultFields = `
 	voiceType->{name},
 	opera->{
 		title,
-		${slug},
+		slug,
 		composers[]-> {
 			${shortCreatorFields}
 		},
@@ -44,7 +43,7 @@ export const ariaSlugsQuery = groq`
 export const ariaBySlugQuery = groq`
 	*[_type == "aria" && slug.current == $slug][0] {
 		title,
-		${slug},
+		slug,
 		voiceType->{displayName},
 		character,
 		length,
@@ -52,7 +51,7 @@ export const ariaBySlugQuery = groq`
 		tessitura,
 		opera->{
 			title,
-			${slug},
+			slug,
 			composers[]->{
 				${shortCreatorFields}
 			},
@@ -78,7 +77,7 @@ export const operaSlugsQuery = groq`
 export const operaBySlugQuery = groq`
 	*[_type == "opera" && slug.current == $slug][0] {
 		title,
-		${slug},
+		slug,
 		sourceMaterial,
 		synopsis,
 		composers[]->{
@@ -91,7 +90,7 @@ export const operaBySlugQuery = groq`
 		mediaLinks[]{description, url},
 		"arias": *[_type == "aria" && references(^._id)] {
 			title,
-			${slug},
+			slug,
 			voiceType->{displayName}
 		}
 	}	
@@ -105,13 +104,13 @@ export const creatorBySlugQuery = groq`
 	*[_type == "creator" && slug.current == $slug][0] {
 		firstName,
 		lastName,
-		${slug},
+		slug,
 		website,
 		bio,
 		photo,
 		"operas": *[_type == "opera" && references(^._id)]{
 			title,
-			${slug}
+			slug
 		}
 	}
 `;
@@ -120,12 +119,12 @@ export const featuredAriasQuery = groq`
 	*[_type == 'featuredAria'] | order(_updatedAt desc) {
 		aria->{
 			title, 
-			${slug},
+			slug,
 			voiceType->{name, displayName},
 			description,
 			opera->{
 				title,
-				${slug},
+				slug,
 				composers[]->{
 					${shortCreatorFields}
 				},

@@ -1,6 +1,13 @@
 import { classNames } from '@utils/tailwind';
+import type { Track } from 'types/sanity';
 
-export default function TrackButtons({ pianoTrack, vocalTrack }) {
+export default function TrackButtons({
+  pianoTrack,
+  vocalTrack,
+}: {
+  pianoTrack: Track;
+  vocalTrack: Track;
+}) {
   const buttonClasses = classNames(
     'snipcart-add-item',
     'block w-full px-2.5 py-2',

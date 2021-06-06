@@ -1,6 +1,11 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
+import type { ExternalLink } from 'types/sanity';
 
-export default function ExternalMediaList({ links }) {
+export default function ExternalMediaList({
+  links,
+}: {
+  links: Array<ExternalLink>;
+}) {
   if (links === undefined || !links || links.length === 0) {
     return null;
   }

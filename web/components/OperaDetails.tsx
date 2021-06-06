@@ -3,8 +3,9 @@ import BlockContent from '@sanity/block-content-to-react';
 import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
 import ScoreLink from '@components/ScoreLink';
+import type { Opera } from 'types/sanity';
 
-export default function OperaDetails({ opera }) {
+export default function OperaDetails({ opera }: { opera: Opera }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div>
@@ -40,8 +41,8 @@ export default function OperaDetails({ opera }) {
             <dd className="mt-1 text-gray-900">
               <ul>
                 {opera.arias.map((aria) => (
-                  <li key={aria.slug}>
-                    <Link href={`/arias/${aria.slug}`}>
+                  <li key={aria.slug.current}>
+                    <Link href={`/arias/${aria.slug.current}`}>
                       <a className="text-cyan-600 hover:underline">
                         {aria.title}
                       </a>

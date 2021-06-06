@@ -1,6 +1,13 @@
 import SearchResultRow from '@components/SearchResultRow';
+import type { SearchResult } from 'types/sanity';
 
-export default function SearchResults({ results, loading }) {
+export default function SearchResults({
+  results,
+  loading,
+}: {
+  results: Array<SearchResult>;
+  loading: boolean;
+}) {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

@@ -1,4 +1,4 @@
-export default function PreviewAlert({ preview }) {
+export default function PreviewAlert({ preview }: { preview: boolean }) {
   if (!preview) {
     return null;
   }

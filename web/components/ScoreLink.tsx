@@ -1,6 +1,7 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
+import type { ExternalLink } from 'types/sanity';
 
-export default function ScoreLink({ link }) {
+export default function ScoreLink({ link }: { link: ExternalLink }) {
   if (link === undefined || !link) {
     return null;
   }

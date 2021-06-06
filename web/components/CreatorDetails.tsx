@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlForImage } from '@utils/sanity';
+import type { Creator } from 'types/sanity';
 
-export default function CreatorDetails({ creator }) {
+export default function CreatorDetails({ creator }: { creator: Creator }) {
   const creatorName = `${creator.firstName} ${creator.lastName}`;
 
   return (
@@ -44,8 +45,8 @@ export default function CreatorDetails({ creator }) {
             <dd className="mt-1 text-gray-900">
               <ul>
                 {creator.operas.map((opera) => (
-                  <li key={opera.slug}>
-                    <Link href={`/operas/${opera.slug}`}>
+                  <li key={opera.slug.current}>
+                    <Link href={`/operas/${opera.slug.current}`}>
                       <a className="text-cyan-600 hover:underline">
                         {opera.title}
                       </a>

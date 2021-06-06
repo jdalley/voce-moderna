@@ -2,9 +2,16 @@ import Layout, { LayoutProps } from '@components/Layout';
 import AriaDetails from '@components/AriaDetails';
 import { ariaBySlugQuery, ariaSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
+import type { Aria as AriaType } from 'types/sanity';
+import type { PathParams } from 'types/next';
 
-export default function Aria({ data, preview }) {
-  const aria = data.aria;
+export default function Aria({
+  aria,
+  preview,
+}: {
+  aria: AriaType;
+  preview: boolean;
+}) {
   const layoutProps: LayoutProps = {
     customMeta: {
       title: `Aria - ${aria.title}`,
@@ -19,23 +26,29 @@ export default function Aria({ data, preview }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const aria = await getClient(preview).fetch(ariaBySlugQuery, {
+export async function getStaticProps({ params, preview = false }: PathParams) {
+  const aria: AriaType = await getClient(preview).fetch(ariaBySlugQuery, {
     slug: params.slug,
   });
 
   return {
     props: {
-      data: { aria },
+      aria,
       preview,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(ariaSlugsQuery);
+  const paths: Array<string> = await sanityClient.fetch(ariaSlugsQuery);
   return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
+    paths: paths.map((slug: string) => {
+      return {
+        params: {
+          slug,
+        },
+      };
+    }),
     fallback: false, // TODO: Set to true?
   };
 }

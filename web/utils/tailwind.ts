@@ -4,6 +4,7 @@
 export function classNames(
   ...classes: (false | null | undefined | string)[]
 ): string {
+  // Filter where truthy (value present)
   return classes.filter(Boolean).join(' ');
 }
 
