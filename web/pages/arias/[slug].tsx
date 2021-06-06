@@ -1,5 +1,8 @@
+import { useRouter } from 'next/router';
 import Layout, { LayoutProps } from '@components/Layout';
 import AriaDetails from '@components/AriaDetails';
+import LoadingSpinner from '@components/LoadingSpinner';
+import NotFound from '@components/NotFound';
 import { ariaBySlugQuery, ariaSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Aria as AriaType } from 'types/sanity';
@@ -12,12 +15,25 @@ export default function Aria({
   aria: AriaType;
   preview: boolean;
 }) {
+  const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Aria - ${aria.title}`,
+      title: `Aria - ${aria?.title ?? ''}`,
     },
     preview,
   };
+
+  if (router.isFallback) {
+    return (
+      <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+        <LoadingSpinner marginTop={24} />
+      </Layout>
+    );
+  }
+
+  if (!aria) {
+    return <NotFound />;
+  }
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
@@ -49,6 +65,6 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false, // TODO: Set to true?
+    fallback: true,
   };
 }

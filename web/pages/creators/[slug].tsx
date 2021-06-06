@@ -1,5 +1,8 @@
+import { useRouter } from 'next/router';
 import Layout, { LayoutProps } from '@components/Layout';
 import CreatorDetails from '@components/CreatorDetails';
+import LoadingSpinner from '@components/LoadingSpinner';
+import NotFound from '@components/NotFound';
 import { creatorBySlugQuery, creatorSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Creator as CreatorType } from 'types/sanity';
@@ -12,12 +15,26 @@ export default function Creator({
   creator: CreatorType;
   preview: boolean;
 }) {
+  const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Creator - ${creator.firstName} ${creator.lastName}`,
+      title: `Creator - ${creator?.firstName ?? ''} ${creator?.lastName ?? ''}`,
     },
     preview,
   };
+
+  if (router.isFallback) {
+    return (
+      <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+        <LoadingSpinner marginTop={24} />
+      </Layout>
+    );
+  }
+
+  if (!creator) {
+    return <NotFound />;
+  }
+
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
       <CreatorDetails creator={creator} />
@@ -50,6 +67,6 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false, // TODO: Set to true?
+    fallback: true,
   };
 }

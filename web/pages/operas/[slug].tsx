@@ -1,5 +1,8 @@
+import { useRouter } from 'next/router';
 import Layout, { LayoutProps } from '@components/Layout';
 import OperaDetails from '@components/OperaDetails';
+import LoadingSpinner from '@components/LoadingSpinner';
+import NotFound from '@components/NotFound';
 import { operaBySlugQuery, operaSlugsQuery } from '@utils/queries';
 import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Opera as OperaType } from 'types/sanity';
@@ -12,12 +15,25 @@ export default function Opera({
   opera: OperaType;
   preview: boolean;
 }) {
+  const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Opera - ${opera.title}`,
+      title: `Opera - ${opera?.title ?? ''}`,
     },
     preview,
   };
+
+  if (router.isFallback) {
+    return (
+      <Layout customMeta={layoutProps.customMeta}>
+        <LoadingSpinner marginTop={24} />
+      </Layout>
+    );
+  }
+
+  if (!opera) {
+    return <NotFound />;
+  }
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
@@ -49,6 +65,6 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false, // TODO: Set to true?
+    fallback: true,
   };
 }
