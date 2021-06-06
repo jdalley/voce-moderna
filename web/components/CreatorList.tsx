@@ -14,11 +14,16 @@ export default function CreatorList({
     <ul>
       {creators.map((creator) => (
         <li key={creator.slug.current} className="mt-1">
-          <img
-            className="inline-block mr-3 h-8 w-8 rounded-full"
-            alt={`Avatar photo of ${creator.firstName} ${creator.lastName}`}
-            src={urlForImage(creator.photo).width(32).height(32).url()}
-          />
+          {creator.photo ? (
+            <img
+              className="inline-block mr-3 h-8 w-8 rounded-full"
+              alt={`Avatar photo of ${creator.firstName} ${creator.lastName}`}
+              src={urlForImage(creator.photo).width(32).height(32).url()}
+            />
+          ) : (
+            <span className="inline-block align-middle mr-3 h-8 w-8 rounded-full bg-gray-100"></span>
+          )}
+
           <Link href={`/creators/${creator.slug.current}`}>
             <a className="whitespace-nowrap text-cyan-600 hover:underline">
               {`${creator.firstName} ${creator.lastName}`}

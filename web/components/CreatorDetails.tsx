@@ -15,11 +15,15 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         <div className="relative px-4 sm:px-6">
           <div className="-mt-12 sm:-mt-16">
             <div className="flex">
-              <img
-                className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-                alt={`Photo of ${creatorName}`}
-                src={urlForImage(creator.photo).width(128).height(128).url()}
-              />
+              {creator.photo ? (
+                <img
+                  className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                  alt={`Photo of ${creatorName}`}
+                  src={urlForImage(creator.photo).width(128).height(128).url()}
+                />
+              ) : (
+                <span className="h-24 w-24 rounded-full bg-gray-100 ring-4 ring-white sm:h-32 sm:w-32"></span>
+              )}
             </div>
           </div>
         </div>
