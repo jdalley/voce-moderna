@@ -14,25 +14,25 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.10.2",
+    "@sanity/base": "^2.10.5",
     "@sanity/components": "^2.2.6",
-    "@sanity/core": "^2.10.2",
+    "@sanity/core": "^2.10.5",
     "@sanity/dashboard": "^2.10.5",
-    "@sanity/default-layout": "^2.10.2",
-    "@sanity/default-login": "^2.8.0",
-    "@sanity/desk-tool": "^2.10.4",
+    "@sanity/default-layout": "^2.10.5",
+    "@sanity/default-login": "^2.10.5",
+    "@sanity/desk-tool": "^2.10.5",
     "@sanity/production-preview": "^2.2.6",
-    "@sanity/types": "^2.10.0",
-    "@sanity/vision": "^2.10.0",
+    "@sanity/types": "^2.10.5",
+    "@sanity/vision": "^2.10.5",
     "prop-types": "^15.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sanity-plugin-vercel-deploy": "^2.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.1",
+    "prettier": "^2.3.1",
     "sanity-codegen": "^0.9.3",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "prettier": {
     "arrowParens": "always",
