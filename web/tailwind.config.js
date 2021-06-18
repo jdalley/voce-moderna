@@ -27,15 +27,6 @@ module.exports = {
         lime: colors.lime,
         yellow: colors.yellow,
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            a: {
-              color: theme('colors.cyan.600'),
-            },
-          },
-        },
-      }),
     },
     fontFamily: {
       selima: ['Selima', 'script'],

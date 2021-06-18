@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* This is how you add custom CSS to a Tailwind layer
-@layer base { }
-*/
 @font-face {
   font-family: 'Selima';
   font-style: normal;
