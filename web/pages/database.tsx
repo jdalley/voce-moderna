@@ -25,7 +25,7 @@ export default function Database() {
   const [searchResults, setSearchResults] = useState(searchResultDefault);
   const [searchLoading, setSearchLoading] = useState(false);
 
-  // Update state from the query string only one time.
+  // Update state from the query string
   useEffect(() => {
     const query = parse(asPath.substr(asPath.indexOf('?') + 1));
     const voice: string = query.voice as string;
@@ -41,29 +41,16 @@ export default function Database() {
     if (search) {
       setSearchTerm(search);
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Run only once.
 
   useEffect(() => {
     search();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [voiceType]);
 
   function search() {
-    updateRouteParams();
-    const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
-    if (searchCriteria) {
-      setSearchLoading(true);
-      sanityClient
-        .fetch(searchCriteria.query, searchCriteria.params)
-        .then((results) => {
-          setSearchResults(results);
-        })
-        .finally(() => {
-          setSearchLoading(false);
-        });
-    }
-  }
-
-  function updateRouteParams() {
+    // Update route params
     const params = {};
     if (voiceType) {
       Object.assign(params, { voice: voiceType });
@@ -82,6 +69,20 @@ export default function Database() {
       undefined,
       { shallow: true }
     );
+
+    // Execute the search
+    const searchCriteria = getSearchQuery(searchType, searchTerm, voiceType);
+    if (searchCriteria) {
+      setSearchLoading(true);
+      sanityClient
+        .fetch(searchCriteria.query, searchCriteria.params)
+        .then((results) => {
+          setSearchResults(results);
+        })
+        .finally(() => {
+          setSearchLoading(false);
+        });
+    }
   }
 
   function handleSearch(e: FormEvent) {

@@ -13,7 +13,7 @@ export default function NotFound() {
         <meta name="robots" content="noindex" />
       </Head>
       <p className="mt-24 text-center text-xl text-gray-500">
-        Sorry, we couldn't find that page.
+        Sorry, we couldn&apos;t find that page.
       </p>
     </Layout>
   );

@@ -1,5 +1,4 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import Link from 'next/link';
 
 export default function About() {
   const layoutProps: LayoutProps = {
@@ -244,22 +243,23 @@ export default function About() {
                 A software developer by day (and sometimes by night), Jeff
                 enjoys configuration files, build pipelines, deleting code,
                 setting up the perfect dev environment full of tools and time
-                savers, and leaving things better than he found them. He's still
-                wondering if he'll find a niche, or just continue to dabble
-                broadly, but he's enjoying himself either way.
+                savers, and leaving things better than he found them. He&apos;s
+                still wondering if he&apos;ll find a niche, or just continue to
+                dabble broadly, but he&apos;s enjoying himself either way.
               </p>
               <p>
-                He spends a lot of time poring over what's new and changing in
-                software development. He follows a number of communities and the
-                folks that participate in them, drawing inspiration from seeing
-                what they build, how they solve problems, communicate, and how
-                sharing their work positively impacts others. He aspires to
-                share more like that.
+                He spends a lot of time poring over what&apos;s new and changing
+                in software development. He follows a number of communities and
+                the folks that participate in them, drawing inspiration from
+                seeing what they build, how they solve problems, communicate,
+                and how sharing their work positively impacts others. He aspires
+                to share more like that.
               </p>
               <p>
-                Outside of software, he's a huge fan of technology in general,
-                speccing and building PCs, fantasy/sci-fi books, gaming, and
-                hanging out with his wife (Blair!) and their dog Nyx.
+                Outside of software, he&apos;s a huge fan of technology in
+                general, speccing and building PCs, fantasy/sci-fi books,
+                gaming, and hanging out with his wife (Blair!) and their dog
+                Nyx.
               </p>
             </div>
           </div>
