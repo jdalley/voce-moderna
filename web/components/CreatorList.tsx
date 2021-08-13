@@ -1,5 +1,6 @@
-import { urlForImage } from '@utils/sanity';
 import Link from 'next/link';
+import { UserCircleIcon } from '@heroicons/react/outline';
+import { urlForImage } from '@utils/sanity';
 import type { Creator } from 'types/sanity';
 
 export default function CreatorList({
@@ -21,7 +22,10 @@ export default function CreatorList({
               src={urlForImage(creator.photo).width(32).height(32).url()}
             />
           ) : (
-            <span className="inline-block align-middle mr-3 h-8 w-8 rounded-full bg-gray-100"></span>
+            <UserCircleIcon
+              className="h-8 w-8 text-gray-400"
+              aria-hidden="true"
+            />
           )}
 
           <Link href={`/creators/${creator.slug.current}`}>

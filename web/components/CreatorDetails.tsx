@@ -4,7 +4,15 @@ import { urlForImage } from '@utils/sanity';
 import type { Creator } from 'types/sanity';
 
 export default function CreatorDetails({ creator }: { creator: Creator }) {
-  const creatorName = `${creator.firstName} ${creator.lastName}`;
+  // the data specifies that some creators don't have first names, and their
+  // last name should be treated as both first and last.
+  let creatorName = `${creator.lastName}`;
+  let initials = `${creator.lastName[0].toUpperCase()}`;
+  // in the majority case we will add the first name.
+  if (creator.firstName) {
+    creatorName = `${creator.firstName} ${creatorName}`;
+    initials = `${creator.firstName[0].toUpperCase()}${initials}`;
+  }
 
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
@@ -22,7 +30,9 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
                   src={urlForImage(creator.photo).width(128).height(128).url()}
                 />
               ) : (
-                <span className="h-24 w-24 rounded-full bg-gray-100 ring-4 ring-white sm:h-32 sm:w-32"></span>
+                <span className="flex-shrink-0 flex items-center justify-center h-24 w-24 rounded-full font-bold text-5xl bg-gray-100 ring-4 ring-white sm:text-6xl sm:h-32 sm:w-32">
+                  <span className="mb-2">{initials}</span>
+                </span>
               )}
             </div>
           </div>

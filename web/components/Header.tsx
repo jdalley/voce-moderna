@@ -69,6 +69,11 @@ export default function Header() {
                 Database
               </a>
             </Link>
+            <Link href="/creators">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
+                Creators
+              </a>
+            </Link>
             <Link href="/about">
               <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 About
@@ -132,6 +137,13 @@ export default function Header() {
                     <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         Database
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="/creators">
+                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                      <div className="text-base font-medium text-gray-900">
+                        Creators
                       </div>
                     </a>
                   </Link>

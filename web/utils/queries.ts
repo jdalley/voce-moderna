@@ -96,6 +96,15 @@ export const operaBySlugQuery = groq`
 	}	
 `;
 
+export const creatorsQuery = groq`
+	*[_type == 'creator'] | order(upper(lastName) asc) {
+    firstName,
+    lastName,
+    slug,
+    photo
+  }  
+`;
+
 export const creatorSlugsQuery = groq`
 	*[_type == "creator" && defined(slug.current)][].slug.current
 `;
