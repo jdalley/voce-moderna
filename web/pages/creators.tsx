@@ -2,10 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { creatorsQuery } from '@utils/queries';
 import { getClient } from '@utils/sanity.server';
+import { urlForImage } from '@utils/sanity';
+import { getFullName, getInitials } from '@utils/content';
 import Layout, { LayoutProps } from '@components/Layout';
 import type { Creator } from 'types/sanity';
-import { urlForImage } from '@utils/sanity';
-import { UserCircleIcon } from '@heroicons/react/outline';
 
 export type Directory = {
   letter: string;
@@ -27,12 +27,20 @@ export default function Creators({
 
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <div className="max-w-2xl mx-auto text-center pt-6 pb-10">
+      <div className="max-w-2xl mx-auto text-center pt-6 pb-10 px-2">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Creators
         </h2>
         <p className="mt-4 text-gray-500">
-          The composers and librettists that make this site tick.
+          Voce Moderna is meant to be an ongoing project!
+        </p>
+        <p className="mt-3 text-gray-500">
+          There are already hundreds of arias ready and waiting to be added to
+          this database.
+        </p>
+        <p className="mt-3 text-gray-500">
+          Below is a list of the composers and librettists whose work is either
+          currently displayed on the VM Database, or is soon to be added.
         </p>
       </div>
       <div className="max-w-2xl mx-auto">
@@ -43,43 +51,52 @@ export default function Creators({
                 <h3>{letter}</h3>
               </div>
               <ul className="relative z-0 divide-y divide-gray-200">
-                {directory[letter].map((creator: Creator) => (
-                  <li key={creator.slug.current} className="bg-white">
-                    <div className="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
-                      <div className="flex-shrink-0">
-                        {creator.photo ? (
-                          <img
-                            className="h-10 w-10 rounded-full"
-                            alt={`Avatar photo of ${creator.firstName} ${creator.lastName}`}
-                            src={urlForImage(creator.photo)
-                              .width(40)
-                              .height(40)
-                              .url()}
-                          />
-                        ) : (
-                          <UserCircleIcon
-                            className="h-10 w-10 text-gray-400"
-                            aria-hidden="true"
-                          />
-                        )}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <Link href={`/creators/${creator.slug.current}`}>
-                          <a className="focus:outline-none">
-                            <span
-                              className="absolute inset-0"
-                              aria-hidden="true"
+                {directory[letter].map((creator: Creator) => {
+                  const fullName = getFullName(
+                    creator.firstName,
+                    creator.lastName
+                  );
+                  const initials = getInitials(
+                    creator.firstName,
+                    creator.lastName
+                  );
+                  return (
+                    <li key={creator.slug.current} className="bg-white">
+                      <div className="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
+                        <div className="flex-shrink-0">
+                          {creator.photo ? (
+                            <img
+                              className="h-10 w-10 rounded-full"
+                              alt={`Avatar photo of ${creator.firstName} ${creator.lastName}`}
+                              src={urlForImage(creator.photo)
+                                .width(40)
+                                .height(40)
+                                .url()}
                             />
-                            <p className="text-sm font-medium text-gray-900">
-                              {creator.firstName} {creator.lastName}
-                            </p>
-                            <p className="text-sm text-gray-500 truncate"></p>
-                          </a>
-                        </Link>
+                          ) : (
+                            <span className="inline-flex items-center justify-center h-10 w-10 rounded-full font-bold bg-gray-100 ">
+                              <span className="">{initials}</span>
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <Link href={`/creators/${creator.slug.current}`}>
+                            <a className="focus:outline-none">
+                              <span
+                                className="absolute inset-0"
+                                aria-hidden="true"
+                              />
+                              <p className="text-sm font-medium text-gray-900">
+                                {fullName}
+                              </p>
+                              <p className="text-sm text-gray-500 truncate"></p>
+                            </a>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -93,12 +110,11 @@ export async function getStaticProps({ preview = false }) {
   const creators: Array<Creator> = await getClient(preview).fetch(
     creatorsQuery
   );
-
   // create an array of unique letters in order to group creators
   // alphabetically by their last name.
-  let directory = creators.reduce((acc, cur) => {
+  const directory = creators.reduce((acc, cur) => {
     // first letter of last name to group by
-    let letter = cur.lastName[0].toUpperCase();
+    const letter = cur.lastName[0].toUpperCase();
     // add the letter and first creator if it doesn't exist yet.
     if (!acc[letter]) {
       acc[letter] = [cur];
