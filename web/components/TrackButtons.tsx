@@ -22,8 +22,8 @@ export default function TrackButtons({
       <button
         className={classNames(
           buttonClasses,
-          'from-blue-600 to-blue-500',
-          'hover:from-blue-700 hover:to-blue-600'
+          'from-red-600 to-rose-500',
+          'hover:from-red-700 hover:to-rose-600'
         )}
         data-item-id={pianoTrack.id}
         data-item-price={pianoTrack.price}
@@ -40,8 +40,8 @@ export default function TrackButtons({
           buttonClasses,
           'mt-2',
           'sm:ml-4 sm:my-0',
-          'from-violet-600 to-violet-500',
-          'hover:from-violet-700 hover:to-violet-600'
+          'from-blue-600 to-violet-500',
+          'hover:from-blue-700 hover:to-violet-600'
         )}
         data-item-id={vocalTrack.id}
         data-item-price={vocalTrack.price}

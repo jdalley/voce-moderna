@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
+import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { urlForImage } from '@utils/sanity';
 import { getFullName, getInitials } from '@utils/content';
 import type { Creator } from 'types/sanity';
@@ -11,8 +12,14 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div>
-        <div className="relative h-32 w-full bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600 lg:h-48">
-          <div className="absolute inset-0 bg-topography"></div>
+        <div className="relative h-44 w-full lg:h-64">
+          <div className="absolute inset-0">
+            <img
+              className="object-cover h-full w-full"
+              src="/images/splash-banner-1024x371.png"
+              alt="Layered smudges of paint"
+            />
+          </div>
         </div>
         <div className="relative px-4 sm:px-6">
           <div className="-mt-12 sm:-mt-16">
@@ -41,13 +48,11 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
-            <dd className="mt-1 text-gray-900">
-              <a
-                href={creator.website}
-                className="text-cyan-600 hover:underline"
-              >
+            <dd className="inline-flex items-center mt-1 text-cyan-600">
+              <a href={creator.website} className=" hover:underline">
                 {creator.website}
               </a>
+              <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
             </dd>
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>
             <dd className="mt-1 text-gray-900">

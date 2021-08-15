@@ -105,7 +105,7 @@ export default function Database() {
       : `bg-gradient-to-r ${voiceToGradientMap[voiceType]}`;
   const voiceTypeHoverGradient =
     voiceType === '' || voiceType === 'all'
-      ? 'hover:bg-gradient-to-tl'
+      ? 'hover:from-yellow-400 hover:via-cyan-700 hover:to-rose-700'
       : `${voiceHoverToGradientMap[voiceType]}`;
 
   return (

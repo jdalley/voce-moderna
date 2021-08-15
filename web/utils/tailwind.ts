@@ -21,12 +21,12 @@ export const voiceToGradientMap: Record<string, string> = {
 };
 
 export const voiceHoverToGradientMap: Record<string, string> = {
-  baritone: 'hover:from-blue-600 hover:to-cyan-600',
-  bass: 'hover:from-bluegray-600 hover:to-blue-600',
-  bassBaritone: 'hover:from-amber-600 hover:to-red-600',
-  contralto: 'hover:from-fuchsia-600 hover:to-indigo-600',
-  counterTenor: 'hover:from-emerald-700 hover:to-lime-600',
-  mezzoSoprano: 'hover:from-cyan-700 hover:to-green-500',
-  soprano: 'hover:from-rose-500 hover:to-amber-500',
-  tenor: 'hover:from-red-600 hover:to-fuchsia-600',
+  baritone: 'hover:from-cyan-700 hover:to-blue-700',
+  bass: 'hover:from-blue-700 hover:to-bluegray-700',
+  bassBaritone: 'hover:from-red-700 hover:to-amber-700',
+  contralto: 'hover:from-indigo-700 hover:to-fuchsia-700',
+  counterTenor: 'hover:from-lime-700 hover:to-emerald-800',
+  mezzoSoprano: 'hover:from-green-600 hover:to-cyan-800',
+  soprano: 'hover:from-amber-600 hover:to-rose-600',
+  tenor: 'hover:from-fuchsia-700 hover:to-red-700',
 };

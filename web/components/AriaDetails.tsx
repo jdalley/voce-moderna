@@ -10,8 +10,14 @@ import type { Aria } from 'types/sanity';
 export default function AriaDetails({ aria }: { aria: Aria }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
-      <div className="relative h-32 w-full bg-gradient-to-tr from-yellow-200 via-cyan-600 to-rose-600 lg:h-48">
-        <div className="absolute inset-0 bg-topography"></div>
+      <div className="relative h-44 w-full lg:h-64">
+        <div className="absolute inset-0">
+          <img
+            className="object-cover h-full w-full"
+            src="/images/splash-banner-1024x371.png"
+            alt="Layered smudges of paint"
+          />
+        </div>
       </div>
       <div className="flex flex-col px-4 py-5 sm:px-9 sm:justify-between sm:flex-row">
         <h1 className="text-xl font-medium leading-9 text-gray-900">
