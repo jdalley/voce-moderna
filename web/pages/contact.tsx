@@ -17,7 +17,7 @@ export default function Contact() {
           <div className="mt-8 text-lg text-gray-500">
             <p>
               Have an aria to suggest? Want to get your music in the database?
-              Want a consultation? Find a typo?
+              Interested in a consultation? Find a typo?
             </p>
             <p className="mt-4">Get in touch, we’d love to hear from you!</p>
           </div>

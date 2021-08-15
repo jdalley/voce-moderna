@@ -7,16 +7,19 @@ export default function FeaturedArias({
   featuredArias: Array<FeaturedAria>;
 }) {
   return (
-    <section className="relative pt-12 pb-14 px-4 sm:px-6 lg:pt-20 lg:pb-24 lg:px-12">
+    <section
+      className="relative pt-12 pb-6 px-4 sm:px-6 lg:pt-16 lg:pb-18 lg:px-12"
+      aria-labelledby="new-additions-title"
+    >
       <div className="text-center">
-        <h2 className="text-3xl tracking-tight font-extrabold text-gray-800 sm:text-4xl">
-          Newly Added Arias
+        <h2
+          id="new-additions-title"
+          className="text-lg tracking-tight font-bold text-gray-800 sm:text-2xl"
+        >
+          New additions to the VM Database
         </h2>
-        <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-          Check out some recently added arias.
-        </p>
       </div>
-      <div className="mt-12 max-w-sm mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <div className="mt-6 sm:mt-12 max-w-sm mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {featuredArias.map((featuredAria) => (
           <FeaturedAriaCard
             key={featuredAria.aria.slug.current}

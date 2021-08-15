@@ -83,7 +83,7 @@ export default function About() {
           </div>
           <div className="lg:row-start-2 lg:col-start-2">
             <h2 className="mt-8 text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              The Creators
+              The People Behind VM
             </h2>
           </div>
         </div>
@@ -128,24 +128,26 @@ export default function About() {
                   <img
                     className="rounded-lg shadow-lg object-cover object-top lg:object-center lg:float-right"
                     src="/images/blair.jpg"
-                    alt="A portrait of Blair Salter"
+                    alt="A portrait photo of Blair Salter"
                   />
                 </div>
               </figure>
             </div>
           </div>
           <div className="mt-8 lg:mt-0">
+            <h3 className="pb-4 font-bold text-2xl text-gray-800">
+              Blair Salter
+            </h3>
             <div className="prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-2">
-              <h3>Blair Salter</h3>
               <p>
                 Collaborative pianist Blair Salter is a versatile performer and
                 music director who has worked at prestigious opera companies and
                 young artist programs throughout the United States and Canada. A
                 graduate of the Houston Grand Opera Studio, San Francisco
-                Opera’s Merola Young Artist Program and the Glimmerglass
-                Festival, Blair is currently a member of the music staff at
-                Santa Fe Opera and will join the music faculty at Penn State
-                University in August 2021.
+                Opera’s Merola Young Artist Program, Wolf Trap Opera, and the
+                Glimmerglass Festival, Blair is currently a member of the music
+                staff at Santa Fe Opera and joined the music faculty at Penn
+                State University in 2021.
               </p>
               <p>
                 Blair has worked on staff at Houston Grand Opera, Opera
@@ -171,9 +173,9 @@ export default function About() {
                 residency at the Fall Island Vocal Arts Seminar, and with the
                 Khemia Ensemble at Michigan State University, Tufts University
                 and the Avaloch Farms Music Institute. She has also worked on
-                several operatic world premieres, including The Thirteenth Child
-                at Santa Fe Opera, and The Phoenix and El Milagro del Recuerdo
-                at Houston Grand Opera.
+                several operatic world premieres, including Lord of Cries and
+                The Thirteenth Child at Santa Fe Opera, and The Phoenix and El
+                Milagro del Recuerdo at Houston Grand Opera.
               </p>
               <p>
                 Blair was a freelance collaborative pianist and coach in Toronto
@@ -230,15 +232,17 @@ export default function About() {
                   <img
                     className="rounded-lg shadow-lg object-cover object-top lg:object-center"
                     src="/images/jeff.jpg"
-                    alt="A portrait of Jeff Dalley"
+                    alt="A portrait photo of Jeff Dalley"
                   />
                 </div>
               </figure>
             </div>
           </div>
           <div className="mt-8 lg:mt-0">
+            <h3 className="pb-4 font-bold text-2xl text-gray-800">
+              Jeff Dalley
+            </h3>
             <div className="prose prose-cyan text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-              <h3>Jeff Dalley</h3>
               <p>
                 A software developer by day (and sometimes by night), Jeff
                 enjoys configuration files, build pipelines, deleting code,
@@ -248,15 +252,16 @@ export default function About() {
                 dabble broadly, but he&apos;s enjoying himself either way.
               </p>
               <p>
-                He spends a lot of time poring over what&apos;s new and changing
-                in software development. He follows a number of communities and
-                the folks that participate in them, drawing inspiration from
-                seeing what they build, how they solve problems, communicate,
-                and how sharing their work positively impacts others. He aspires
-                to share more like that.
+                Jeff spends a lot of time poring over what&apos;s new and
+                changing in software development. He follows a number of
+                communities and the folks that participate in them; he enjoys
+                drawing inspiration from seeing what other people are building,
+                how they solve problems, and how sharing one&apos;s work
+                positively impacts others. He aspires to communicate and share
+                in this same supportive way.
               </p>
               <p>
-                Outside of software, he&apos;s a huge fan of technology in
+                Outside of software, he&apos;s a huge fan of: technology in
                 general, speccing and building PCs, fantasy/sci-fi books,
                 gaming, and hanging out with his wife (Blair!) and their dog
                 Nyx.

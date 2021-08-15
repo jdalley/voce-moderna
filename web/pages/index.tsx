@@ -33,6 +33,24 @@ export default function Index({
           />
         </div>
       </div>
+      <section className="relative bg-white" aria-labelledby="intro-blurb">
+        <div className="max-w-6xl mx-auto rounded-2xl shadow-lg lg:shadow-xl overflow-hidden">
+          <div className="relative text-center py-12 px-4 sm:px-6 lg:py-24  lg:px-12">
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-800 sm:text-4xl">
+              Welcome to <i>VOCE MODERNA</i>
+            </h2>
+            <p
+              id="intro-blurb"
+              className=" max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4"
+            >
+              A new and ongoing resource to help connect singers with
+              contemporary opera arias. Head over to the Database to get
+              started!
+            </p>
+          </div>
+        </div>
+      </section>
+
       <FeaturedArias featuredArias={featuredArias} />
     </Layout>
   );
