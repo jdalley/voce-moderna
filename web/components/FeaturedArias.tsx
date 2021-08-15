@@ -8,13 +8,13 @@ export default function FeaturedArias({
 }) {
   return (
     <section
-      className="relative mt-12 pt-4 pb-6 px-4 sm:pt-6 sm:px-6 lg:mt-0 lg:pt-10 lg:pb-18 lg:px-12"
+      className="relative mt-6 pt-4 pb-6 px-4 xs:mt-12 sm:pt-6 sm:px-6 lg:mt-0 lg:pt-10 lg:pb-18 lg:px-12"
       aria-labelledby="new-additions-title"
     >
       <div className="text-center">
         <h2
           id="new-additions-title"
-          className="text-lg tracking-tight font-bold text-gray-800 sm:text-2xl"
+          className="tracking-tight font-bold text-gray-800 xs:text-lg sm:text-2xl"
         >
           New additions to the VM Database
         </h2>

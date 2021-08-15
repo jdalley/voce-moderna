@@ -67,15 +67,15 @@ export default function Index({
           ></rect>
         </svg>
         <div className="mx-auto px-4 sm:px-0 lg:max-w-none lg:py-20">
-          <div className="relative mx-auto pt-56 sm:pt-60 md:pt-64 lg:pb-10">
+          <div className="relative mx-auto pt-52 sm:pt-60 md:pt-64 lg:pb-10">
             <div className="absolute inset-0 bg-white rounded-2xl shadow-lg lg:shadow-xl overflow-hidden">
-              <div className="relative text-center py-16 px-4 sm:px-6 lg:py-24  lg:px-12">
-                <h2 className="text-2xl tracking-tight font-extrabold text-gray-800 sm:text-3xl md:text-4xl">
+              <div className="relative text-center pt-14 sm:py-16 px-4 sm:px-6 lg:py-24  lg:px-12">
+                <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-3xl md:text-4xl">
                   Welcome to <i>VOCE MODERNA</i>
                 </h2>
                 <p
                   id="intro-blurb"
-                  className=" max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 sm:mt-4"
+                  className="max-w-2xl mx-auto xs:text-lg sm:text-xl text-gray-500 sm:mt-4"
                 >
                   A new and ongoing resource to help connect singers with
                   contemporary opera arias. Head over to the Database to get

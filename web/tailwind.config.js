@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
@@ -30,6 +31,10 @@ module.exports = {
     },
     fontFamily: {
       selima: ['Selima', 'script'],
+    },
+    screens: {
+      xs: '425px',
+      ...defaultTheme.screens,
     },
   },
   variants: {
