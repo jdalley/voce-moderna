@@ -8,7 +8,7 @@ export default function FeaturedArias({
 }) {
   return (
     <section
-      className="relative pt-12 pb-6 px-4 sm:px-6 lg:pt-16 lg:pb-18 lg:px-12"
+      className="relative mt-12 pt-4 pb-6 px-4 sm:pt-6 sm:px-6 lg:mt-0 lg:pt-10 lg:pb-18 lg:px-12"
       aria-labelledby="new-additions-title"
     >
       <div className="text-center">
@@ -19,7 +19,7 @@ export default function FeaturedArias({
           New additions to the VM Database
         </h2>
       </div>
-      <div className="mt-6 sm:mt-12 max-w-sm mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <div className="mt-6 sm:mt-10 max-w-sm mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {featuredArias.map((featuredAria) => (
           <FeaturedAriaCard
             key={featuredAria.aria.slug.current}
