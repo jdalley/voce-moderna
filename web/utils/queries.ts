@@ -195,7 +195,7 @@ export const ariaSearchBase = `
 	*[_type == "aria" 
 		{{voiceType}}
 		{{filter}}	
-	]{
+	] | order(opera->title asc) {
 		${searchResultFields}
 	}	
 `;

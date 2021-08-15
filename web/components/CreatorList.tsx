@@ -2,15 +2,19 @@ import Link from 'next/link';
 import { urlForImage } from '@utils/sanity';
 import { getFullName, getInitials } from '@utils/content';
 import type { Creator } from 'types/sanity';
+import { classNames } from '@utils/tailwind';
 
 export default function CreatorList({
   creators,
+  splitLine,
 }: {
   creators: Array<Creator>;
+  splitLine?: boolean;
 }) {
   if (creators === undefined || !creators || creators.length === 0) {
     return null;
   }
+
   return (
     <ul>
       {creators.map((creator) => {
@@ -20,12 +24,22 @@ export default function CreatorList({
           <li key={creator.slug.current} className="mt-1">
             {creator.photo ? (
               <img
-                className="inline-block mr-3 h-8 w-8 rounded-full"
+                className={classNames(
+                  splitLine ? 'block' : 'inline-block',
+                  `mr-3 h-8 w-8 rounded-full`
+                )}
                 alt={`Avatar photo of ${creator.firstName} ${creator.lastName}`}
                 src={urlForImage(creator.photo).width(32).height(32).url()}
               />
             ) : (
-              <span className="inline-flex items-center justify-center h-8 w-8 mr-3 rounded-full font-bold bg-gray-100 ">
+              <span
+                className={classNames(
+                  splitLine ? 'flex' : 'inline-flex',
+                  'items-center justify-center',
+                  'h-8 w-8 mr-3 rounded-full',
+                  'font-bold bg-gray-100'
+                )}
+              >
                 <span className="">{initials}</span>
               </span>
             )}

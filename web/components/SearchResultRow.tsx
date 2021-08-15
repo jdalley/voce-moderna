@@ -16,10 +16,10 @@ export default function SearchResultRow({ result }: { result: SearchResult }) {
         </Link>
       </td>
       <td className="px-6 py-4 text-sm">
-        <CreatorList creators={result.opera.composers} />
+        <CreatorList creators={result.opera.composers} splitLine={true} />
       </td>
       <td className="px-6 py-4 text-sm">
-        <CreatorList creators={result.opera.librettists} />
+        <CreatorList creators={result.opera.librettists} splitLine={true} />
       </td>
     </tr>
   );
