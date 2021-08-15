@@ -85,7 +85,16 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t border-gray-200">
           <p className="mt-8 text-center text-base text-gray-400">
-            &copy; {new Date().getFullYear()} Project Voce Moderna
+            &copy; {new Date().getFullYear()} Voce Moderna
+          </p>
+          <p className="mt-2 text-center text-base text-gray-400">
+            VM art designed by multi-talented soprano{' '}
+            <a
+              className="text-cyan-600 hover:underline"
+              href="https://www.dorothygal.com"
+            >
+              Dorothy Gal
+            </a>
           </p>
         </div>
       </div>

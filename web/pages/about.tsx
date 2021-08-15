@@ -30,8 +30,8 @@ export default function About() {
                 available for your personal use.
               </p>
               <p>
-                This database is ongoing! Arias will continue to be added to
-                this site, so be sure to keep checking back for new entries.
+                This database ongoing! Arias will continue to be added to this
+                site, so be sure to keep checking back for new entries.
               </p>
             </div>
           </div>
