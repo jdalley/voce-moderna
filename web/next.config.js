@@ -17,7 +17,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' *.sanity.io cdn.snipcart.com;
   style-src 'self' 'unsafe-inline' cdn.snipcart.com *.googleapis.com;
-	frame-src payment.snipcart.com
+	frame-src payment.snipcart.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
