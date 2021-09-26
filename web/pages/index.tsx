@@ -24,7 +24,14 @@ export default function Index({
       <Head>
         <link rel="preload" href="/images/vm-hero.png" as="image" />
       </Head>
-      <div className="relative px-4 py-36 sm:px-6 sm:py-32 md:py-44 lg:px-8 lg:py-56 ">
+      <div className="hidden sm:block">
+        <img
+          className="h-full w-full"
+          src="/images/vm-hero.png"
+          alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+        />
+      </div>
+      <div className="relative px-4 py-36 sm:hidden">
         <div className="absolute inset-0">
           <img
             className="object-cover h-full w-full"
@@ -33,9 +40,9 @@ export default function Index({
           />
         </div>
       </div>
-      <div className="relative hidden lg:block sm:mt-6 md:py-4 lg:mt-4 lg:py-0">
+      <div className="relative hidden lg:block lg:mt-4 lg:py-0">
         <svg
-          className=" absolute lg:-right-8 lg:left-auto lg:top-4"
+          className=" absolute lg:-right-8 lg:left-auto lg:-top-2"
           width="404"
           height="392"
           fill="none"
@@ -67,15 +74,15 @@ export default function Index({
           ></rect>
         </svg>
       </div>
-      <div className="relative mx-auto px-4 xs:pt-8 sm:px-0 sm:pt-10 lg:max-w-none">
+      <div className="relative mx-auto px-4 xs:pt-2 sm:px-0 md:pt-4 lg:max-w-none">
         <div className="bg-white rounded-2xl shadow-lg lg:shadow-xl">
-          <div className="text-center py-10 sm:py-16 px-4 sm:px-6 lg:py-24 lg:px-12">
-            <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-3xl md:text-4xl">
+          <div className="text-center pt-10 pb-6 xs:py-10 sm:py-16 px-4 sm:px-6 lg:py-24 lg:px-12">
+            <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-2xl md:text-3xl">
               Welcome to <i>VOCE MODERNA</i>
             </h2>
             <p
               id="intro-blurb"
-              className="max-w-2xl mx-auto xs:text-lg sm:text-xl text-gray-500 sm:mt-4"
+              className="max-w-2xl mx-auto mt-4 xs:text-lg md:text-xl text-gray-500 "
             >
               A new and ongoing resource to help connect singers with
               contemporary opera arias. Head over to the Database to get
