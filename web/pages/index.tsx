@@ -33,9 +33,9 @@ export default function Index({
           />
         </div>
       </div>
-      <div className="relative sm:mt-6 md:py-4 lg:mt-0 lg:py-0">
+      <div className="relative hidden lg:block sm:mt-6 md:py-4 lg:mt-4 lg:py-0">
         <svg
-          className="hidden lg:block absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12"
+          className=" absolute lg:-right-8 lg:left-auto lg:top-4"
           width="404"
           height="392"
           fill="none"
@@ -66,23 +66,21 @@ export default function Index({
             fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)"
           ></rect>
         </svg>
-        <div className="mx-auto px-4 sm:px-0 lg:max-w-none lg:py-20">
-          <div className="relative mx-auto pt-52 sm:pt-60 md:pt-64 lg:pb-10">
-            <div className="absolute inset-0 bg-white rounded-2xl shadow-lg lg:shadow-xl overflow-hidden">
-              <div className="relative text-center pt-14 sm:py-16 px-4 sm:px-6 lg:py-24  lg:px-12">
-                <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-3xl md:text-4xl">
-                  Welcome to <i>VOCE MODERNA</i>
-                </h2>
-                <p
-                  id="intro-blurb"
-                  className="max-w-2xl mx-auto xs:text-lg sm:text-xl text-gray-500 sm:mt-4"
-                >
-                  A new and ongoing resource to help connect singers with
-                  contemporary opera arias. Head over to the Database to get
-                  started!
-                </p>
-              </div>
-            </div>
+      </div>
+      <div className="relative mx-auto px-4 xs:pt-8 sm:px-0 sm:pt-10 lg:max-w-none">
+        <div className="bg-white rounded-2xl shadow-lg lg:shadow-xl">
+          <div className="text-center py-10 sm:py-16 px-4 sm:px-6 lg:py-24 lg:px-12">
+            <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-3xl md:text-4xl">
+              Welcome to <i>VOCE MODERNA</i>
+            </h2>
+            <p
+              id="intro-blurb"
+              className="max-w-2xl mx-auto xs:text-lg sm:text-xl text-gray-500 sm:mt-4"
+            >
+              A new and ongoing resource to help connect singers with
+              contemporary opera arias. Head over to the Database to get
+              started!
+            </p>
           </div>
         </div>
       </div>

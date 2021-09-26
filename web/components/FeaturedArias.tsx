@@ -8,7 +8,7 @@ export default function FeaturedArias({
 }) {
   return (
     <section
-      className="relative mt-6 pt-4 pb-6 px-4 xs:mt-12 sm:pt-6 sm:px-6 lg:mt-0 lg:pt-10 lg:pb-18 lg:px-12"
+      className="relative mt-6 pt-4 pb-6 px-4 xs:mt-10 sm:pt-6 sm:px-6 md:mt-12 lg:pt-10 lg:pb-18 lg:px-12"
       aria-labelledby="new-additions-title"
     >
       <div className="text-center">
