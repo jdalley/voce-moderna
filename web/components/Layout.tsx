@@ -19,7 +19,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const meta = {
     title: 'Project Voce Moderna',
     description: 'A contemporary aria database',
-    image: 'https://voce-moderna.vercel.app/images/vm-logo-colour.png',
+    image: 'https://www.projectvocemoderna.com/images/vm-logo-colour.png',
     type: 'website',
     ...customMeta,
   };
@@ -32,7 +32,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://voce-moderna.vercel.app${router.asPath}`}
+          content={`https://www.projectvocemoderna.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Project Voce Moderna" />
