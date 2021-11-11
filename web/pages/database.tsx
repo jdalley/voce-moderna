@@ -111,7 +111,7 @@ export default function Database() {
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
       <div className="max-w-4xl mx-auto grid grid-cols-1 gap-4 sm:py-2 lg:py-8 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid-cols-10 lg:gap-6">
-        <div className="bg-white sticky top-6 lg:relative lg:top-0 lg:col-span-3">
+        <div className="bg-white sticky top-0 sm:top-6 lg:relative lg:top-0 lg:col-span-3">
           <div aria-label="Search criteria" className="lg:sticky lg:top-6">
             <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
               <div className={classNames('h-20', voiceTypeGradient)}></div>
