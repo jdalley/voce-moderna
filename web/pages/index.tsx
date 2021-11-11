@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Image from 'next/image';
+import VMHero from '../public/images/vm-hero.png';
 import { featuredAriasQuery } from '@utils/queries';
 import { getClient } from '@utils/sanity.server';
 import Layout, { LayoutProps } from '@components/Layout';
@@ -25,22 +27,26 @@ export default function Index({
         <link rel="preload" href="/images/vm-hero.png" as="image" />
       </Head>
       <div className="hidden sm:block">
-        <img
-          className="h-full w-full"
-          src="/images/vm-hero.png"
+        <Image
+          src={VMHero}
           alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+          placeholder="blur"
+          priority
         />
       </div>
       <div className="relative px-4 py-36 sm:hidden">
         <div className="absolute inset-0">
-          <img
-            className="object-cover h-full w-full"
-            src="/images/vm-hero.png"
+          <Image
+            src={VMHero}
             alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
+            placeholder="blur"
+            layout="fill"
+            objectFit="cover"
+            priority
           />
         </div>
       </div>
-      <div className="relative hidden lg:block lg:mt-4 lg:py-0">
+      <div className="relative hidden lg:block lg:mt-2.5 lg:py-0">
         <svg
           className=" absolute lg:-right-8 lg:left-auto lg:-top-2"
           width="404"
