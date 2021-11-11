@@ -171,17 +171,15 @@ export default function Header() {
                 </nav>
               </div>
             </div>
-            <div className="py-6 px-5">
+            <div
+              className="py-6 px-5 snipcart-checkout"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
               <div className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="snipcart-checkout "
-                >
-                  <ShoppingBagIcon className="h-6 w-6" />
-                </button>
-                <span className="h-6 w-6 text-sm leading-normal ml-1 rounded-full border border-gray-400 bg-gray-100 text-center">
+                <span className="h-6 w-6 text-sm leading-normal mr-1 rounded-full border border-gray-400 bg-gray-100 text-center">
                   {cartCount}
                 </span>
+                <ShoppingBagIcon className="h-6 w-6" />
               </div>
             </div>
           </div>
