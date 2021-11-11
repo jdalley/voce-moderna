@@ -49,7 +49,12 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
             <dd className="inline-flex items-center mt-1 text-cyan-600">
-              <a href={creator.website} className=" hover:underline">
+              <a
+                href={creator.website}
+                className=" hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {creator.website}
               </a>
               <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
