@@ -23,14 +23,10 @@ export default function Index({
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
-      <Head>
-        <link rel="preload" href="/images/vm-hero.png" as="image" />
-      </Head>
       <div className="hidden sm:block">
         <Image
           src={VMHero}
           alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
-          placeholder="blur"
           priority
         />
       </div>
@@ -39,10 +35,8 @@ export default function Index({
           <Image
             src={VMHero}
             alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
-            placeholder="blur"
             layout="fill"
             objectFit="cover"
-            priority
           />
         </div>
       </div>
