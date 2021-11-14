@@ -48,7 +48,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
-            <dd className="inline-flex items-center mt-1 text-cyan-600">
+            <dd className="inline-flex items-center break-all mt-1 text-cyan-600 ">
               <a
                 href={creator.website}
                 className=" hover:underline"
@@ -56,8 +56,9 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
                 rel="noopener noreferrer"
               >
                 {creator.website}
+                <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
+
               </a>
-              <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
             </dd>
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>
             <dd className="mt-1 text-gray-900">
