@@ -18,7 +18,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
   const router = useRouter();
   const meta = {
     title: 'Project Voce Moderna',
-    description: 'A contemporary aria database',
+    description: 'Voce Moderna is a database of contemporary opera arias, including information about composers and librettists, individual arias, full opera synopses, score links, and practice tracks for download.',
     image: 'https://www.projectvocemoderna.com/images/vm-logo-colour.png',
     type: 'website',
     ...customMeta,
