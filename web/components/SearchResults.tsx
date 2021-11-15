@@ -97,34 +97,34 @@ export default function SearchResults({
                 <thead className="bg-gray-50">
                   <tr>
                     <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      scope="col" className="px-6 py-3 text-left"
                     >
-                      <button type="button" onClick={() => doSort('opera')}>
+                      <button type="button" onClick={() => doSort('opera')}
+                       className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Opera
                       </button>
                     </th>
                     <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      scope="col" className="px-6 py-3 text-left"
                     >
-                      <button type="button" onClick={() => doSort('aria')}>
+                      <button type="button" onClick={() => doSort('aria')}
+                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Aria
                       </button>
                     </th>
                     <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      scope="col" className="px-6 py-3 text-left"
                     >
-                      <button type="button" onClick={() => doSort('composer')}>
+                      <button type="button" onClick={() => doSort('composer')}
+                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Composer
                       </button>
                     </th>
                     <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      scope="col" className="px-6 py-3 text-left"
                     >
-                      <button type="button" onClick={() => doSort('librettist')}>
+                      <button type="button" onClick={() => doSort('librettist')}
+                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Librettist
                       </button>
                     </th>
