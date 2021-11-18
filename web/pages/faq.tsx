@@ -4,43 +4,43 @@ import Link from 'next/link';
 const faqs = [
   {
     id: 1,
-    question: 'How does the Voce Moderna database work?',
-    answer:
-      'VM is categorized by voice type. Select a voice type to see the arias that are currently entered into the database. Every entry has information about the opera, its creators, where to find the score, and practice tracks available for purchase. These entries are meant to help you browse and find an aria that might be suitable for you, and provides you with the tools you may need in learning the piece.',
+    question: `How does the Voce Moderna database work?`,
+    answer: `VM is categorized by voice type. Select a voice type to see the arias that are currently entered into the database. Every entry has information about the opera, its creators, where to find the score, and practice tracks available for purchase. These entries are meant to help you browse and find an aria that might be suitable for you, and provides you with the tools you may need in learning the piece.`,
   },
   {
     id: 2,
-    question: 'What’s the difference between a Piano Track and a Vocal Track?',
-    answer:
-      'A Piano Track is a recording of an aria’s piano accompaniment only. A Vocal Track is a recording of the piano accompaniment as well as the vocal line played overtop at a slightly louder volume.',
+    question: `What’s the difference between a Piano Track and a Vocal Track?`,
+    answer: `A Piano Track is a recording of an aria’s piano accompaniment only. A Vocal Track is a recording of the piano accompaniment as well as the vocal line played overtop at a slightly louder volume.`,
   },
   {
     id: 3,
-    question: 'Can I request a specific track?',
-    answer:
-      'Yes! If you’re interested in an aria that isn’t currently listed on the database, please reach out to us. If the aria is not already on our radar, we can go about securing a license to share the work.',
+    question: `Can I request a specific track?`,
+    answer: `Yes! If you’re interested in an aria that isn’t currently listed on the database, please reach out to us. If the aria is not already on our radar, we can go about securing a license to share the work.`,
   },
   {
     id: 4,
-    question: 'Do you have permission to sell these tracks?',
-    answer:
-      'Yes! Depending on the status of the work, all publishers or composers have been contacted for licensing agreements in order to share these practice tracks.',
+    question: `Do you have permission to sell these tracks?`,
+    answer: `Yes! Depending on the status of the work, all publishers or composers have been contacted for licensing agreements in order to share these practice tracks.`,
   },
   {
     id: 5,
-    question: 'Can I record a video with the track?',
-    answer:
-      'These arias were written by living composers and are not available in the public domain. The tracks are meant to be used as practice tools, and not for performance. If you would like to record the work, please get in touch with us or reach out to the composer directly to ensure that you are following the proper copyright guidelines.',
+    question: `Can I record a video with the track?`,
+    answer: `These arias were written by living composers and are not available in the public domain. The tracks are meant to be used as practice tools, and not for performance. If you would like to record the work, please get in touch with us or reach out to the composer directly to ensure that you are following the proper copyright guidelines.`,
   },
   {
     id: 6,
-    question: 'I encountered a problem with my download, what should I do?',
-    answer: 'Email us and we will do our best to help you resolve the issue.',
+    question: `What do the 'R' and 'T' represent on the aria information pages?`,
+    answer: `These stand for "Range" and "Tessitura". The range shows the lowest and highest pitches found in the aria, and the tessitura indicates which part of the range is most consistently used. This can help determine if an aria might suit your voice!`,
   },
   {
     id: 7,
-    question: 'I accidentally lost access to my track, can I have it resent?',
-    answer: 'Email us and we will do our best to get the track to you.',
+    question: `I accidentally lost access to my track, can I have it resent?`,
+    answer: `Email us and we will resend the download link as soon as possible.`,
+  },
+  {
+    id: 8,
+    question: `I encountered a problem with my download, what should I do?`,
+    answer: `Email us and we will make sure you get your track(s)!`,
   },
 ];
 

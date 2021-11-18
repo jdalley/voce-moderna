@@ -57,7 +57,6 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
               >
                 {creator.website}
                 <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
-
               </a>
             </dd>
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>
