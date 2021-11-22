@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import BlockContent from '@sanity/block-content-to-react';
 import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
@@ -9,13 +11,13 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div className="relative h-44 w-full lg:h-64">
-        <div className="absolute inset-0">
-          <img
-            className="object-cover h-full w-full"
-            src="/images/splash-banner-1024x371.png"
-            alt="Layered smudges of paint"
-          />
-        </div>
+        <Image
+          src={SplashBanner}
+          alt="Layered smudges of paint"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
       </div>
       <div className="px-4 py-5 sm:px-9">
         <h1 className="text-xl font-medium leading-9 text-gray-900">

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlForImage } from '@utils/sanity';
 import ExternalMediaList from '@components/ExternalMediaList';
@@ -11,13 +13,13 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
   return (
     <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
       <div className="relative h-44 w-full lg:h-64">
-        <div className="absolute inset-0">
-          <img
-            className="object-cover h-full w-full"
-            src="/images/splash-banner-1024x371.png"
-            alt="Layered smudges of paint"
-          />
-        </div>
+        <Image
+          src={SplashBanner}
+          alt="Layered smudges of paint"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
       </div>
       <div className="flex flex-col px-4 py-5 sm:px-9 sm:justify-between sm:flex-row">
         <h1 className="text-xl font-medium leading-9 text-gray-900">
