@@ -3,7 +3,7 @@ import Layout, { LayoutProps } from '@components/Layout';
 export default function About() {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'About',
+      title: 'About - Voce Moderna',
     },
   };
   return (

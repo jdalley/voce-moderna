@@ -16,7 +16,7 @@ export default function Index({
 }) {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'Home',
+      title: 'Voce Moderna',
     },
     preview,
   };

@@ -18,7 +18,9 @@ export default function Creator({
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Creator - ${creator?.firstName ?? ''} ${creator?.lastName ?? ''}`,
+      title: `Creator - ${creator?.firstName ?? ''} ${
+        creator?.lastName ?? ''
+      } - Voce Moderna`,
     },
     preview,
   };

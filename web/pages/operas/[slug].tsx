@@ -18,7 +18,7 @@ export default function Opera({
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Opera - ${opera?.title ?? ''}`,
+      title: `Opera - ${opera?.title ?? ''} - Voce Moderna`,
     },
     preview,
   };

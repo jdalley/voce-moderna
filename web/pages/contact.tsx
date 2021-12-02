@@ -4,7 +4,7 @@ import { MailIcon } from '@heroicons/react/outline';
 export default function Contact() {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'Contact',
+      title: 'Contact - Voce Moderna',
     },
   };
   return (

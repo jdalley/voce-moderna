@@ -18,7 +18,7 @@ export default function Aria({
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: `Aria - ${aria?.title ?? ''}`,
+      title: `Aria - ${aria?.title ?? ''} - Voce Moderna`,
     },
     preview,
   };

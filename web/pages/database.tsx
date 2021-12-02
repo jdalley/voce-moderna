@@ -97,7 +97,7 @@ export default function Database() {
   }
 
   const layoutProps: LayoutProps = {
-    customMeta: { title: 'Database' },
+    customMeta: { title: 'Database - Voce Moderna' },
   };
   const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'

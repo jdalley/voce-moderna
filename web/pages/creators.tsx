@@ -21,7 +21,7 @@ export default function Creators({
 }) {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'Creators',
+      title: 'Creators - Voce Moderna',
     },
   };
 

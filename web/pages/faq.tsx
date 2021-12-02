@@ -47,7 +47,7 @@ const faqs = [
 export default function Faq() {
   const layoutProps: LayoutProps = {
     customMeta: {
-      title: 'FAQ',
+      title: 'FAQ - Voce Moderna',
     },
   };
   return (
