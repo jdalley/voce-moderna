@@ -23,7 +23,7 @@ export default function Contact() {
           </div>
           <div className="mt-8 text-lg">
             <div className="flex justify-center items-center">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <MailIcon
                   className="h-6 w-6 text-gray-400"
                   aria-hidden="true"

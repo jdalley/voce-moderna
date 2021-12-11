@@ -63,7 +63,7 @@ export default function Creators({
                   return (
                     <li key={creator.slug.current} className="bg-white">
                       <div className="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
-                        <div className="flex-shrink-0">
+                        <div className="shrink-0">
                           {creator.photo ? (
                             <img
                               className="h-10 w-10 rounded-full"

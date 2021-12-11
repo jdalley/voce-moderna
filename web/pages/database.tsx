@@ -101,11 +101,11 @@ export default function Database() {
   };
   const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'
-      ? 'bg-gradient-to-tr from-yellow-300 via-cyan-600 to-rose-600'
+      ? 'bg-gradient-to-tr from-amber-300 via-cyan-600 to-rose-600'
       : `bg-gradient-to-r ${voiceToGradientMap[voiceType]}`;
   const voiceTypeHoverGradient =
     voiceType === '' || voiceType === 'all'
-      ? 'hover:from-yellow-400 hover:via-cyan-700 hover:to-rose-700'
+      ? 'hover:from-amber-400 hover:via-cyan-700 hover:to-rose-700'
       : `${voiceHoverToGradientMap[voiceType]}`;
 
   return (

@@ -55,7 +55,7 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
       <div className="bg-white flex flex-col min-h-screen justify-between">
         <PreviewAlert preview={preview} />
         <Header />
-        <main id="skip" className="flex-grow">
+        <main id="skip" className="grow">
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">{children}</div>
         </main>
         <Footer />
