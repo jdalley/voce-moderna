@@ -28,3 +28,13 @@
 #snipcart .snipcart-item-line--cart-edit .snipcart-item-line__title {
   padding-left: 0;
 }
+
+/* Fix for transparent checkout button after Tailwind V3 upgrade */
+.snipcart-button-primary.snipcart-base-button {
+  color: #fff;
+  color: var(--color-buttonPrimary, #fff);
+  border-color: transparent;
+  border-color: var(--borderColor-buttonPrimary, transparent);
+  background-color: #1a4db3;
+  background-color: var(--bgColor-buttonPrimary, #1a4db3);
+}
