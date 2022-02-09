@@ -8,7 +8,7 @@ export default function ScoreLink({ link }: { link: ExternalLink }) {
   return (
     <>
       <p>{link.description}</p>
-      <span className="inline-flex items-center my-1 text-cyan-600">
+      <span className="my-1 inline-flex items-center text-cyan-600">
         <a
           href={link.url}
           className="hover:underline"
@@ -17,7 +17,7 @@ export default function ScoreLink({ link }: { link: ExternalLink }) {
         >
           Get It Here
         </a>
-        <ExternalLinkIcon className="h-4 w-4 mx-1" />
+        <ExternalLinkIcon className="mx-1 h-4 w-4" />
       </span>
     </>
   );

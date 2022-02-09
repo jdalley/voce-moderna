@@ -38,6 +38,7 @@
     "eslint-config-next": "^12.0.7",
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
     "sanity-codegen": "^0.9.8",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",

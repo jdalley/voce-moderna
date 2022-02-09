@@ -52,11 +52,11 @@ export default function Layout({ children, customMeta, preview }: LayoutProps) {
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-      <div className="bg-white flex flex-col min-h-screen justify-between">
+      <div className="flex min-h-screen flex-col justify-between bg-white">
         <PreviewAlert preview={preview} />
         <Header />
         <main id="skip" className="grow">
-          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">{children}</div>
+          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
         </main>
         <Footer />
       </div>

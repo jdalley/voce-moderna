@@ -39,26 +39,26 @@ export default function Header() {
   return (
     <header>
       <div className="relative">
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 sm:space-x-10 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:space-x-10 sm:px-6 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <a className="h-8 w-12 bg-vm-logo bg-no-repeat bg-contain">
+              <a className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat">
                 <span className="sr-only">Project Voce Moderna</span>
               </a>
             </Link>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="-my-2 -mr-2 md:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
               aria-expanded="false"
             >
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" />
             </button>
           </div>
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden space-x-10 md:flex">
             <Link href="/">
               <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Home
@@ -90,8 +90,8 @@ export default function Header() {
               </a>
             </Link>
           </nav>
-          <div className="hidden md:flex items-center justify-end sm:flex-1 lg:w-0">
-            <span className="h-6 w-6 text-sm leading-normal mr-1 rounded-full border border-gray-400 bg-gray-100 text-center">
+          <div className="hidden items-center justify-end sm:flex-1 md:flex lg:w-0">
+            <span className="mr-1 h-6 w-6 rounded-full border border-gray-400 bg-gray-100 text-center text-sm leading-normal">
               {cartCount}
             </span>
             <button type="button" className="snipcart-checkout">
@@ -107,17 +107,17 @@ export default function Header() {
           leave="ease-in duration-100 "
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
-          className="absolute z-30 top-0 inset-x-0 p-2 transition origin-top-right md:hidden"
+          className="absolute inset-x-0 top-0 z-30 origin-top-right p-2 transition md:hidden"
         >
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
+          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <div className="h-8 w-12 bg-vm-logo bg-no-repeat bg-contain"></div>
+                <div className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat"></div>
                 <div className="-mr-2">
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                   >
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" />
@@ -127,42 +127,42 @@ export default function Header() {
               <div className="mt-6">
                 <nav className="grid grid-cols-1 gap-7">
                   <Link href="/">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         Home
                       </div>
                     </a>
                   </Link>
                   <Link href="/database">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         Database
                       </div>
                     </a>
                   </Link>
                   <Link href="/creators">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         Creators
                       </div>
                     </a>
                   </Link>
                   <Link href="/about">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         About
                       </div>
                     </a>
                   </Link>
                   <Link href="/faq">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         FAQ
                       </div>
                     </a>
                   </Link>
                   <Link href="/contact">
-                    <a className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                       <div className="text-base font-medium text-gray-900">
                         Contact
                       </div>
@@ -172,11 +172,11 @@ export default function Header() {
               </div>
             </div>
             <div
-              className="py-6 px-5 snipcart-checkout"
+              className="snipcart-checkout py-6 px-5"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <div className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                <span className="h-6 w-6 text-sm leading-normal mr-1 rounded-full border border-gray-400 bg-gray-100 text-center">
+              <div className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                <span className="mr-1 h-6 w-6 rounded-full border border-gray-400 bg-gray-100 text-center text-sm leading-normal">
                   {cartCount}
                 </span>
                 <ShoppingBagIcon className="h-6 w-6" />

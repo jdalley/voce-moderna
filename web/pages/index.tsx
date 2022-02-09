@@ -40,7 +40,7 @@ export default function Index({
           />
         </div>
       </div>
-      <div className="relative hidden lg:block lg:mt-2.5 lg:py-0">
+      <div className="relative hidden lg:mt-2.5 lg:block lg:py-0">
         <svg
           className=" absolute lg:-right-8 lg:left-auto lg:-top-2"
           width="404"
@@ -75,14 +75,14 @@ export default function Index({
         </svg>
       </div>
       <div className="relative mx-auto px-4 xs:pt-2 sm:px-0 md:pt-4 lg:max-w-none">
-        <div className="bg-white rounded-2xl shadow-lg lg:shadow-xl">
-          <div className="text-center pt-10 pb-6 xs:py-10 sm:py-16 px-4 sm:px-6 lg:py-24 lg:px-12">
-            <h2 className="text-xl tracking-tight font-extrabold text-gray-800 xs:text-2xl sm:text-2xl md:text-3xl">
+        <div className="rounded-2xl bg-white shadow-lg lg:shadow-xl">
+          <div className="px-4 pt-10 pb-6 text-center xs:py-10 sm:py-16 sm:px-6 lg:py-24 lg:px-12">
+            <h2 className="text-xl font-extrabold tracking-tight text-gray-800 xs:text-2xl sm:text-2xl md:text-3xl">
               Welcome to <i>VOCE MODERNA</i>
             </h2>
             <p
               id="intro-blurb"
-              className="max-w-2xl mx-auto mt-4 xs:text-lg md:text-xl text-gray-500 "
+              className="mx-auto mt-4 max-w-2xl text-gray-500 xs:text-lg md:text-xl "
             >
               A new and ongoing resource to help connect singers with
               contemporary opera arias. Head over to the Database to get

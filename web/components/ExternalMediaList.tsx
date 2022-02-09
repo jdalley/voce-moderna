@@ -16,7 +16,7 @@ export default function ExternalMediaList({
           <a href={link.url} className=" hover:underline">
             {link.description}
           </a>
-          <ExternalLinkIcon className="inline-block mb-1 h-4 w-4 mx-1" />
+          <ExternalLinkIcon className="mx-1 mb-1 inline-block h-4 w-4" />
         </li>
       ))}
     </ul>

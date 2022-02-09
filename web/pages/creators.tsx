@@ -27,7 +27,7 @@ export default function Creators({
 
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <div className="max-w-2xl mx-auto text-center pt-6 pb-10 px-2">
+      <div className="mx-auto max-w-2xl px-2 pt-6 pb-10 text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Creators
         </h2>
@@ -43,11 +43,11 @@ export default function Creators({
           currently displayed on the VM Database, or is soon to be added.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto">
+      <div className="mx-auto max-w-2xl">
         <nav className="h-full" aria-label="Directory">
           {Object.keys(directory).map((letter) => (
             <div key={letter} className="relative">
-              <div className="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
+              <div className="sticky top-0 z-10 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
                 <h3>{letter}</h3>
               </div>
               <ul className="relative z-0 divide-y divide-gray-200">
@@ -62,7 +62,7 @@ export default function Creators({
                   );
                   return (
                     <li key={creator.slug.current} className="bg-white">
-                      <div className="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
+                      <div className="relative flex items-center space-x-3 px-6 py-5 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 hover:bg-gray-50">
                         <div className="shrink-0">
                           {creator.photo ? (
                             <img
@@ -74,12 +74,12 @@ export default function Creators({
                                 .url()}
                             />
                           ) : (
-                            <span className="inline-flex items-center justify-center h-10 w-10 rounded-full font-bold bg-gray-100 ">
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 font-bold ">
                               <span className="">{initials}</span>
                             </span>
                           )}
                         </div>
-                        <div className="flex-1 min-w-0">
+                        <div className="min-w-0 flex-1">
                           <Link href={`/creators/${creator.slug.current}`}>
                             <a className="focus:outline-none">
                               <span
@@ -89,7 +89,7 @@ export default function Creators({
                               <p className="text-sm font-medium text-gray-900">
                                 {fullName}
                               </p>
-                              <p className="text-sm text-gray-500 truncate"></p>
+                              <p className="truncate text-sm text-gray-500"></p>
                             </a>
                           </Link>
                         </div>

@@ -39,7 +39,7 @@ export default function TrackButtons({
         className={classNames(
           buttonClasses,
           'mt-2',
-          'sm:ml-4 sm:my-0',
+          'sm:my-0 sm:ml-4',
           'from-blue-600 to-violet-500',
           'hover:from-blue-700 hover:to-violet-600'
         )}

@@ -11,20 +11,23 @@ export default function SearchResults({
   loading: boolean;
 }) {
   const [sortConfig, setSortConfig] = useState(null);
-  
+
   const doSort = (key: string) => {
     let direction = 'ascending';
-    if (sortConfig !== null && 
-      sortConfig.key === key && sortConfig.direction === 'ascending') {
+    if (
+      sortConfig !== null &&
+      sortConfig.key === key &&
+      sortConfig.direction === 'ascending'
+    ) {
       direction = 'descending';
     }
     setSortConfig({ key, direction });
-  }
+  };
 
   const sortedResults = useMemo(() => {
     let resultsToSort = [...results];
     if (sortConfig !== null) {
-      switch(sortConfig.key) {
+      switch (sortConfig.key) {
         case 'opera':
           resultsToSort.sort((a, b) => {
             if (a.opera.title.toLowerCase() < b.opera.title.toLowerCase()) {
@@ -49,12 +52,16 @@ export default function SearchResults({
           break;
         case 'composer':
           resultsToSort.sort((a, b) => {
-            if (a.opera.composers[0].lastName.toLowerCase() 
-              < b.opera.composers[0].lastName.toLowerCase()) {
+            if (
+              a.opera.composers[0].lastName.toLowerCase() <
+              b.opera.composers[0].lastName.toLowerCase()
+            ) {
               return sortConfig.direction === 'ascending' ? -1 : 1;
             }
-            if (a.opera.composers[0].lastName.toLowerCase() 
-              > b.opera.composers[0].lastName.toLowerCase()) {
+            if (
+              a.opera.composers[0].lastName.toLowerCase() >
+              b.opera.composers[0].lastName.toLowerCase()
+            ) {
               return sortConfig.direction === 'ascending' ? 1 : -1;
             }
             return 0;
@@ -62,12 +69,16 @@ export default function SearchResults({
           break;
         case 'librettist':
           resultsToSort.sort((a, b) => {
-            if (a.opera.librettists[0].lastName.toLowerCase() 
-              < b.opera.librettists[0].lastName.toLowerCase()) {
+            if (
+              a.opera.librettists[0].lastName.toLowerCase() <
+              b.opera.librettists[0].lastName.toLowerCase()
+            ) {
               return sortConfig.direction === 'ascending' ? -1 : 1;
             }
-            if (a.opera.librettists[0].lastName.toLowerCase() 
-              > b.opera.librettists[0].lastName.toLowerCase()) {
+            if (
+              a.opera.librettists[0].lastName.toLowerCase() >
+              b.opera.librettists[0].lastName.toLowerCase()
+            ) {
               return sortConfig.direction === 'ascending' ? 1 : -1;
             }
             return 0;
@@ -77,11 +88,11 @@ export default function SearchResults({
     }
     return resultsToSort;
   }, [results, sortConfig]);
-  
+
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
           {loading ? (
             <LoadingSpinner />
           ) : (
@@ -92,45 +103,49 @@ export default function SearchResults({
             )
           )}
           {!loading && sortedResults?.length > 0 && (
-            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th
-                      scope="col" className="px-6 py-3 text-left"
-                    >
-                      <button type="button" onClick={() => doSort('opera')}
-                       className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left">
+                      <button
+                        type="button"
+                        onClick={() => doSort('opera')}
+                        className="text-xs font-medium uppercase tracking-wider text-gray-500"
+                      >
                         Opera
                       </button>
                     </th>
-                    <th
-                      scope="col" className="px-6 py-3 text-left"
-                    >
-                      <button type="button" onClick={() => doSort('aria')}
-                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left">
+                      <button
+                        type="button"
+                        onClick={() => doSort('aria')}
+                        className="text-xs font-medium uppercase tracking-wider text-gray-500"
+                      >
                         Aria
                       </button>
                     </th>
-                    <th
-                      scope="col" className="px-6 py-3 text-left"
-                    >
-                      <button type="button" onClick={() => doSort('composer')}
-                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left">
+                      <button
+                        type="button"
+                        onClick={() => doSort('composer')}
+                        className="text-xs font-medium uppercase tracking-wider text-gray-500"
+                      >
                         Composer
                       </button>
                     </th>
-                    <th
-                      scope="col" className="px-6 py-3 text-left"
-                    >
-                      <button type="button" onClick={() => doSort('librettist')}
-                        className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left">
+                      <button
+                        type="button"
+                        onClick={() => doSort('librettist')}
+                        className="text-xs font-medium uppercase tracking-wider text-gray-500"
+                      >
                         Librettist
                       </button>
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="divide-y divide-gray-200 bg-white">
                   {sortedResults?.map((result) => (
                     <SearchResultRow key={result.ariaSlug} result={result} />
                   ))}

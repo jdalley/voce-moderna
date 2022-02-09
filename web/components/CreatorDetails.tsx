@@ -12,7 +12,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
   const initials = getInitials(creator.firstName, creator.lastName);
 
   return (
-    <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
+    <div className="mx-auto max-w-5xl overflow-hidden bg-white shadow sm:mt-4 sm:rounded-lg">
       <div>
         <div className="relative h-44 w-full lg:h-64">
           <Image
@@ -33,7 +33,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
                   src={urlForImage(creator.photo).width(128).height(128).url()}
                 />
               ) : (
-                <span className="flex items-center justify-center h-24 w-24 rounded-full font-bold text-5xl bg-gray-100 ring-4 ring-white sm:text-6xl sm:h-32 sm:w-32">
+                <span className="flex h-24 w-24 items-center justify-center rounded-full bg-gray-100 text-5xl font-bold ring-4 ring-white sm:h-32 sm:w-32 sm:text-6xl">
                   <span className="mb-2">{initials}</span>
                 </span>
               )}
@@ -42,15 +42,15 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         </div>
       </div>
       <div className="px-4 py-5 sm:px-9">
-        <h1 className="text-lg leading-6 font-medium text-gray-900">
+        <h1 className="text-lg font-medium leading-6 text-gray-900">
           {fullName}
         </h1>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:pb-9 sm:px-9">
+      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
-            <dd className="inline-flex items-center break-all mt-1 text-cyan-600 ">
+            <dd className="mt-1 inline-flex items-center break-all text-cyan-600 ">
               <a
                 href={creator.website}
                 className=" hover:underline"
@@ -58,7 +58,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
                 rel="noopener noreferrer"
               >
                 {creator.website}
-                <ExternalLinkIcon className="inline h-4 w-4 mx-1" />
+                <ExternalLinkIcon className="mx-1 inline h-4 w-4" />
               </a>
             </dd>
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>
@@ -78,7 +78,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
           </div>
           <div className="sm:col-span-2">
             <dt className=" font-medium text-gray-500">Biography</dt>
-            <dd className="mt-1 text-gray-900 prose max-w-2xl">
+            <dd className="prose mt-1 max-w-2xl text-gray-900">
               <BlockContent blocks={creator.bio} />
             </dd>
           </div>

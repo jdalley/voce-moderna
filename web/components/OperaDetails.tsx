@@ -9,7 +9,7 @@ import type { Opera } from 'types/sanity';
 
 export default function OperaDetails({ opera }: { opera: Opera }) {
   return (
-    <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
+    <div className="mx-auto max-w-5xl overflow-hidden bg-white shadow sm:mt-4 sm:rounded-lg">
       <div className="relative h-44 w-full lg:h-64">
         <Image
           src={SplashBanner}
@@ -24,7 +24,7 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
           {opera.title}
         </h1>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:pb-9 sm:px-9">
+      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Composer</dt>
@@ -76,7 +76,7 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
           </div>
           <div className="sm:col-span-2">
             <dt className=" font-medium text-gray-500">Synopsis</dt>
-            <dd className="mt-1 text-gray-900 prose max-w-2xl">
+            <dd className="prose mt-1 max-w-2xl text-gray-900">
               {opera.synopsis !== undefined && (
                 <BlockContent blocks={opera.synopsis} />
               )}

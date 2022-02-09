@@ -36,8 +36,8 @@ export default function CreatorList({
                 className={classNames(
                   splitLine ? 'flex' : 'inline-flex',
                   'items-center justify-center',
-                  'h-8 w-8 mr-3 rounded-full',
-                  'font-bold bg-gray-100'
+                  'mr-3 h-8 w-8 rounded-full',
+                  'bg-gray-100 font-bold'
                 )}
               >
                 <span className="">{initials}</span>

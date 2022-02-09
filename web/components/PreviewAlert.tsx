@@ -11,7 +11,7 @@ export default function PreviewAlert({ preview }: { preview: boolean }) {
         <div className="py-2 text-center text-sm">
           This page is a preview.{' '}
           <Link href="/api/exit-preview">
-            <a className="underline hover:text-cyan duration-200 transition-colors">
+            <a className="hover:text-cyan underline transition-colors duration-200">
               Click here
             </a>{' '}
           </Link>

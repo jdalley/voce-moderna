@@ -52,7 +52,7 @@ export default function Faq() {
   };
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <div className="max-w-4xl mx-auto py-4 px-4 sm:py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl py-4 px-4 sm:py-14 sm:px-6 lg:px-8">
         <div className="max-w-2xl lg:mx-auto lg:text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Frequently Asked Questions
@@ -65,7 +65,7 @@ export default function Faq() {
           </p>
         </div>
         <div className="mt-14">
-          <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10">
+          <dl className="space-y-10 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10 lg:space-y-0">
             {faqs.map((faq) => (
               <div key={faq.id}>
                 <dt className="font-semibold text-gray-900">{faq.question}</dt>

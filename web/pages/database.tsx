@@ -110,14 +110,14 @@ export default function Database() {
 
   return (
     <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
-      <div className="max-w-4xl mx-auto grid grid-cols-1 gap-4 sm:py-2 lg:py-8 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid-cols-10 lg:gap-6">
-        <div className="bg-white sticky top-0 sm:top-6 lg:relative lg:top-0 lg:col-span-3">
+      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:grid-cols-10 lg:gap-6 lg:py-8 lg:px-8">
+        <div className="sticky top-0 bg-white sm:top-6 lg:relative lg:top-0 lg:col-span-3">
           <div aria-label="Search criteria" className="lg:sticky lg:top-6">
-            <div className="flex flex-col rounded-lg shadow overflow-hidden border-b border-gray-200">
+            <div className="flex flex-col overflow-hidden rounded-lg border-b border-gray-200 shadow">
               <div className={classNames('h-20', voiceTypeGradient)}></div>
               <form
                 onSubmit={handleSearch}
-                className="-mt-14 mx-2 px-3 pt-3 pb-4 bg-white rounded-lg flex-1 flex flex-col justify-between space-y-4 sm:px-20 lg:px-4"
+                className="mx-2 -mt-14 flex flex-1 flex-col justify-between space-y-4 rounded-lg bg-white px-3 pt-3 pb-4 sm:px-20 lg:px-4"
               >
                 <div>
                   <label
@@ -131,7 +131,7 @@ export default function Database() {
                     name="voiceType"
                     value={voiceType}
                     onChange={(e) => setVoiceType(e.target.value)}
-                    className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:py-2 sm:text-sm"
                   >
                     <option value="" disabled>
                       Select voice type...
@@ -158,7 +158,7 @@ export default function Database() {
                     name="searchType"
                     value={searchType}
                     onChange={(e) => setSearchType(e.target.value)}
-                    className="mt-1 block w-full pl-3 pr-10 py-1 sm:py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:py-2 sm:text-sm"
                   >
                     {Object.entries(searchTypes).map(([key, value]) => {
                       return (
@@ -176,13 +176,13 @@ export default function Database() {
                     id="searchTerm"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="shadow-sm py-1 sm:py-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                    className="block w-full rounded-md border-gray-300 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:py-2 sm:text-sm"
                     placeholder="Search"
                   />
                   <button
                     type="reset"
                     onClick={handleReset}
-                    className="absolute top-[5px] right-[9px] p-1 text-gray-400 bg-transparent rounded-md cursor-pointer sm:top-[7px] sm:right-2 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    className="absolute top-[5px] right-[9px] cursor-pointer rounded-md bg-transparent p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:top-[7px] sm:right-2"
                   >
                     <span className="sr-only">Clear search</span>
                     <XIcon className="h-4 w-4" />
@@ -192,14 +192,14 @@ export default function Database() {
                   <button
                     type="submit"
                     className={classNames(
-                      'w-full inline-flex items-center px-4 py-2',
-                      'shadow-sm text-base font-medium rounded-md text-white',
-                      'sm:w-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                      'inline-flex w-full items-center px-4 py-2',
+                      'rounded-md text-base font-medium text-white shadow-sm',
+                      'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto',
                       voiceTypeGradient,
                       voiceTypeHoverGradient
                     )}
                   >
-                    <SearchIcon className="h-6 w-6 mr-2" /> Search
+                    <SearchIcon className="mr-2 h-6 w-6" /> Search
                   </button>
                 </div>
               </form>

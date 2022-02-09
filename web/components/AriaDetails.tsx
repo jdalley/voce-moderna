@@ -11,7 +11,7 @@ import type { Aria } from 'types/sanity';
 
 export default function AriaDetails({ aria }: { aria: Aria }) {
   return (
-    <div className="max-w-5xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg sm:mt-4">
+    <div className="mx-auto max-w-5xl overflow-hidden bg-white shadow sm:mt-4 sm:rounded-lg">
       <div className="relative h-44 w-full lg:h-64">
         <Image
           src={SplashBanner}
@@ -21,7 +21,7 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
           priority
         />
       </div>
-      <div className="flex flex-col px-4 py-5 sm:px-9 sm:justify-between sm:flex-row">
+      <div className="flex flex-col px-4 py-5 sm:flex-row sm:justify-between sm:px-9">
         <h1 className="text-xl font-medium leading-9 text-gray-900">
           {aria.title}
         </h1>
@@ -32,9 +32,9 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
           />
         </div>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:pb-9 sm:px-9">
+      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
         <div className="grid grid-cols-1 gap-4 md:grid-flow-col-dense md:grid-cols-2 md:grid-rows-1">
-          <dl className="mt-3 row-start-2 md:col-start-1 md:row-start-1 md:mt-0">
+          <dl className="row-start-2 mt-3 md:col-start-1 md:row-start-1 md:mt-0">
             <dt className="font-medium text-gray-500">Composer</dt>
             <dd className="mt-1">
               <CreatorList creators={aria.opera.composers} />
@@ -79,7 +79,7 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
             <dd className="mt-1">{aria.character}</dd>
 
             <dt className="mt-6 font-medium text-gray-500">Description</dt>
-            <dd className="mt-1 text-gray-900 prose max-w-2xl">
+            <dd className="prose mt-1 max-w-2xl text-gray-900">
               <BlockContent blocks={aria.description} />
             </dd>
 

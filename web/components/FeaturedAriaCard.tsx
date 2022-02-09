@@ -12,7 +12,7 @@ export default function FeaturedAriaCard({
   const aria = featuredAria.aria;
 
   return (
-    <article className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <article className="flex flex-col overflow-hidden rounded-lg shadow-lg">
       <div
         className={classNames(
           'h-24',
@@ -20,14 +20,14 @@ export default function FeaturedAriaCard({
           voiceToGradientMap[aria.voiceType.name]
         )}
       ></div>
-      <div className="-mt-10 mx-5 px-8 pt-6 pb-7 bg-white rounded-lg flex-1 flex flex-col justify-between ">
+      <div className="mx-5 -mt-10 flex flex-1 flex-col justify-between rounded-lg bg-white px-8 pt-6 pb-7 ">
         <div className="flex-1">
           <dt className="font-medium text-gray-500">Voice Type</dt>
           <dd className="mt-1">
             <span className="text-gray-900">{aria.voiceType.displayName}</span>
           </dd>
         </div>
-        <div className="flex-1 mt-3">
+        <div className="mt-3 flex-1">
           <dt className="font-medium text-gray-500">Aria</dt>
           <dd className="mt-1">
             <Link href={'/arias/' + aria.slug.current}>
@@ -35,7 +35,7 @@ export default function FeaturedAriaCard({
             </Link>
           </dd>
         </div>
-        <div className="flex-1 mt-3">
+        <div className="mt-3 flex-1">
           <dt className="font-medium text-gray-500">Opera</dt>
           <dd className="mt-1">
             <Link href={'/operas/' + aria.opera.slug.current}>
@@ -45,13 +45,13 @@ export default function FeaturedAriaCard({
             </Link>
           </dd>
         </div>
-        <div className="flex-1 mt-3 ">
+        <div className="mt-3 flex-1 ">
           <dt className="font-medium text-gray-500">Composer</dt>
           <dd className="mt-1">
             <CreatorList creators={aria.opera.composers} />
           </dd>
         </div>
-        <div className="flex-1 mt-3 ">
+        <div className="mt-3 flex-1 ">
           <dt className="font-medium text-gray-500">Librettist</dt>
           <dd className="mt-1">
             <CreatorList creators={aria.opera.librettists} />
