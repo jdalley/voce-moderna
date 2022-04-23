@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://cdn.snipcart.com" />
           <link
             rel="stylesheet"
-            href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css"
+            href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css"
           />
           <link
             rel="preload"
@@ -52,16 +52,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            async
-            src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"
-          ></script>
-          <div
-            hidden
-            id="snipcart"
-            data-api-key={process.env.SNIPCART_PUBLIC_API_KEY}
-            data-config-modal-style="side"
-          ></div>
         </body>
       </Html>
     );
