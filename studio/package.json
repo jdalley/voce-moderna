@@ -14,26 +14,26 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.20.0",
+    "@sanity/base": "^2.30.1",
     "@sanity/components": "^2.14.0",
-    "@sanity/core": "^2.20.0",
-    "@sanity/dashboard": "^2.20.0",
-    "@sanity/default-layout": "^2.20.0",
-    "@sanity/default-login": "^2.19.0",
-    "@sanity/desk-tool": "^2.20.0",
-    "@sanity/production-preview": "^2.15.0",
-    "@sanity/types": "^2.19.0",
-    "@sanity/vision": "^2.20.0",
-    "prop-types": "^15.7",
+    "@sanity/core": "^2.30.1",
+    "@sanity/dashboard": "^2.30.1",
+    "@sanity/default-layout": "^2.30.1",
+    "@sanity/default-login": "^2.30.1",
+    "@sanity/desk-tool": "^2.30.1",
+    "@sanity/production-preview": "^2.29.3",
+    "@sanity/types": "^2.29.5",
+    "@sanity/vision": "^2.30.1",
+    "prop-types": "^15.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sanity-plugin-vercel-deploy": "^2.0.1",
-    "styled-components": "^5.3.1"
+    "sanity-plugin-vercel-deploy": "^2.1.6",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "prettier": "^2.4.1",
-    "sanity-codegen": "^0.9.5",
-    "typescript": "^4.4.3"
+    "prettier": "^2.6.2",
+    "sanity-codegen": "^0.9.8",
+    "typescript": "^4.7.3"
   },
   "prettier": {
     "arrowParens": "always",
