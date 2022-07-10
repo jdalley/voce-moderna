@@ -24,7 +24,7 @@ export default function TrackButtons({
     return (
       <>
         <div className="h-full text-right text-gray-900">
-          <p>Want to request a track? Email us here:</p>
+          <p>Request a practice track for this aria here:</p>
           <div>
             <a
               className="ml-1 text-cyan-600 hover:underline"
