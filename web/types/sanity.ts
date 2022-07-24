@@ -56,6 +56,7 @@ export interface Opera extends SanityDocument {
   librettists?: Array<Creator>;
   sourceMaterial?: string;
   synopsis?: Array<SanityKeyed<SanityBlock>>;
+  premiereInformation?: Array<SanityKeyed<SanityBlock>>;
   scoreLink?: ExternalLink;
   mediaLinks?: Array<SanityKeyed<ExternalLink>>;
   arias?: Array<Aria>;

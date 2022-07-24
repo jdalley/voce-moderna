@@ -80,6 +80,7 @@ export const operaBySlugQuery = groq`
 		slug,
 		sourceMaterial,
 		synopsis,
+        premiereInformation,
 		composers[]->{
 			${shortCreatorFields}
 		},

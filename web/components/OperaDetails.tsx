@@ -75,12 +75,23 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
             )}
           </div>
           <div className="sm:col-span-2">
-            <dt className=" font-medium text-gray-500">Synopsis</dt>
+            <dt className="font-medium text-gray-500">Synopsis</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
               {opera.synopsis !== undefined && (
                 <BlockContent blocks={opera.synopsis} />
               )}
             </dd>
+            {opera.premiereInformation !== undefined &&
+              opera.premiereInformation && (
+                <>
+                  <dt className="font-medium text-gray-500">
+                    Premiere Information
+                  </dt>
+                  <dd className="prose mt-1 max-w-2xl text-gray-900">
+                    <BlockContent blocks={opera.premiereInformation} />
+                  </dd>
+                </>
+              )}
           </div>
         </dl>
       </div>
