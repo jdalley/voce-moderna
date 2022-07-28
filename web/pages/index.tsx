@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import VMHero from '../public/images/vm-hero.png';
 import { featuredAriasQuery } from '@utils/queries';
