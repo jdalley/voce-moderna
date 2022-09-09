@@ -56,6 +56,12 @@ export default {
       of: [{ type: 'block' }]
     },
     {
+      name: 'premiereInformation',
+      title: 'Premiere Information',
+      type: 'array',
+      of: [{ type: 'block' }]
+    },
+    {
       name: 'scoreLink',
       title: 'Score Link',
       type: 'externalLink'
