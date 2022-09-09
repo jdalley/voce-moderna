@@ -84,6 +84,11 @@ export default function Header() {
                 FAQ
               </a>
             </Link>
+            <Link href="/resources">
+              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
+                Resources
+              </a>
+            </Link>
             <Link href="/contact">
               <a className="text-base font-medium text-gray-600 hover:text-gray-900">
                 Contact
