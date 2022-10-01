@@ -1,5 +1,4 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import Link from 'next/link';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 
 const resources = [
@@ -52,20 +51,14 @@ const resources = [
     urlText: `Donne, Women in Music`,
   },
   {
-    description: `A nonprofit database, charting the
-		lives and works of composers in the here and now.`,
-    url: `http://www.composers21.com`,
-    urlText: `The Living Composers Project`,
+    description: `A collection of fifty new art songs set exclusively to Irish language texts.`,
+    url: `https://www.cmc.ie/AmhrainEalaineGhaeilge`,
+    urlText: `Irish Language Art Song Project`,
   },
   {
     description: ``,
     url: `https://www.operaamerica.org/industry-resources/`,
     urlText: `Opera America: Industry Resources`,
-  },
-  {
-    description: `A comprehensive database of operas and arias.`,
-    url: `https://theoperadatabase.com/`,
-    urlText: `The Opera Database`,
   },
   {
     description: `A simple way to search through the vast number of art
@@ -75,11 +68,23 @@ const resources = [
     urlText: `SongHelix`,
   },
   {
+    description: `A nonprofit database, charting the
+		lives and works of composers in the here and now.`,
+    url: `http://www.composers21.com`,
+    urlText: `The Living Composers Project`,
+  },
+
+  {
+    description: `A comprehensive database of operas and arias.`,
+    url: `https://theoperadatabase.com/`,
+    urlText: `The Opera Database`,
+  },
+  {
     description: `The mission of United in Opera is to inspire
 		creativity, provide vital resources, and to mentor musicians so
 		that they may have an impact on the opera world. We support
 		musicians without regards to race, ethnicity, gender, sexuality,
-		of financial situation.`,
+		or financial situation.`,
     url: `https://www.unitedinopera.org/`,
     urlText: `United in Opera`,
   },
