@@ -33,9 +33,9 @@ export default function Index({
         <div className="absolute inset-0">
           <Image
             src={VMHero}
+            className="object-cover"
             alt="Layered smudges of paint and the words Voce Modern - A Contemporary Aria Project"
-            layout="fill"
-            objectFit="cover"
+            fill
           />
         </div>
       </div>

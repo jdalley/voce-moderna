@@ -17,9 +17,9 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         <div className="relative h-44 w-full lg:h-64">
           <Image
             src={SplashBanner}
+            className="object-cover"
             alt="Layered smudges of paint"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
           />
         </div>
