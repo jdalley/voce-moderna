@@ -48,10 +48,11 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
               <ul>
                 {opera.arias.map((aria) => (
                   <li key={aria.slug.current}>
-                    <Link href={`/arias/${aria.slug.current}`}>
-                      <a className="text-cyan-600 hover:underline">
-                        {aria.title}
-                      </a>
+                    <Link
+                      href={`/arias/${aria.slug.current}`}
+                      className="text-cyan-600 hover:underline"
+                    >
+                      {aria.title}
                     </Link>
                   </li>
                 ))}

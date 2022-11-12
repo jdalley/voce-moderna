@@ -9,50 +9,59 @@ export default function Footer() {
           aria-label="Footer"
         >
           <div className="px-5 py-2">
-            <Link href="/">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                Home
-              </a>
+            <Link
+              href="/"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              Home
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/database">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                Database
-              </a>
+            <Link
+              href="/database"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              Database
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/creators">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                Creators
-              </a>
+            <Link
+              href="/creators"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              Creators
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/about">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                About
-              </a>
+            <Link
+              href="/about"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              About
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/faq">
-              <a className="text-base text-gray-600 hover:text-gray-900">FAQ</a>
+            <Link
+              href="/faq"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              FAQ
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/resources">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                Resources
-              </a>
+            <Link
+              href="/resources"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              Resources
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/contact">
-              <a className="text-base text-gray-600 hover:text-gray-900">
-                Contact
-              </a>
+            <Link
+              href="/contact"
+              className="text-base text-gray-600 hover:text-gray-900"
+            >
+              Contact
             </Link>
           </div>
         </nav>

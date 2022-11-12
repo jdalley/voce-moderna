@@ -66,10 +66,11 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
               <ul>
                 {creator.operas.map((opera) => (
                   <li key={opera.slug.current}>
-                    <Link href={`/operas/${opera.slug.current}`}>
-                      <a className="text-cyan-600 hover:underline">
-                        {opera.title}
-                      </a>
+                    <Link
+                      href={`/operas/${opera.slug.current}`}
+                      className="text-cyan-600 hover:underline"
+                    >
+                      {opera.title}
                     </Link>
                   </li>
                 ))}

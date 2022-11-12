@@ -59,8 +59,8 @@ export default function Faq() {
           </h2>
           <p className="mt-4 text-gray-500">
             Have another question?
-            <Link href="/contact">
-              <a className="text-cyan-600 hover:underline">{` Reach out!`}</a>
+            <Link href="/contact" className="text-cyan-600 hover:underline">
+              {` Reach out!`}
             </Link>
           </p>
         </div>

@@ -44,10 +44,11 @@ export default function CreatorList({
               </span>
             )}
 
-            <Link href={`/creators/${creator.slug.current}`}>
-              <a className="whitespace-nowrap text-cyan-600 hover:underline">
-                {`${fullName}`}
-              </a>
+            <Link
+              href={`/creators/${creator.slug.current}`}
+              className="whitespace-nowrap text-cyan-600 hover:underline"
+            >
+              {`${fullName}`}
             </Link>
           </li>
         );

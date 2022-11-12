@@ -47,10 +47,11 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
 
             <dt className="mt-6 font-medium text-gray-500">Opera</dt>
             <dd className="mt-1">
-              <Link href={`/operas/${aria.opera.slug.current}`}>
-                <a className="text-cyan-600 hover:underline">
-                  {aria.opera.title}
-                </a>
+              <Link
+                href={`/operas/${aria.opera.slug.current}`}
+                className="text-cyan-600 hover:underline"
+              >
+                {aria.opera.title}
               </Link>
             </dd>
 

@@ -80,17 +80,18 @@ export default function Creators({
                           )}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <Link href={`/creators/${creator.slug.current}`}>
-                            <a className="focus:outline-none">
-                              <span
-                                className="absolute inset-0"
-                                aria-hidden="true"
-                              />
-                              <p className="text-sm font-medium text-gray-900">
-                                {fullName}
-                              </p>
-                              <p className="truncate text-sm text-gray-500"></p>
-                            </a>
+                          <Link
+                            href={`/creators/${creator.slug.current}`}
+                            className="focus:outline-none"
+                          >
+                            <span
+                              className="absolute inset-0"
+                              aria-hidden="true"
+                            />
+                            <p className="text-sm font-medium text-gray-900">
+                              {fullName}
+                            </p>
+                            <p className="truncate text-sm text-gray-500"></p>
                           </Link>
                         </div>
                       </div>

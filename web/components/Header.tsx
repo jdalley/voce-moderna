@@ -41,10 +41,11 @@ export default function Header() {
       <div className="relative">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:space-x-10 sm:px-6 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
-              <a className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat">
-                <span className="sr-only">Project Voce Moderna</span>
-              </a>
+            <Link
+              href="/"
+              className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat"
+            >
+              <span className="sr-only">Project Voce Moderna</span>
             </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -59,40 +60,47 @@ export default function Header() {
             </button>
           </div>
           <nav className="hidden space-x-10 md:flex">
-            <Link href="/">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                Home
-              </a>
+            <Link
+              href="/"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              Home
             </Link>
-            <Link href="/database">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                Database
-              </a>
+            <Link
+              href="/database"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              Database
             </Link>
-            <Link href="/creators">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                Creators
-              </a>
+            <Link
+              href="/creators"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              Creators
             </Link>
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                About
-              </a>
+            <Link
+              href="/about"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              About
             </Link>
-            <Link href="/faq">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                FAQ
-              </a>
+            <Link
+              href="/faq"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              FAQ
             </Link>
-            <Link href="/resources">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                Resources
-              </a>
+            <Link
+              href="/resources"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              Resources
             </Link>
-            <Link href="/contact">
-              <a className="text-base font-medium text-gray-600 hover:text-gray-900">
-                Contact
-              </a>
+            <Link
+              href="/contact"
+              className="text-base font-medium text-gray-600 hover:text-gray-900"
+            >
+              Contact
             </Link>
           </nav>
           <div className="hidden items-center justify-end sm:flex-1 md:flex lg:w-0">
@@ -131,47 +139,53 @@ export default function Header() {
               </div>
               <div className="mt-6">
                 <nav className="grid grid-cols-1 gap-7">
-                  <Link href="/">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        Home
-                      </div>
-                    </a>
+                  <Link
+                    href="/"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      Home
+                    </div>
                   </Link>
-                  <Link href="/database">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        Database
-                      </div>
-                    </a>
+                  <Link
+                    href="/database"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      Database
+                    </div>
                   </Link>
-                  <Link href="/creators">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        Creators
-                      </div>
-                    </a>
+                  <Link
+                    href="/creators"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      Creators
+                    </div>
                   </Link>
-                  <Link href="/about">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        About
-                      </div>
-                    </a>
+                  <Link
+                    href="/about"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      About
+                    </div>
                   </Link>
-                  <Link href="/faq">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        FAQ
-                      </div>
-                    </a>
+                  <Link
+                    href="/faq"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      FAQ
+                    </div>
                   </Link>
-                  <Link href="/contact">
-                    <a className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                      <div className="text-base font-medium text-gray-900">
-                        Contact
-                      </div>
-                    </a>
+                  <Link
+                    href="/contact"
+                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                  >
+                    <div className="text-base font-medium text-gray-900">
+                      Contact
+                    </div>
                   </Link>
                 </nav>
               </div>
