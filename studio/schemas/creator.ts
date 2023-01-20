@@ -1,4 +1,4 @@
-import { SanityDocument, SlugSourceOptions } from '@sanity/types';
+import { SanityDocument, SlugSourceContext } from 'sanity';
 
 export default {
   name: 'creator',
@@ -20,7 +20,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: (doc: SanityDocument, options: SlugSourceOptions) =>
+        source: (doc: SanityDocument, options: SlugSourceContext) =>
           `${doc.firstName} ${doc.lastName}`,
         slugify: (input: string) =>
           input.toLowerCase().replace(/\s+/g, '-').slice(0, 96)

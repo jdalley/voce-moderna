@@ -1,4 +1,4 @@
-import { SanityDocument, SlugSourceOptions } from '@sanity/types';
+import { SanityDocument, SlugSourceContext } from 'sanity';
 
 export default {
   name: 'track',
@@ -16,7 +16,7 @@ export default {
       title: 'Id',
       type: 'slug',
       options: {
-        source: (doc: SanityDocument, options: SlugSourceOptions) => {
+        source: (doc: SanityDocument, options: SlugSourceContext) => {
           let parent: Record<string, unknown> = options.parent as Record<
             string,
             unknown
