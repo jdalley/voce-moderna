@@ -1,7 +1,10 @@
 import { FormEvent, MouseEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { parse } from 'querystring';
-import { SearchIcon, XIcon } from '@heroicons/react/solid';
+import {
+  MagnifyingGlassCircleIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid';
 import { searchTypes, voiceTypes } from '@utils/enums';
 import { sanityClient } from '@utils/sanity.server';
 import { getSearchQuery } from '@utils/queries';
@@ -109,7 +112,7 @@ export default function Database() {
       : `${voiceHoverToGradientMap[voiceType]}`;
 
   return (
-    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+    <Layout customMeta={layoutProps.customMeta}>
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:grid-cols-10 lg:gap-6 lg:py-8 lg:px-8">
         <div className="sticky top-0 bg-white sm:top-6 lg:relative lg:top-0 lg:col-span-3">
           <div aria-label="Search criteria" className="lg:sticky lg:top-6">
@@ -185,7 +188,7 @@ export default function Database() {
                     className="absolute top-[5px] right-[9px] cursor-pointer rounded-md bg-transparent p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:top-[7px] sm:right-2"
                   >
                     <span className="sr-only">Clear search</span>
-                    <XIcon className="h-4 w-4" />
+                    <XMarkIcon className="h-4 w-4" />
                   </button>
                 </div>
                 <div>
@@ -199,7 +202,8 @@ export default function Database() {
                       voiceTypeHoverGradient
                     )}
                   >
-                    <SearchIcon className="mr-2 h-6 w-6" /> Search
+                    <MagnifyingGlassCircleIcon className="mr-2 h-6 w-6" />{' '}
+                    Search
                   </button>
                 </div>
               </form>

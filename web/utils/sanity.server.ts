@@ -10,16 +10,9 @@ import { sanityConfig } from './config';
 export type QueryParams = { [key: string]: unknown };
 
 export const sanityClient = createClient(sanityConfig);
-export const previewClient = createClient({
-  ...sanityConfig,
-  useCdn: false,
-  token: process.env.SANITY_API_TOKEN,
-});
 
-export const getClient = (preview: boolean) =>
-  preview ? previewClient : sanityClient;
+export const getClient = () => sanityClient;
 
-// TODO: Implement this wrapping sanity client requests to support draft previews
 // TODO: Figure out what the `docs` type is
 // Use of any: type is whatever .result is in underlying fetch (next-sanity fetch = picosanity)
 export function overlayDrafts(docs: any) {

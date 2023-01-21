@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import type { ExternalLink } from 'types/sanity';
 
 export default function ScoreLink({ link }: { link: ExternalLink }) {
@@ -17,7 +17,7 @@ export default function ScoreLink({ link }: { link: ExternalLink }) {
         >
           Get It Here
         </a>
-        <ExternalLinkIcon className="mx-1 h-4 w-4" />
+        <ArrowTopRightOnSquareIcon className="mx-1 h-4 w-4" />
       </span>
     </>
   );

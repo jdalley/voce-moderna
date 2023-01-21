@@ -8,13 +8,7 @@ import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Creator as CreatorType } from 'types/sanity';
 import type { PathParams } from 'types/next';
 
-export default function Creator({
-  creator,
-  preview,
-}: {
-  creator: CreatorType;
-  preview: boolean;
-}) {
+export default function Creator({ creator }: { creator: CreatorType }) {
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
@@ -22,12 +16,11 @@ export default function Creator({
         creator?.lastName ?? ''
       } - Voce Moderna`,
     },
-    preview,
   };
 
   if (router.isFallback) {
     return (
-      <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+      <Layout customMeta={layoutProps.customMeta}>
         <LoadingSpinner marginTop={24} />
       </Layout>
     );
@@ -38,23 +31,19 @@ export default function Creator({
   }
 
   return (
-    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+    <Layout customMeta={layoutProps.customMeta}>
       <CreatorDetails creator={creator} />
     </Layout>
   );
 }
 
-export async function getStaticProps({ params, preview = false }: PathParams) {
-  const creator: CreatorType = await getClient(preview).fetch(
-    creatorBySlugQuery,
-    {
-      slug: params.slug,
-    }
-  );
+export async function getStaticProps({ params }: PathParams) {
+  const creator: CreatorType = await getClient().fetch(creatorBySlugQuery, {
+    slug: params.slug,
+  });
   return {
     props: {
       creator,
-      preview,
     },
   };
 }

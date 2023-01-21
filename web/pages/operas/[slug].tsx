@@ -8,19 +8,12 @@ import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Opera as OperaType } from 'types/sanity';
 import type { PathParams } from 'types/next';
 
-export default function Opera({
-  opera,
-  preview,
-}: {
-  opera: OperaType;
-  preview: boolean;
-}) {
+export default function Opera({ opera }: { opera: OperaType }) {
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
       title: `Opera - ${opera?.title ?? ''} - Voce Moderna`,
     },
-    preview,
   };
 
   if (router.isFallback) {
@@ -36,21 +29,20 @@ export default function Opera({
   }
 
   return (
-    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+    <Layout customMeta={layoutProps.customMeta}>
       <OperaDetails opera={opera} />
     </Layout>
   );
 }
 
-export async function getStaticProps({ params, preview = false }: PathParams) {
-  const opera: OperaType = await getClient(preview).fetch(operaBySlugQuery, {
+export async function getStaticProps({ params }: PathParams) {
+  const opera: OperaType = await getClient().fetch(operaBySlugQuery, {
     slug: params.slug,
   });
 
   return {
     props: {
       opera,
-      preview,
     },
   };
 }

@@ -1,5 +1,5 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 const resources = [
   {
@@ -119,7 +119,7 @@ export default function Faq() {
                       rel="noopener noreferrer"
                     >
                       {resource.urlText}
-                      <ExternalLinkIcon className="mx-1 mb-1 inline h-4 w-4" />
+                      <ArrowTopRightOnSquareIcon className="mx-1 mb-1 inline h-4 w-4" />
                     </a>
                   </p>
                   <p className=" text-gray-500">{resource.description}</p>

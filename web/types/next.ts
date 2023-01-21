@@ -7,5 +7,4 @@ export type PathParams = {
   params: {
     slug: string;
   };
-  preview: boolean;
 };

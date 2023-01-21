@@ -14,10 +14,8 @@ export type Directory = {
 
 export default function Creators({
   directory,
-  preview,
 }: {
   directory: Array<Directory>;
-  preview: boolean;
 }) {
   const layoutProps: LayoutProps = {
     customMeta: {
@@ -107,10 +105,8 @@ export default function Creators({
   );
 }
 
-export async function getStaticProps({ preview = false }) {
-  const creators: Array<Creator> = await getClient(preview).fetch(
-    creatorsQuery
-  );
+export async function getStaticProps() {
+  const creators: Array<Creator> = await getClient().fetch(creatorsQuery);
   // create an array of unique letters in order to group creators
   // alphabetically by their last name.
   const directory = creators.reduce((acc, cur) => {
@@ -128,6 +124,6 @@ export async function getStaticProps({ preview = false }) {
   }, {}); // initialValue to avoid skipping first value.
 
   return {
-    props: { directory, preview },
+    props: { directory },
   };
 }

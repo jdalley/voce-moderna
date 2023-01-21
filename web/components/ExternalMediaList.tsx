@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import type { ExternalLink } from 'types/sanity';
 
 export default function ExternalMediaList({
@@ -16,7 +16,7 @@ export default function ExternalMediaList({
           <a href={link.url} className=" hover:underline">
             {link.description}
           </a>
-          <ExternalLinkIcon className="mx-1 mb-1 inline-block h-4 w-4" />
+          <ArrowTopRightOnSquareIcon className="mx-1 mb-1 inline-block h-4 w-4" />
         </li>
       ))}
     </ul>

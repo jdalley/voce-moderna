@@ -1,5 +1,5 @@
 import Layout, { LayoutProps } from '@components/Layout';
-import { MailIcon } from '@heroicons/react/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
   const layoutProps: LayoutProps = {
@@ -24,7 +24,7 @@ export default function Contact() {
           <div className="mt-8 text-lg">
             <div className="flex items-center justify-center">
               <div className="shrink-0">
-                <MailIcon
+                <EnvelopeIcon
                   className="h-6 w-6 text-gray-400"
                   aria-hidden="true"
                 />

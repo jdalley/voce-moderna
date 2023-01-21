@@ -8,20 +8,17 @@ import type { FeaturedAria } from 'types/sanity';
 
 export default function Index({
   featuredArias,
-  preview,
 }: {
   featuredArias: Array<FeaturedAria>;
-  preview: boolean;
 }) {
   const layoutProps: LayoutProps = {
     customMeta: {
       title: 'Voce Moderna',
     },
-    preview,
   };
 
   return (
-    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+    <Layout customMeta={layoutProps.customMeta}>
       <div className="hidden sm:block">
         <Image
           src={VMHero}
@@ -96,11 +93,11 @@ export default function Index({
   );
 }
 
-export async function getStaticProps({ preview = false }) {
-  const featuredArias: Array<FeaturedAria> = await getClient(preview).fetch(
+export async function getStaticProps() {
+  const featuredArias: Array<FeaturedAria> = await getClient().fetch(
     featuredAriasQuery
   );
   return {
-    props: { featuredArias, preview },
+    props: { featuredArias },
   };
 }

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import BlockContent from '@sanity/block-content-to-react';
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { urlForImage } from '@utils/sanity';
 import { getFullName, getInitials } from '@utils/content';
 import type { Creator } from 'types/sanity';
@@ -58,7 +58,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
                 rel="noopener noreferrer"
               >
                 {creator.website}
-                <ExternalLinkIcon className="mx-1 inline h-4 w-4" />
+                <ArrowTopRightOnSquareIcon className="mx-1 inline h-4 w-4" />
               </a>
             </dd>
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>

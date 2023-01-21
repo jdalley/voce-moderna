@@ -8,24 +8,17 @@ import { getClient, sanityClient } from '@utils/sanity.server';
 import type { Aria as AriaType } from 'types/sanity';
 import type { PathParams } from 'types/next';
 
-export default function Aria({
-  aria,
-  preview,
-}: {
-  aria: AriaType;
-  preview: boolean;
-}) {
+export default function Aria({ aria }: { aria: AriaType }) {
   const router = useRouter();
   const layoutProps: LayoutProps = {
     customMeta: {
       title: `Aria - ${aria?.title ?? ''} - Voce Moderna`,
     },
-    preview,
   };
 
   if (router.isFallback) {
     return (
-      <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+      <Layout customMeta={layoutProps.customMeta}>
         <LoadingSpinner marginTop={24} />
       </Layout>
     );
@@ -36,21 +29,20 @@ export default function Aria({
   }
 
   return (
-    <Layout customMeta={layoutProps.customMeta} preview={layoutProps.preview}>
+    <Layout customMeta={layoutProps.customMeta}>
       <AriaDetails aria={aria} />
     </Layout>
   );
 }
 
-export async function getStaticProps({ params, preview = false }: PathParams) {
-  const aria: AriaType = await getClient(preview).fetch(ariaBySlugQuery, {
+export async function getStaticProps({ params }: PathParams) {
+  const aria: AriaType = await getClient().fetch(ariaBySlugQuery, {
     slug: params.slug,
   });
 
   return {
     props: {
       aria,
-      preview,
     },
   };
 }
