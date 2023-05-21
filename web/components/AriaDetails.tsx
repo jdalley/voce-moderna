@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
-import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 import { urlForImage } from '@utils/sanity';
 import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
@@ -32,7 +32,7 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
           />
         </div>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
+      <div className="border-t border-gray-200 px-4 pb-5 pt-5 sm:px-9 sm:pb-9">
         <div className="grid grid-cols-1 gap-4 md:grid-flow-col-dense md:grid-cols-2 md:grid-rows-1">
           <dl className="row-start-2 mt-3 md:col-start-1 md:row-start-1 md:mt-0">
             <dt className="font-medium text-gray-500">Composer</dt>
@@ -81,7 +81,7 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
 
             <dt className="mt-6 font-medium text-gray-500">Description</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
-              <BlockContent blocks={aria.description} />
+              <PortableText value={aria.description} />
             </dd>
 
             <dt className="mt-6 font-medium text-gray-500">Length</dt>

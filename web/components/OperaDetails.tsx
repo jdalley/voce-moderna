@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
-import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
 import ScoreLink from '@components/ScoreLink';
@@ -24,7 +24,7 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
           {opera.title}
         </h1>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
+      <div className="border-t border-gray-200 px-4 pb-5 pt-5 sm:px-9 sm:pb-9">
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Composer</dt>
@@ -79,7 +79,7 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
             <dt className="text-lg font-medium text-gray-500">SYNOPSIS</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
               {opera.synopsis !== undefined && (
-                <BlockContent blocks={opera.synopsis} />
+                <PortableText value={opera.synopsis} />
               )}
             </dd>
             {opera.premiereInformation !== undefined &&
@@ -89,7 +89,7 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
                     PREMIERE INFORMATION
                   </dt>
                   <dd className="prose mt-1 max-w-2xl text-gray-900">
-                    <BlockContent blocks={opera.premiereInformation} />
+                    <PortableText value={opera.premiereInformation} />
                   </dd>
                 </>
               )}

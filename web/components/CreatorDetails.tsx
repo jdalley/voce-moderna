@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
-import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { urlForImage } from '@utils/sanity';
 import { getFullName, getInitials } from '@utils/content';
@@ -46,7 +46,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
           {fullName}
         </h1>
       </div>
-      <div className="border-t border-gray-200 px-4 pt-5 pb-5 sm:px-9 sm:pb-9">
+      <div className="border-t border-gray-200 px-4 pb-5 pt-5 sm:px-9 sm:pb-9">
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
@@ -80,7 +80,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
           <div className="sm:col-span-2">
             <dt className=" font-medium text-gray-500">Biography</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
-              <BlockContent blocks={creator.bio} />
+              <PortableText value={creator.bio} />
             </dd>
           </div>
         </dl>
