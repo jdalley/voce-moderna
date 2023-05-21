@@ -3,10 +3,11 @@ import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '@utils/sanity';
-import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
-import ScoreLink from '@components/ScoreLink';
+import ExternalMediaList from '@components/ExternalMediaList';
+import PortableImage from '@components/PortableImage';
 import TrackButtons from '@components/TrackButtons';
+import ScoreLink from '@components/ScoreLink';
 import type { Aria } from 'types/sanity';
 
 export default function AriaDetails({ aria }: { aria: Aria }) {
@@ -81,7 +82,14 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
 
             <dt className="mt-6 font-medium text-gray-500">Description</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
-              <PortableText value={aria.description} />
+              <PortableText
+                value={aria.description}
+                components={{
+                  types: {
+                    image: PortableImage,
+                  },
+                }}
+              />
             </dd>
 
             <dt className="mt-6 font-medium text-gray-500">Length</dt>

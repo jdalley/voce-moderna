@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import { PortableText } from '@portabletext/react';
-import ExternalMediaList from '@components/ExternalMediaList';
 import CreatorList from '@components/CreatorList';
+import ExternalMediaList from '@components/ExternalMediaList';
+import PortableImage from '@components/PortableImage';
 import ScoreLink from '@components/ScoreLink';
 import type { Opera } from 'types/sanity';
 
@@ -79,7 +80,14 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
             <dt className="text-lg font-medium text-gray-500">SYNOPSIS</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
               {opera.synopsis !== undefined && (
-                <PortableText value={opera.synopsis} />
+                <PortableText
+                  value={opera.synopsis}
+                  components={{
+                    types: {
+                      image: PortableImage,
+                    },
+                  }}
+                />
               )}
             </dd>
             {opera.premiereInformation !== undefined &&
@@ -89,7 +97,14 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
                     PREMIERE INFORMATION
                   </dt>
                   <dd className="prose mt-1 max-w-2xl text-gray-900">
-                    <PortableText value={opera.premiereInformation} />
+                    <PortableText
+                      value={opera.premiereInformation}
+                      components={{
+                        types: {
+                          image: PortableImage,
+                        },
+                      }}
+                    />
                   </dd>
                 </>
               )}

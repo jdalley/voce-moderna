@@ -5,6 +5,7 @@ import { PortableText } from '@portabletext/react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { urlForImage } from '@utils/sanity';
 import { getFullName, getInitials } from '@utils/content';
+import PortableImage from '@components/PortableImage';
 import type { Creator } from 'types/sanity';
 
 export default function CreatorDetails({ creator }: { creator: Creator }) {
@@ -50,17 +51,19 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
         <dl className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <dt className="font-medium text-gray-500">Website</dt>
-            <dd className="mt-1 inline-flex items-center break-all text-cyan-600 ">
-              <a
-                href={creator.website}
-                className=" hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {creator.website}
-                <ArrowTopRightOnSquareIcon className="mx-1 inline h-4 w-4" />
-              </a>
-            </dd>
+            {creator.website && (
+              <dd className="mt-1 inline-flex items-center break-all text-cyan-600 ">
+                <a
+                  href={creator.website}
+                  className=" hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {creator.website}
+                  <ArrowTopRightOnSquareIcon className="mx-1 inline h-4 w-4" />
+                </a>
+              </dd>
+            )}
             <dt className="mt-6 font-medium text-gray-500">Operas</dt>
             <dd className="mt-1 text-gray-900">
               <ul>
@@ -80,7 +83,14 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
           <div className="sm:col-span-2">
             <dt className=" font-medium text-gray-500">Biography</dt>
             <dd className="prose mt-1 max-w-2xl text-gray-900">
-              <PortableText value={creator.bio} />
+              <PortableText
+                value={creator.bio}
+                components={{
+                  types: {
+                    image: PortableImage,
+                  },
+                }}
+              />
             </dd>
           </div>
         </dl>
