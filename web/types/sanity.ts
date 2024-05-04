@@ -1,31 +1,3 @@
-import type {
-  SanityReference,
-  SanityKeyedReference,
-  SanityAsset,
-  SanityImage,
-  SanityFile,
-  SanityGeoPoint,
-  SanityBlock,
-  SanityDocument,
-  SanityImageCrop,
-  SanityImageHotspot,
-  SanityKeyed,
-} from 'sanity-codegen';
-
-export type {
-  SanityReference,
-  SanityKeyedReference,
-  SanityAsset,
-  SanityImage,
-  SanityFile,
-  SanityGeoPoint,
-  SanityBlock,
-  SanityDocument,
-  SanityImageCrop,
-  SanityImageHotspot,
-  SanityKeyed,
-};
-
 /**
  * Notes:
  * These types were originally generated using sanity-codegen, then modified to correctly
@@ -119,3 +91,52 @@ export type SearchResult = {
 };
 
 export type Documents = Creator | Opera | Aria | FeaturedAria | VoiceType;
+
+/**
+ * The following types were originally generated with sanity-codegen.
+ */
+
+/**
+ * Represents a reference in Sanity to another entity. Note that the
+ * generic type is strictly for TypeScript meta programming.
+ */
+export declare type SanityReference<_T> = {
+  _type: 'reference';
+  _ref: string;
+};
+
+export declare type SanityKeyed<T> = T extends object
+  ? T & {
+      _key: string;
+    }
+  : T;
+
+export declare type SanityAsset = SanityReference<any>;
+
+export interface SanityDocument {
+  _id: string;
+  _createdAt: string;
+  _rev: string;
+  _updatedAt: string;
+}
+
+export interface SanityBlock {
+  _type: 'block';
+  [key: string]: any;
+}
+
+export interface SanityImageCrop {
+  _type: 'sanity.imageCrop';
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
+}
+
+export interface SanityImageHotspot {
+  _type: 'sanity.imageHotspot';
+  height: number;
+  width: number;
+  x: number;
+  y: number;
+}

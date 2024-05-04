@@ -40,7 +40,6 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "sanity-codegen": "^0.9.8",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },
