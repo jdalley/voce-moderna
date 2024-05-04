@@ -1,16 +1,11 @@
 {
-	// Avoid stylelint clashing with default validation
-	"css.validate": false,
-	"less.validate": false,
-	"scss.validate": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#800080",
     "titleBar.inactiveBackground": "#800080CC",
-		"titleBar.activeForeground": "#ffffff",
-		"titleBar.inactiveForeground": "#d1d1d1",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#d1d1d1"
   }
 }

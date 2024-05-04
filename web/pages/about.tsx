@@ -8,7 +8,7 @@ export default function About() {
   };
   return (
     <Layout customMeta={layoutProps.customMeta}>
-      <article className="relative mx-auto max-w-7xl overflow-x-hidden py-4 px-4 sm:py-14 sm:px-6 lg:px-8">
+      <article className="relative mx-auto max-w-7xl overflow-x-hidden px-4 py-4 sm:px-6 sm:py-14 lg:px-8">
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div className="lg:col-start-1 lg:row-start-1">
             <h1 className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">
@@ -37,7 +37,7 @@ export default function About() {
           </div>
           <div className="relative lg:col-start-2 lg:row-start-1">
             <svg
-              className="absolute top-0 right-0 -mt-20 mr-5 hidden lg:block"
+              className="absolute right-0 top-0 -mt-20 mr-5 hidden lg:block"
               width={404}
               height={384}
               fill="none"
@@ -71,7 +71,7 @@ export default function About() {
             </svg>
             <div className="relative mx-auto mt-10 max-w-prose text-base lg:mt-0 lg:max-w-none ">
               <figure>
-                <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
+                <div className="aspect-h-3 aspect-w-3 lg:aspect-none">
                   <img
                     className="rounded-lg bg-white object-cover object-top shadow-lg lg:object-center"
                     src="/images/vm-logo-colour.png"
@@ -90,7 +90,7 @@ export default function About() {
         <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative lg:col-start-1 lg:row-start-1">
             <svg
-              className="absolute top-0 left-0 -mt-20 -ml-20 hidden lg:block"
+              className="absolute left-0 top-0 -ml-20 -mt-20 hidden lg:block"
               width={404}
               height={384}
               fill="none"
@@ -124,7 +124,7 @@ export default function About() {
             </svg>
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
-                <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
+                <div className="aspect-h-3 aspect-w-3 lg:aspect-none">
                   <img
                     className="rounded-lg object-cover object-top shadow-lg lg:float-right lg:object-center"
                     src="/images/blair.jpg"
@@ -145,23 +145,25 @@ export default function About() {
                 young artist programs throughout the United States and Canada. A
                 graduate of the Houston Grand Opera Studio, San Francisco
                 Opera’s Merola Young Artist Program, Wolf Trap Opera, and the
-                Glimmerglass Festival, Blair is currently a member of the music
-                staff at Santa Fe Opera and joined the music faculty at Penn
-                State University in 2021.
+                Glimmerglass Festival, Blair is currently Head Coach for the LA
+                Opera Young Artist Program and a member of the music staff at
+                Santa Fe Opera. She was a conductor at The Dallas Opera’s Hart
+                Institute for Women Conductors in 2023, and Music Director for
+                Opera Theatre at Penn State University from 2021-23.
               </p>
               <p>
-                Blair has worked on staff at Houston Grand Opera, Opera
-                Colorado, Michigan Opera Theatre, Sewanee WinterFest Opera
-                Intensive, and the CoOPERAtive Program. Her extensive recital
-                credits include a program of music curated for the HGO Recital
-                Series at Rienzi, which featured a commissioned set of songs by
-                Jamie Leidwinger. Other performances include recitals with
-                Cincinnati Song Initiative, a mini-recital for the Sam Houston
-                State University Art Song Festival with frequent collaborator
-                Amy Petrongelli, a residency on Performance Today with tubist
-                Cristina Cutts, and her debut at the Kennedy Center in
-                Washington, D.C., accompanying students from the University of
-                Michigan. She has participated in and performed at multiple
+                Blair has worked on staff at LA Opera, San Francisco Opera,
+                Houston Grand Opera, Opera Colorado, Michigan Opera Theatre, New
+                Orleans Opera, and the CoOPERAtive Program. Her extensive
+                recital credits include a program of music curated for the HGO
+                Recital Series at Rienzi, which featured a commissioned set of
+                songs by Jamie Leidwinger. Other performances include recitals
+                with Cincinnati Song Initiative, a mini-recital for the Sam
+                Houston State University Art Song Festival with frequent
+                collaborator Amy Petrongelli, a residency on Performance Today
+                with tubist Cristina Cutts, and her debut at the Kennedy Center
+                in Washington, D.C., accompanying students from the University
+                of Michigan. She has participated in and performed at multiple
                 conferences, including: the New Works Forum at Opera America in
                 New York City, the African American Song Alliance Conference in
                 Irvine, California, the Song of America Conference in
@@ -173,9 +175,9 @@ export default function About() {
                 residency at the Fall Island Vocal Arts Seminar, and with the
                 Khemia Ensemble at Michigan State University, Tufts University
                 and the Avaloch Farms Music Institute. She has also worked on
-                several operatic world premieres, including Lord of Cries and
-                The Thirteenth Child at Santa Fe Opera, and The Phoenix and El
-                Milagro del Recuerdo at Houston Grand Opera.
+                several operatic world premieres, including M. Butterly, Lord of
+                Cries, and The Thirteenth Child at Santa Fe Opera, and The
+                Phoenix and El Milagro del Recuerdo at Houston Grand Opera.
               </p>
               <p>
                 Blair was a freelance collaborative pianist and coach in Toronto
@@ -194,7 +196,7 @@ export default function About() {
         <div className=" mt-8 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8">
           <div className=" relative lg:col-start-2 lg:row-start-1">
             <svg
-              className="absolute top-0 right-0 -mt-20 -mr-20 hidden lg:block"
+              className="absolute right-0 top-0 -mr-20 -mt-20 hidden lg:block"
               width={404}
               height={384}
               fill="none"
@@ -228,7 +230,7 @@ export default function About() {
             </svg>
             <div className="relative mx-auto max-w-prose lg:max-w-none">
               <figure>
-                <div className="aspect-w-3 aspect-h-3 lg:aspect-none">
+                <div className="aspect-h-3 aspect-w-3 lg:aspect-none">
                   <img
                     className="rounded-lg object-cover object-top shadow-lg lg:object-center"
                     src="/images/jeff.jpg"
