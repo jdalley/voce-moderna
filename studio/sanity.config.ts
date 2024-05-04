@@ -1,6 +1,6 @@
 // sanity.config.js
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure';
 import schemas from './schemas/schema';
 import { visionTool } from '@sanity/vision';
 import {
@@ -16,7 +16,7 @@ export default defineConfig({
   projectId: 'a31t0q44',
   dataset: 'production',
   plugins: [
-    deskTool(),
+    structureTool(),
     visionTool(),
     dashboardTool({
       widgets: [

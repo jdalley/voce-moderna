@@ -15,20 +15,20 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/dashboard": "^3.1.4",
-    "@sanity/vision": "^3.11.1",
+    "@sanity/dashboard": "^3.1.6",
+    "@sanity/vision": "^3.40.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sanity": "^3.11.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.40.0",
     "sanity-plugin-dashboard-widget-document-list": "^1.0.1",
     "sanity-plugin-dashboard-widget-vercel": "^2.0.1",
-    "styled-components": "^5.3.10"
+    "styled-components": "^6.1.9"
   },
   "devDependencies": {
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.5",
     "sanity-codegen": "^0.9.8",
-    "typescript": "^5.0.4"
+    "typescript": "^5.4.5"
   },
   "prettier": {
     "arrowParens": "always",
