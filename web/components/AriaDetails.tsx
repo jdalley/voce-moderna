@@ -4,10 +4,10 @@ import SplashBanner from '../public/images/splash-banner-1024x371.png';
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '@utils/sanity';
 import CreatorList from '@components/CreatorList';
-import ExternalMediaList from '@components/ExternalMediaList';
 import PortableImage from '@components/PortableImage';
 import TrackButtons from '@components/TrackButtons';
 import ScoreLink from '@components/ScoreLink';
+import PerformanceLinks from './PerformanceLinks';
 import type { Aria } from 'types/sanity';
 
 export default function AriaDetails({ aria }: { aria: Aria }) {
@@ -63,14 +63,7 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
               )}
             </dd>
 
-            {aria.performanceLinks !== undefined && aria.performanceLinks && (
-              <>
-                <dt className="mt-6 font-medium text-gray-500">Performances</dt>
-                <dd className="mt-1">
-                  <ExternalMediaList links={aria.performanceLinks} />
-                </dd>
-              </>
-            )}
+            <PerformanceLinks performanceLinks={aria.performanceLinks} />
           </dl>
 
           <dl className="row-start-1 md:col-start-2">
