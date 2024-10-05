@@ -124,85 +124,86 @@ export default function Header() {
           leave="ease-in duration-100 "
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
-          className="absolute inset-x-0 top-0 z-30 origin-top-right p-2 transition md:hidden"
         >
-          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="px-5 pt-5 pb-6">
-              <div className="flex items-center justify-between">
-                <div className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat"></div>
-                <div className="-mr-2">
-                  <button
-                    type="button"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                  >
-                    <span className="sr-only">Close menu</span>
-                    <XMarkIcon className="h-6 w-6" />
-                  </button>
+          <div className="absolute inset-x-0 top-0 z-30 origin-top-right p-2 transition md:hidden">
+            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="px-5 pb-6 pt-5">
+                <div className="flex items-center justify-between">
+                  <div className="h-8 w-12 bg-vm-logo bg-contain bg-no-repeat"></div>
+                  <div className="-mr-2">
+                    <button
+                      type="button"
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    >
+                      <span className="sr-only">Close menu</span>
+                      <XMarkIcon className="h-6 w-6" />
+                    </button>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <nav className="grid grid-cols-1 gap-7">
+                    <Link
+                      href="/"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        Home
+                      </div>
+                    </Link>
+                    <Link
+                      href="/database"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        Database
+                      </div>
+                    </Link>
+                    <Link
+                      href="/creators"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        Creators
+                      </div>
+                    </Link>
+                    <Link
+                      href="/about"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        About
+                      </div>
+                    </Link>
+                    <Link
+                      href="/faq"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        FAQ
+                      </div>
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                    >
+                      <div className="text-base font-medium text-gray-900">
+                        Contact
+                      </div>
+                    </Link>
+                  </nav>
                 </div>
               </div>
-              <div className="mt-6">
-                <nav className="grid grid-cols-1 gap-7">
-                  <Link
-                    href="/"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      Home
-                    </div>
-                  </Link>
-                  <Link
-                    href="/database"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      Database
-                    </div>
-                  </Link>
-                  <Link
-                    href="/creators"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      Creators
-                    </div>
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      About
-                    </div>
-                  </Link>
-                  <Link
-                    href="/faq"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      FAQ
-                    </div>
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
-                  >
-                    <div className="text-base font-medium text-gray-900">
-                      Contact
-                    </div>
-                  </Link>
-                </nav>
-              </div>
-            </div>
-            <div
-              className="snipcart-checkout py-6 px-5"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <div className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
-                <span className="mr-1 h-6 w-6 rounded-full border border-gray-400 bg-gray-100 text-center text-sm leading-normal">
-                  {cartCount}
-                </span>
-                <ShoppingBagIcon className="h-6 w-6" />
+              <div
+                className="snipcart-checkout px-5 py-6"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <div className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                  <span className="mr-1 h-6 w-6 rounded-full border border-gray-400 bg-gray-100 text-center text-sm leading-normal">
+                    {cartCount}
+                  </span>
+                  <ShoppingBagIcon className="h-6 w-6" />
+                </div>
               </div>
             </div>
           </div>
