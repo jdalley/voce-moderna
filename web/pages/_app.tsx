@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/next';
 import Router from 'next/router';
 import Script from 'next/script';
 import NProgress from 'nprogress';
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
