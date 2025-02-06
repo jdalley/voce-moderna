@@ -12,8 +12,8 @@ export default function TrackButtons({
     'snipcart-add-item',
     'block w-full px-2.5 py-2',
     'text-sm font-medium text-white',
-    'border border-transparent rounded shadow-sm',
-    'bg-gradient-to-r',
+    'border border-transparent rounded-sm shadow-xs',
+    'bg-linear-to-r',
     'sm:inline-block sm:w-auto'
   );
 

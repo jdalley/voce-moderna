@@ -103,7 +103,7 @@ export default function SearchResults({
             )
           )}
           {!loading && sortedResults?.length > 0 && (
-            <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+            <div className="overflow-hidden border-b border-gray-200 shadow-sm sm:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>

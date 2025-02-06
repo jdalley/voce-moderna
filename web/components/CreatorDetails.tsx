@@ -13,7 +13,7 @@ export default function CreatorDetails({ creator }: { creator: Creator }) {
   const initials = getInitials(creator.firstName, creator.lastName);
 
   return (
-    <div className="mx-auto max-w-5xl overflow-hidden bg-white shadow sm:mt-4 sm:rounded-lg">
+    <div className="mx-auto max-w-5xl overflow-hidden bg-white shadow-sm sm:mt-4 sm:rounded-lg">
       <div>
         <div className="relative h-44 w-full lg:h-64">
           <Image
