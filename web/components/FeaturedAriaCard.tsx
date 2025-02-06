@@ -16,7 +16,7 @@ export default function FeaturedAriaCard({
       <div
         className={classNames(
           'h-24',
-          'bg-gradient-to-r',
+          'bg-linear-to-r',
           voiceToGradientMap[aria.voiceType.name]
         )}
       ></div>

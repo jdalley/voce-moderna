@@ -104,8 +104,8 @@ export default function Database() {
   };
   const voiceTypeGradient =
     voiceType === '' || voiceType === 'all'
-      ? 'bg-gradient-to-tr from-amber-300 via-cyan-600 to-rose-600'
-      : `bg-gradient-to-r ${voiceToGradientMap[voiceType]}`;
+      ? 'bg-linear-to-tr from-amber-300 via-cyan-600 to-rose-600'
+      : `bg-linear-to-r ${voiceToGradientMap[voiceType]}`;
   const voiceTypeHoverGradient =
     voiceType === '' || voiceType === 'all'
       ? 'hover:from-amber-400 hover:via-cyan-700 hover:to-rose-700'
@@ -116,7 +116,7 @@ export default function Database() {
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:grid-cols-10 lg:gap-6 lg:py-8 lg:px-8">
         <div className="sticky top-0 bg-white sm:top-6 lg:relative lg:top-0 lg:col-span-3">
           <div aria-label="Search criteria" className="lg:sticky lg:top-6">
-            <div className="flex flex-col overflow-hidden rounded-lg border-b border-gray-200 shadow">
+            <div className="flex flex-col overflow-hidden rounded-lg border-b border-gray-200 shadow-sm">
               <div className={classNames('h-20', voiceTypeGradient)}></div>
               <form
                 onSubmit={handleSearch}
@@ -134,7 +134,7 @@ export default function Database() {
                     name="voiceType"
                     value={voiceType}
                     onChange={(e) => setVoiceType(e.target.value)}
-                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:py-2 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-hidden focus:ring-indigo-500 sm:py-2 sm:text-sm"
                   >
                     <option value="" disabled>
                       Select voice type...
@@ -161,7 +161,7 @@ export default function Database() {
                     name="searchType"
                     value={searchType}
                     onChange={(e) => setSearchType(e.target.value)}
-                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:py-2 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-1 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-hidden focus:ring-indigo-500 sm:py-2 sm:text-sm"
                   >
                     {Object.entries(searchTypes).map(([key, value]) => {
                       return (
@@ -179,13 +179,13 @@ export default function Database() {
                     id="searchTerm"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="block w-full rounded-md border-gray-300 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:py-2 sm:text-sm"
+                    className="block w-full rounded-md border-gray-300 py-1 shadow-xs focus:border-indigo-500 focus:ring-indigo-500 sm:py-2 sm:text-sm"
                     placeholder="Search"
                   />
                   <button
                     type="reset"
                     onClick={handleReset}
-                    className="absolute top-[5px] right-[9px] cursor-pointer rounded-md bg-transparent p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:top-[7px] sm:right-2"
+                    className="absolute top-[5px] right-[9px] cursor-pointer rounded-md bg-transparent p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:top-[7px] sm:right-2"
                   >
                     <span className="sr-only">Clear search</span>
                     <XMarkIcon className="h-4 w-4" />
@@ -196,8 +196,8 @@ export default function Database() {
                     type="submit"
                     className={classNames(
                       'inline-flex w-full items-center px-4 py-2',
-                      'rounded-md text-base font-medium text-white shadow-sm',
-                      'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto',
+                      'rounded-md text-base font-medium text-white shadow-xs',
+                      'focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto',
                       voiceTypeGradient,
                       voiceTypeHoverGradient
                     )}

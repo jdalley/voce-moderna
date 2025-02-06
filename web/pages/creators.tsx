@@ -80,7 +80,7 @@ export default function Creators({
                         <div className="min-w-0 flex-1">
                           <Link
                             href={`/creators/${creator.slug.current}`}
-                            className="focus:outline-none"
+                            className="focus:outline-hidden"
                           >
                             <span
                               className="absolute inset-0"
