@@ -8,7 +8,7 @@ import {
   projectInfoWidget,
   projectUsersWidget
 } from '@sanity/dashboard';
-import { vercelWidget } from 'sanity-plugin-dashboard-widget-vercel';
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { documentListWidget } from 'sanity-plugin-dashboard-widget-document-list';
 
 export default defineConfig({
@@ -28,9 +28,9 @@ export default defineConfig({
           limit: 8,
           layout: { width: 'medium' }
         }),
-        vercelWidget()
       ]
-    })
+    }),
+    vercelDeployTool(),
   ],
   schema: {
     types: schemas
