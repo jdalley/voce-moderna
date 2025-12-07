@@ -9,10 +9,6 @@ module.exports = {
       },
     ],
   },
-  eslint: {
-    // Allow builds to complete despite ESLint errors
-    ignoreDuringBuilds: true,
-  },
   async headers() {
     return [
       {
