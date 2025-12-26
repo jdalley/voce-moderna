@@ -15,13 +15,13 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/dashboard": "^5.0.0",
-    "@sanity/vision": "^4.21.1",
+    "@sanity/dashboard": "^5.0.1",
+    "@sanity/vision": "^5.1.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-is": "19.2.3",
-    "sanity": "^4.21.1",
+    "sanity": "^5.1.0",
     "sanity-plugin-dashboard-widget-document-list": "^2.1.1",
     "sanity-plugin-vercel-deploy": "^4.0.0",
     "styled-components": "^6.1.19"
