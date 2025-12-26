@@ -87,8 +87,6 @@ export default function Index({
           </div>
         </div>
       </div>
-
-      <FeaturedArias featuredArias={featuredArias} />
     </Layout>
   );
 }
