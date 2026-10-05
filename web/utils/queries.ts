@@ -12,6 +12,7 @@ const shortCreatorFields = `
   slug,
 	photo
 `;
+
 const searchResultFields = `
 	"ariaTitle": title,
 	"ariaSlug": slug.current,
