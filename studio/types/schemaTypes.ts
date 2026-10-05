@@ -119,6 +119,13 @@ export interface Opera extends SanityDocument {
   librettists?: Array<SanityKeyedReference<Creator>>;
 
   /**
+   * Year — `string`
+   *
+   *
+   */
+  year?: string;
+
+  /**
    * Source Material — `string`
    *
    *

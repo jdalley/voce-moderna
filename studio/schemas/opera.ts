@@ -45,6 +45,11 @@ export default {
       ]
     },
     {
+      name: 'year',
+      title: 'Year',
+      type: 'string'
+    },
+    {
       name: 'sourceMaterial',
       title: 'Source Material',
       type: 'string'

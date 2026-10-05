@@ -15,7 +15,7 @@ const shortCreatorFields = `
 const ariaTrackFields = `
 	"id": id.current,
 	name,
-	description, 
+	description,
 	relativeUrl,
 	price,
 	fileGuid
@@ -78,6 +78,7 @@ export const operaBySlugQuery = groq`
 	*[_type == "opera" && slug.current == $slug][0] {
 		title,
 		slug,
+		year,
 		sourceMaterial,
 		synopsis,
         premiereInformation,
@@ -94,7 +95,7 @@ export const operaBySlugQuery = groq`
 			slug,
 			voiceType->{displayName}
 		}
-	}	
+	}
 `;
 
 export const creatorsQuery = groq`
@@ -103,7 +104,7 @@ export const creatorsQuery = groq`
     lastName,
     slug,
     photo
-  }  
+  }
 `;
 
 export const creatorSlugsQuery = groq`
@@ -128,7 +129,7 @@ export const creatorBySlugQuery = groq`
 export const featuredAriasQuery = groq`
 	*[_type == 'featuredAria'] | order(_updatedAt desc) {
 		aria->{
-			title, 
+			title,
 			slug,
 			voiceType->{name, displayName},
 			description,
@@ -149,61 +150,61 @@ export const featuredAriasQuery = groq`
 export const ariasByAnyVoiceType = groq`
 	*[_type == "aria"] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariasByVoiceType = groq`
 	*[_type == "aria" && references(*[_type == "voiceType" && name == $voiceType]._id)] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariasByOperaTitle = groq`
-	*[_type == "aria" 
+	*[_type == "aria"
 		&& references(*[_type == "voiceType" && name == $voiceType]._id)
 		&& references(*[_type == "opera" && title match "*" + $operaTitle + "*"]._id)] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariasByAriaTitle = groq`
-	*[_type == "aria" 
+	*[_type == "aria"
 		&& references(*[_type == "voiceType" && name == $voiceType]._id)
 		&& title match "*" + $ariaTitle + "*"] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariasByComposerName = groq`
-	*[_type == "aria" 
+	*[_type == "aria"
 		&& references(*[_type == "voiceType" && name == $voiceType]._id)
-		&& references(*[_type == "opera" && 
+		&& references(*[_type == "opera" &&
     	(composers[]->firstName match "*" + $name + "*" || composers[]->lastName match "*" + $name + "*")]._id)] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariasByLibrettistName = groq`
-	*[_type == "aria" 
+	*[_type == "aria"
 		&& references(*[_type == "voiceType" && name == $voiceType]._id)
-		&& references(*[_type == "opera" && 
+		&& references(*[_type == "opera" &&
     	(librettists[]->firstName match "*" + $name + "*" || librettists[]->lastName match "*" + $name + "*")]._id)] {
 		${searchResultFields}
-	}	
+	}
 `;
 
 export const ariaSearchBase = `
-	*[_type == "aria" 
+	*[_type == "aria"
 		{{voiceType}}
-		{{filter}}	
+		{{filter}}
 	] | order(opera->title asc) {
 		${searchResultFields}
-	}	
+	}
 `;
 
 /**
  * Construct a Groq query to find Arias based on the searchType.
- * @param searchType Type of search: opear title, aria title, composer name, librettist name.
+ * @param searchType Type of search: opera title, aria title, composer name, librettist name.
  * @param searchTerm The term to search by, wildcards are added to each side of the term.
  * @param voiceType The voice type to filter by. Null or "all" will remove this expression.
  */
@@ -251,16 +252,16 @@ export function getSearchQuery(
     } else if (searchType === 'composer') {
       search.query = search.query.replace(
         '{{filter}}',
-        `&& references(*[_type == "opera" && 
-					(composers[]->firstName match "*" + $name + "*" 
+        `&& references(*[_type == "opera" &&
+					(composers[]->firstName match "*" + $name + "*"
 						|| composers[]->lastName match "*" + $name + "*")]._id)`
       );
       Object.assign(search.params, { name: searchTerm });
     } else if (searchType === 'librettist') {
       search.query = search.query.replace(
         '{{filter}}',
-        `&& references(*[_type == "opera" && 
-					(librettists[]->firstName match "*" + $name + "*" 
+        `&& references(*[_type == "opera" &&
+					(librettists[]->firstName match "*" + $name + "*"
 						|| librettists[]->lastName match "*" + $name + "*")]._id)`
       );
       Object.assign(search.params, { name: searchTerm });

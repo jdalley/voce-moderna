@@ -26,6 +26,7 @@ export interface Opera extends SanityDocument {
   slug?: { _type: 'slug'; current: string };
   composers?: Array<Creator>;
   librettists?: Array<Creator>;
+  year?: string;
   sourceMaterial?: string;
   synopsis?: Array<SanityKeyed<SanityBlock>>;
   premiereInformation?: Array<SanityKeyed<SanityBlock>>;

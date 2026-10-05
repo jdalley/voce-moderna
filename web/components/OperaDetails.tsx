@@ -36,6 +36,14 @@ export default function OperaDetails({ opera }: { opera: Opera }) {
             <dd className="mt-1">
               <CreatorList creators={opera.librettists} />
             </dd>
+            {opera.year !== undefined && opera.year && (
+              <>
+                <dt className="mt-6 font-medium text-gray-500">
+                  Year
+                </dt>
+                <dd className="mt-1 text-gray-900">{opera.year}</dd>
+              </>
+            )}
             {opera.sourceMaterial !== undefined && opera.sourceMaterial && (
               <>
                 <dt className="mt-6 font-medium text-gray-500">
