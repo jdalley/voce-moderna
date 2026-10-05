@@ -17,9 +17,9 @@ export default function Layout({ children, customMeta }: LayoutProps) {
   const meta = {
     title: 'Project Voce Moderna',
     description:
-      'Voce Moderna is a database of contemporary opera arias, including information about composers and librettists, individual arias, full opera synopses, score links, and practice tracks for download.',
+      'Voce Moderna is a database of contemporary opera arias, including information about composers and librettists, individual arias, full opera synopses, and score links.',
     keywords:
-      'opera, operas, aria, arias, opera database, aria database, contemporary opera, contemporary music, new opera, new music, synopses, practice tracks, piano tracks, accompaniment tracks',
+      'opera, operas, aria, arias, opera database, aria database, contemporary opera, contemporary music, new opera, new music, synopses',
     image: 'https://www.projectvocemoderna.com/images/vm-logo-colour.png',
     type: 'website',
     ...customMeta,

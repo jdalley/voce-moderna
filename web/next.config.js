@@ -22,9 +22,9 @@ module.exports = {
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.sanity.io *.snipcart.com *.stripe.com;
-  style-src 'self' 'unsafe-inline' *.snipcart.com *.stripe.com *.googleapis.com;
-	frame-src *.snipcart.com *.stripe.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.sanity.io;
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
+	frame-src;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;

@@ -5,7 +5,6 @@ import { PortableText } from '@portabletext/react';
 import { urlForImage } from '@utils/sanity';
 import CreatorList from '@components/CreatorList';
 import PortableImage from '@components/PortableImage';
-import TrackButtons from '@components/TrackButtons';
 import ScoreLink from '@components/ScoreLink';
 import PerformanceLinks from './PerformanceLinks';
 import type { Aria } from 'types/sanity';
@@ -26,12 +25,6 @@ export default function AriaDetails({ aria }: { aria: Aria }) {
         <h1 className="text-xl font-medium leading-9 text-gray-900">
           {aria.title}
         </h1>
-        <div className="mt-4 sm:mt-0">
-          <TrackButtons
-            pianoTrack={aria.pianoTrack}
-            vocalTrack={aria.vocalTrack}
-          />
-        </div>
       </div>
       <div className="border-t border-gray-200 px-4 pb-5 pt-5 sm:px-9 sm:pb-9">
         <div className="grid grid-cols-1 gap-4 md:grid-flow-col-dense md:grid-cols-2 md:grid-rows-1">

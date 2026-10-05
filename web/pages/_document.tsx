@@ -5,12 +5,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preconnect" href="https://app.snipcart.com" />
-          <link rel="preconnect" href="https://cdn.snipcart.com" />
-          <link
-            rel="stylesheet"
-            href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css"
-          />
           <link
             rel="preload"
             href="/fonts/Selima.woff2"

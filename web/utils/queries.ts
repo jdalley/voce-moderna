@@ -12,14 +12,6 @@ const shortCreatorFields = `
   slug,
 	photo
 `;
-const ariaTrackFields = `
-	"id": id.current,
-	name,
-	description,
-	relativeUrl,
-	price,
-	fileGuid
-`;
 const searchResultFields = `
 	"ariaTitle": title,
 	"ariaSlug": slug.current,
@@ -61,12 +53,6 @@ export const ariaBySlugQuery = groq`
 		},
 		scoreLink{description, url},
 		performanceLinks[]{description, url},
-		pianoTrack{
-			${ariaTrackFields}
-		},
-		vocalTrack{
-			${ariaTrackFields}
-		}
 	}
 `;
 

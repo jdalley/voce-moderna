@@ -52,8 +52,6 @@ export interface Aria extends SanityDocument {
   };
   scoreLink?: ExternalLink;
   performanceLinks?: Array<SanityKeyed<ExternalLink>>;
-  pianoTrack?: Track;
-  vocalTrack?: Track;
 }
 
 export interface FeaturedAria extends SanityDocument {
@@ -72,16 +70,6 @@ export type ExternalLink = {
   _type: 'externalLink';
   description?: string;
   url?: string;
-};
-
-export type Track = {
-  _type: 'track';
-  name?: string;
-  id?: { _type: 'id'; current: string };
-  price?: number;
-  relativeUrl?: string;
-  description?: string;
-  fileGuid?: string;
 };
 
 export type SearchResult = {

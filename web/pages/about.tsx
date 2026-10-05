@@ -24,12 +24,6 @@ export default function About() {
             </div>
             <div className="prose prose-cyan mt-8 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
               <p>
-                Composers and publishers are collaborators at Voce Moderna, and
-                they receive royalties from track purchases. Mechanical licenses
-                have been obtained so that these practice tracks could be made
-                available for your personal use.
-              </p>
-              <p>
                 This database is ongoing! Arias will continue to be added to
                 this site, so be sure to keep checking back for new entries.
               </p>
@@ -145,13 +139,12 @@ export default function About() {
                 young artist programs throughout the United States and Canada. A
                 graduate of the Houston Grand Opera Studio, San Francisco Opera’s
                 Merola Young Artist Program, Wolf Trap Opera, and the Glimmerglass
-                Festival, Blair is currently Head Coach for the LA Opera
-                Domingo-Colburn-Stein Young Artist Program and a member of the
-                music staff at Wolf Trap Opera. She made her conducting debuts at
-                Lyric Opera of Kansas City and Pacific Opera Project in 2025, she
-                was a conductor at The Dallas Opera’s Hart Institute for Women
-                Conductors in 2023, and she was Music Director for Opera Theatre
-                at Penn State University from 2021-23.
+                Festival, Blair is currently the Head of Music at LA Opera. She
+                made her conducting debuts at Lyric Opera of Kansas City and
+                Pacific Opera Project in 2025, she was a conductor at The Dallas
+                Opera’s Hart Institute for Women Conductors in 2023, and she was
+                Music Director for Opera Theatre at Penn State University from
+                2021-23.
               </p>
               <p>
                 Blair has worked as a member of music staff at Lyric Opera of
